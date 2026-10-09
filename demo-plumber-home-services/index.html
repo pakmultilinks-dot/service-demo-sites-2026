@@ -8,9 +8,10 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/custom.css">
-<style>body{font-family:'Inter',system-ui,sans-serif}h1,h2,h3,.font-display{font-family:'Archivo','Inter',sans-serif}</style>
+<style>body{font-family:'Inter',system-ui,sans-serif}h1,h2,h3,.font-display{font-family:'Oswald','Inter',sans-serif;letter-spacing:.015em}</style>
 </head>
 <body data-page="home" class="bg-slate-50 text-slate-800 antialiased">
 
@@ -56,11 +57,11 @@
 <main>
   <!-- HERO -->
   <section class="relative text-white overflow-hidden">
-    <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1920&q=80" alt="Plumber repairing a pipe" class="absolute inset-0 w-full h-full object-cover">
+    <img fetchpriority="high" src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1920&q=80" alt="Plumber repairing a pipe" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-gradient-to-r from-[#082c44]/95 via-[#0b3d5c]/80 to-[#0b3d5c]/30"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-24 md:py-36">
       <p class="reveal inline-block bg-amber-500/15 border border-amber-400/40 text-amber-300 text-xs font-bold uppercase tracking-[0.18em] px-4 py-2 rounded-full">Denver, CO plumbing crew</p>
-      <h1 class="reveal font-display font-extrabold text-4xl md:text-6xl leading-[1.05] mt-5 max-w-2xl">Plumbing problems, solved the same day.</h1>
+      <h1 class="reveal font-display font-bold uppercase text-5xl md:text-7xl leading-[1.02] mt-5 max-w-2xl">Plumbing problems,<br class="hidden md:block"> solved the same day.</h1>
       <p class="reveal text-lg md:text-xl text-slate-200 mt-5 max-w-xl">Leaks, clogs, water heaters, full repipes. One call to PureFlow and a licensed Denver plumber is on the way, with upfront pricing before any work starts.</p>
       <div class="reveal flex flex-wrap gap-4 mt-8">
         <a href="tel:+15551234567" class="bg-amber-500 hover:bg-amber-400 text-[#0b3d5c] font-bold px-8 py-4 rounded-full transition shadow-xl">Call (555) 123-4567</a>
@@ -78,9 +79,32 @@
   <!-- EMERGENCY STRIP -->
   <section class="bg-amber-500 text-[#0b3d5c]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="font-bold text-lg text-center md:text-left">Burst pipe or flooding right now? Do not wait, call immediately.</p>
-      <a href="tel:+15551234567" class="shrink-0 bg-[#0b3d5c] text-white font-bold px-7 py-3 rounded-full hover:bg-[#082c44] transition">Emergency: (555) 123-4567</a>
+      <p class="font-bold text-lg text-center md:text-left flex items-center gap-3"><span class="pulse-dot" aria-hidden="true"></span>Burst pipe or flooding right now? Do not wait, call immediately.</p>
+      <a href="tel:+15551234567" class="shrink-0 bg-[#0b3d5c] text-white font-bold px-7 py-3 rounded-full hover:bg-[#082c44] hover:scale-105 transition">Emergency: (555) 123-4567</a>
     </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="bg-[#082c44] text-white py-14 md:py-16 border-y border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="reveal">
+        <p class="font-display font-semibold text-4xl md:text-5xl text-amber-400"><span class="count" data-count="2400">0</span>+</p>
+        <p class="text-slate-300 text-sm mt-2 font-medium">Sample jobs completed</p>
+      </div>
+      <div class="reveal">
+        <p class="font-display font-semibold text-4xl md:text-5xl text-amber-400"><span class="count" data-count="15">0</span></p>
+        <p class="text-slate-300 text-sm mt-2 font-medium">Sample years in Denver</p>
+      </div>
+      <div class="reveal">
+        <p class="font-display font-semibold text-4xl md:text-5xl text-amber-400"><span class="count" data-count="98">0</span>%</p>
+        <p class="text-slate-300 text-sm mt-2 font-medium">Sample on-time arrivals</p>
+      </div>
+      <div class="reveal">
+        <p class="font-display font-semibold text-4xl md:text-5xl text-amber-400">4.9</p>
+        <p class="text-slate-300 text-sm mt-2 font-medium">Sample average rating</p>
+      </div>
+    </div>
+    <p class="text-center text-xs text-slate-500 mt-8 px-4">Figures shown are sample illustrations for this demo concept, not real business data.</p>
   </section>
 
   <!-- SERVICES OVERVIEW -->
@@ -93,32 +117,74 @@
       <a href="services.html" class="shrink-0 font-bold text-[#0b3d5c] border-b-2 border-amber-500 pb-0.5">See all services</a>
     </div>
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
-      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition">
-        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Pipe repair work" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition duration-300">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Pipe repair work" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
         <div class="p-7"><h3 class="font-display font-bold text-xl text-slate-900">Drain Cleaning</h3><p class="text-slate-500 mt-2 text-[0.95rem]">Stubborn clogs cleared with pro augers and hydro jetting, kitchen to main line.</p></div>
       </a>
-      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition">
-        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=800&q=80" alt="Plumber with professional tools" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition duration-300">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=800&q=80" alt="Plumber with professional tools" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
         <div class="p-7"><h3 class="font-display font-bold text-xl text-slate-900">Water Heaters</h3><p class="text-slate-500 mt-2 text-[0.95rem]">Tank and tankless repair plus full replacements, sized for your home.</p></div>
       </a>
-      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition">
-        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80" alt="Technician fixing a leaking pipe" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition duration-300">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80" alt="Technician fixing a leaking pipe" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
         <div class="p-7"><h3 class="font-display font-bold text-xl text-slate-900">Leak Repair</h3><p class="text-slate-500 mt-2 text-[0.95rem]">Hidden leaks found fast with acoustic detection, fixed with minimal damage.</p></div>
       </a>
-      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt="Plumber at work in a home" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition duration-300">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt="Plumber at work in a home" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
         <div class="p-7"><h3 class="font-display font-bold text-xl text-slate-900">Fixture Installs</h3><p class="text-slate-500 mt-2 text-[0.95rem]">Faucets, toilets, showers and disposals installed cleanly and tested twice.</p></div>
       </a>
-      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition">
-        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&h=520&q=80" alt="Sewer line service work" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition duration-300">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&h=520&q=80" alt="Sewer line service work" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
         <div class="p-7"><h3 class="font-display font-bold text-xl text-slate-900">Sewer Lines</h3><p class="text-slate-500 mt-2 text-[0.95rem]">Camera inspections, spot repairs and trenchless replacement options.</p></div>
       </a>
-      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition">
-        <img src="https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?auto=format&fit=crop&w=800&q=80" alt="Friendly service technician" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition duration-300">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?auto=format&fit=crop&w=800&q=80" alt="Friendly service technician" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
         <div class="p-7"><h3 class="font-display font-bold text-xl text-slate-900">Remodel Plumbing</h3><p class="text-slate-500 mt-2 text-[0.95rem]">Rough-ins and finish work for bathroom and kitchen remodels.</p></div>
       </a>
     </div>
   </section>
+
+  <!-- TROUBLESHOOTER -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+    <p class="reveal text-amber-600 font-bold text-sm uppercase tracking-[0.18em] text-center">Not sure what it is?</p>
+    <h2 class="reveal font-display font-semibold uppercase text-3xl md:text-5xl mt-3 text-center text-slate-900">Find your fix in 30 seconds</h2>
+    <div id="trouble" class="reveal mt-12 bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
+      <div class="bg-[#0b3d5c] text-white px-7 md:px-10 py-6 flex items-center justify-between">
+        <p class="font-display font-semibold text-xl tracking-wide">Plumbing troubleshooter</p>
+        <p id="trStepLabel" class="text-sm text-slate-300 font-semibold">Step 1 of 3</p>
+      </div>
+      <div class="p-7 md:p-10">
+        <div class="tr-step" data-step="1">
+          <p class="font-bold text-lg text-slate-900 mb-5">What symptom are you seeing?</p>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <button class="tr-opt" data-symptom="drain">Slow or clogged drain</button>
+            <button class="tr-opt" data-symptom="leak">Drip, leak, or water stain</button>
+            <button class="tr-opt" data-symptom="heater">No hot water</button>
+            <button class="tr-opt" data-symptom="pressure">Low water pressure</button>
+            <button class="tr-opt" data-symptom="toilet">Toilet running or not flushing</button>
+            <button class="tr-opt" data-symptom="sewer">Sewer smell or backup</button>
+          </div>
+        </div>
+        <div class="tr-step hidden" data-step="2">
+          <p class="font-bold text-lg text-slate-900 mb-5">How urgent is it?</p>
+          <div class="grid sm:grid-cols-3 gap-3">
+            <button class="tr-opt" data-urgency="now">Emergency, water flowing now</button>
+            <button class="tr-opt" data-urgency="today">Need it fixed today</button>
+            <button class="tr-opt" data-urgency="week">This week is fine</button>
+          </div>
+        </div>
+        <div class="tr-step hidden" data-step="3">
+          <div id="trResult"></div>
+        </div>
+        <div class="flex items-center justify-between mt-8">
+          <button id="trBack" class="hidden font-bold text-[#0b3d5c] border-2 border-slate-200 rounded-xl px-6 py-3 hover:border-amber-500 transition">Back</button>
+          <p class="text-xs text-slate-400 ml-auto">Demo widget, sample guidance for illustration only.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-pipe" aria-hidden="true"><span></span><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round"><path d="M14.7 6.3a4.5 4.5 0 0 0-6 6L3 18l3 3 5.7-5.7a4.5 4.5 0 0 0 6-6L14 13l-3-3 3.7-3.7z"/></svg><span></span></div>
 
   <!-- HOW IT WORKS -->
   <section class="bg-[#0b3d5c] text-white py-20 md:py-28">
@@ -143,6 +209,35 @@
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- WHY US COMPARISON -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+    <p class="reveal text-amber-600 font-bold text-sm uppercase tracking-[0.18em] text-center">Why PureFlow</p>
+    <h2 class="reveal font-display font-semibold uppercase text-3xl md:text-5xl mt-3 text-center text-slate-900">The difference is in the details</h2>
+    <div class="grid md:grid-cols-2 gap-6 mt-12">
+      <div class="reveal bg-[#0b3d5c] text-white rounded-3xl p-8 md:p-10 shadow-xl relative overflow-hidden">
+        <p class="font-display font-semibold text-2xl tracking-wide">The PureFlow way</p>
+        <ul class="mt-6 space-y-4">
+          <li class="flex gap-3"><span class="mt-1 w-6 h-6 shrink-0 rounded-full bg-amber-500 grid place-items-center text-[#0b3d5c] font-black text-sm">✓</span><span class="text-slate-200"><strong class="text-white">One flat price</strong>, approved by you before any work starts.</span></li>
+          <li class="flex gap-3"><span class="mt-1 w-6 h-6 shrink-0 rounded-full bg-amber-500 grid place-items-center text-[#0b3d5c] font-black text-sm">✓</span><span class="text-slate-200"><strong class="text-white">Shoe covers and drop cloths</strong> on every single visit.</span></li>
+          <li class="flex gap-3"><span class="mt-1 w-6 h-6 shrink-0 rounded-full bg-amber-500 grid place-items-center text-[#0b3d5c] font-black text-sm">✓</span><span class="text-slate-200"><strong class="text-white">Text updates</strong> when your tech is on the way, with a live arrival window.</span></li>
+          <li class="flex gap-3"><span class="mt-1 w-6 h-6 shrink-0 rounded-full bg-amber-500 grid place-items-center text-[#0b3d5c] font-black text-sm">✓</span><span class="text-slate-200"><strong class="text-white">We fix the cause</strong>, not just the symptom, and test everything twice.</span></li>
+          <li class="flex gap-3"><span class="mt-1 w-6 h-6 shrink-0 rounded-full bg-amber-500 grid place-items-center text-[#0b3d5c] font-black text-sm">✓</span><span class="text-slate-200"><strong class="text-white">Full cleanup</strong> before we leave. Your home looks untouched.</span></li>
+        </ul>
+      </div>
+      <div class="reveal bg-white border-2 border-slate-200 rounded-3xl p-8 md:p-10">
+        <p class="font-display font-semibold text-2xl tracking-wide text-slate-400">The way it usually goes</p>
+        <ul class="mt-6 space-y-4 text-slate-500">
+          <li class="flex gap-3"><span class="mt-1 w-6 h-6 shrink-0 rounded-full bg-slate-200 grid place-items-center text-slate-500 font-black text-sm">✕</span><span>Vague hourly rates that grow while you watch.</span></li>
+          <li class="flex gap-3"><span class="mt-1 w-6 h-6 shrink-0 rounded-full bg-slate-200 grid place-items-center text-slate-500 font-black text-sm">✕</span><span>Boot prints on the carpet and a "that is normal" shrug.</span></li>
+          <li class="flex gap-3"><span class="mt-1 w-6 h-6 shrink-0 rounded-full bg-slate-200 grid place-items-center text-slate-500 font-black text-sm">✕</span><span>A four-hour window and radio silence until they show up.</span></li>
+          <li class="flex gap-3"><span class="mt-1 w-6 h-6 shrink-0 rounded-full bg-slate-200 grid place-items-center text-slate-500 font-black text-sm">✕</span><span>The same clog back next month, and another invoice.</span></li>
+          <li class="flex gap-3"><span class="mt-1 w-6 h-6 shrink-0 rounded-full bg-slate-200 grid place-items-center text-slate-500 font-black text-sm">✕</span><span>Packaging, parts and dust left behind for you.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="text-center text-xs text-slate-400 mt-6">Comparison shown for demo illustration only.</p>
   </section>
 
   <!-- TESTIMONIAL SLIDER -->
@@ -189,12 +284,21 @@
         <span class="bg-white shadow-sm rounded-full px-5 py-2.5 font-semibold text-slate-700">Westminster</span>
         <span class="bg-white shadow-sm rounded-full px-5 py-2.5 font-semibold text-slate-700">Centennial</span>
       </div>
+      <div class="reveal max-w-xl mx-auto mt-10 bg-white rounded-2xl shadow-md p-6 md:p-8 text-left">
+        <p class="font-display font-semibold text-xl text-slate-900 tracking-wide">Check your ZIP code</p>
+        <form id="zipForm" class="mt-4 flex gap-3">
+          <input id="zipInput" inputmode="numeric" pattern="[0-9]*" maxlength="5" placeholder="e.g. 80202" aria-label="ZIP code" class="flex-1 min-w-0 border-2 border-slate-200 rounded-xl px-4 py-3 font-medium focus:border-amber-500">
+          <button type="submit" class="shrink-0 bg-[#0b3d5c] text-white font-bold px-6 rounded-xl hover:bg-[#082c44] transition">Check</button>
+        </form>
+        <div id="zipResult" class="hidden mt-4 rounded-xl p-4 text-sm font-semibold"></div>
+        <p class="text-xs text-slate-400 mt-3">Demo checker using a sample ZIP list, for illustration only.</p>
+      </div>
     </div>
   </section>
 
   <!-- CTA BAND -->
   <section class="relative text-white overflow-hidden">
-    <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1920&q=80" alt="Plumber with tools ready for the job" class="absolute inset-0 w-full h-full object-cover">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1920&q=80" alt="Plumber with tools ready for the job" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-[#082c44]/85"></div>
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 py-20 md:py-28 text-center">
       <h2 class="reveal font-display font-extrabold text-3xl md:text-5xl">Need a plumber today?</h2>
@@ -254,6 +358,6 @@
   </div>
 </div>
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

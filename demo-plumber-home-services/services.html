@@ -8,9 +8,10 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/custom.css">
-<style>body{font-family:'Inter',system-ui,sans-serif}h1,h2,h3,.font-display{font-family:'Archivo','Inter',sans-serif}</style>
+<style>body{font-family:'Inter',system-ui,sans-serif}h1,h2,h3,.font-display{font-family:'Oswald','Inter',sans-serif;letter-spacing:.015em}</style>
 </head>
 <body data-page="services" class="bg-slate-50 text-slate-800 antialiased">
 
@@ -56,7 +57,7 @@
 <main>
   <!-- PAGE HERO -->
   <section class="relative text-white overflow-hidden">
-    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1920&q=80" alt="Plumbing pipe repair in progress" class="absolute inset-0 w-full h-full object-cover">
+    <img fetchpriority="high" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1920&q=80" alt="Plumbing pipe repair in progress" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-[#082c44]/80"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-28">
       <p class="reveal text-amber-400 font-bold text-sm uppercase tracking-[0.18em]">Services</p>
@@ -68,7 +69,7 @@
   <!-- SERVICE DETAIL ROWS -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 space-y-16 md:space-y-24">
     <div class="reveal grid md:grid-cols-2 gap-8 md:gap-14 items-center">
-      <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80" alt="Drain line cleaning work" class="rounded-3xl shadow-xl w-full h-72 md:h-96 object-cover">
+      <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80" alt="Drain line cleaning work" class="rounded-3xl shadow-xl w-full h-72 md:h-96 object-cover">
       <div>
         <h2 class="font-display font-extrabold text-3xl text-slate-900">Drain Cleaning</h2>
         <p class="text-slate-500 mt-4 leading-relaxed">Slow sink, gurgling tub, or a main line that backs up every few months. We clear it with pro-grade augers and hydro jetting, then camera-check the line so you know it is actually fixed.</p>
@@ -81,7 +82,7 @@
     </div>
     <div class="reveal grid md:grid-cols-2 gap-8 md:gap-14 items-center">
       <div class="md:order-2">
-        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1000&q=80" alt="Water heater installation tools" class="rounded-3xl shadow-xl w-full h-72 md:h-96 object-cover">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1000&q=80" alt="Water heater installation tools" class="rounded-3xl shadow-xl w-full h-72 md:h-96 object-cover">
       </div>
       <div class="md:order-1">
         <h2 class="font-display font-extrabold text-3xl text-slate-900">Water Heaters</h2>
@@ -94,7 +95,7 @@
       </div>
     </div>
     <div class="reveal grid md:grid-cols-2 gap-8 md:gap-14 items-center">
-      <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1000&q=80" alt="Leak detection and repair" class="rounded-3xl shadow-xl w-full h-72 md:h-96 object-cover">
+      <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1000&q=80" alt="Leak detection and repair" class="rounded-3xl shadow-xl w-full h-72 md:h-96 object-cover">
       <div>
         <h2 class="font-display font-extrabold text-3xl text-slate-900">Leak Detection and Repair</h2>
         <p class="text-slate-500 mt-4 leading-relaxed">Mystery water bill or a damp spot that keeps coming back. Acoustic sensors and thermal imaging pinpoint the leak without tearing your walls apart first.</p>
@@ -107,7 +108,7 @@
     </div>
     <div class="reveal grid md:grid-cols-2 gap-8 md:gap-14 items-center">
       <div class="md:order-2">
-        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=80" alt="Fixture installation in a home" class="rounded-3xl shadow-xl w-full h-72 md:h-96 object-cover">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1000&q=80" alt="Fixture installation in a home" class="rounded-3xl shadow-xl w-full h-72 md:h-96 object-cover">
       </div>
       <div class="md:order-1">
         <h2 class="font-display font-extrabold text-3xl text-slate-900">Fixture Installations</h2>
@@ -120,7 +121,7 @@
       </div>
     </div>
     <div class="reveal grid md:grid-cols-2 gap-8 md:gap-14 items-center">
-      <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&h=700&q=80" alt="Sewer line camera inspection" class="rounded-3xl shadow-xl w-full h-72 md:h-96 object-cover">
+      <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&h=700&q=80" alt="Sewer line camera inspection" class="rounded-3xl shadow-xl w-full h-72 md:h-96 object-cover">
       <div>
         <h2 class="font-display font-extrabold text-3xl text-slate-900">Sewer Line Services</h2>
         <p class="text-slate-500 mt-4 leading-relaxed">Recurring backups or soggy spots in the yard. Camera inspection shows exactly what is wrong, then we fix it with spot repair or trenchless replacement that spares your landscaping.</p>
@@ -133,7 +134,7 @@
     </div>
     <div class="reveal grid md:grid-cols-2 gap-8 md:gap-14 items-center">
       <div class="md:order-2">
-        <img src="https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?auto=format&fit=crop&w=1000&q=80" alt="Technician planning remodel plumbing" class="rounded-3xl shadow-xl w-full h-72 md:h-96 object-cover">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?auto=format&fit=crop&w=1000&q=80" alt="Technician planning remodel plumbing" class="rounded-3xl shadow-xl w-full h-72 md:h-96 object-cover">
       </div>
       <div class="md:order-1">
         <h2 class="font-display font-extrabold text-3xl text-slate-900">Remodel Plumbing</h2>
@@ -153,7 +154,7 @@
       <p class="reveal text-amber-400 font-bold text-sm uppercase tracking-[0.18em] text-center">Instant quote estimator</p>
       <h2 class="reveal font-display font-extrabold text-3xl md:text-5xl mt-3 text-center">What might it cost?</h2>
       <p class="reveal text-slate-300 text-center mt-4 max-w-xl mx-auto">Pick a service and your home size for a ballpark range. This is a demo widget, not a binding quote.</p>
-      <form id="estimator" class="reveal mt-10 bg-white text-slate-800 rounded-3xl p-7 md:p-10 shadow-2xl">
+      <form id="estimatorForm" class="reveal mt-10 bg-white text-slate-800 rounded-3xl p-7 md:p-10 shadow-2xl">
         <div class="grid md:grid-cols-2 gap-6">
           <div>
             <label for="estService" class="font-bold text-sm">Service needed</label>
@@ -268,6 +269,6 @@
   </div>
 </div>
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>

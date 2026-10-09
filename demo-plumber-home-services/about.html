@@ -8,9 +8,10 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/custom.css">
-<style>body{font-family:'Inter',system-ui,sans-serif}h1,h2,h3,.font-display{font-family:'Archivo','Inter',sans-serif}</style>
+<style>body{font-family:'Inter',system-ui,sans-serif}h1,h2,h3,.font-display{font-family:'Oswald','Inter',sans-serif;letter-spacing:.015em}</style>
 </head>
 <body data-page="about" class="bg-slate-50 text-slate-800 antialiased">
 
@@ -56,7 +57,7 @@
 <main>
   <!-- PAGE HERO -->
   <section class="relative text-white overflow-hidden">
-    <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1920&q=80" alt="Plumber with professional tools" class="absolute inset-0 w-full h-full object-cover">
+    <img fetchpriority="high" src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=1920&q=80" alt="Plumber with professional tools" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-[#082c44]/80"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-28">
       <p class="reveal text-amber-400 font-bold text-sm uppercase tracking-[0.18em]">About us</p>
@@ -68,7 +69,7 @@
   <!-- STORY -->
   <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 md:gap-16 items-center">
     <div class="reveal relative">
-      <img src="https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?auto=format&fit=crop&w=1000&q=80" alt="Friendly PureFlow service technician (sample photo)" class="rounded-3xl shadow-xl w-full h-80 md:h-[28rem] object-cover">
+      <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?auto=format&fit=crop&w=1000&q=80" alt="Friendly PureFlow service technician (sample photo)" class="rounded-3xl shadow-xl w-full h-80 md:h-[28rem] object-cover">
       <div class="absolute -bottom-6 -right-4 md:-right-6 bg-amber-500 text-[#0b3d5c] rounded-2xl px-7 py-5 shadow-xl">
         <p class="font-display font-extrabold text-2xl">100%</p>
         <p class="font-bold text-sm">Upfront pricing promise</p>
@@ -137,7 +138,7 @@
 
   <!-- CTA -->
   <section class="relative text-white overflow-hidden">
-    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80" alt="Plumber finishing a job in a Denver home" class="absolute inset-0 w-full h-full object-cover">
+    <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1920&q=80" alt="Plumber finishing a job in a Denver home" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-[#082c44]/85"></div>
     <div class="relative max-w-4xl mx-auto px-4 sm:px-6 py-20 md:py-28 text-center">
       <h2 class="reveal font-display font-extrabold text-3xl md:text-5xl">Meet your new plumber</h2>
@@ -197,6 +198,6 @@
   </div>
 </div>
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
