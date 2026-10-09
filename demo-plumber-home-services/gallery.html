@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work Gallery | PureFlow Plumbing Co., Denver (Demo Website Concept)</title>
+<meta name="description" content="Sample work gallery for the PureFlow Plumbing Co. demo website concept, Denver, CO. Call (555) 123-4567.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/custom.css">
+<style>body{font-family:'Inter',system-ui,sans-serif}h1,h2,h3,.font-display{font-family:'Archivo','Inter',sans-serif}</style>
+</head>
+<body data-page="gallery" class="bg-slate-50 text-slate-800 antialiased">
+
+<div class="demo-strip">Demo Website Concept: a sample site for <strong>PureFlow Plumbing Co.</strong>, Denver, CO. Not a real business.</div>
+
+<header class="bg-[#0b3d5c] text-white sticky top-0 z-40 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-20">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.7s6.5 7.1 6.5 11.3a6.5 6.5 0 1 1-13 0C5.5 9.8 12 2.7 12 2.7z" fill="#38bdf8"/><path d="M9.5 13.5a2.5 2.5 0 0 0 2.5 2.5" stroke="#0b3d5c" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span class="font-extrabold text-lg md:text-xl tracking-tight font-display">PureFlow <span class="text-amber-400">Plumbing</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-semibold" aria-label="Main">
+      <a data-nav="home" href="index.html" class="hover:text-amber-400 transition">Home</a>
+      <a data-nav="services" href="services.html" class="hover:text-amber-400 transition">Services</a>
+      <a data-nav="about" href="about.html" class="hover:text-amber-400 transition">About</a>
+      <a data-nav="gallery" href="gallery.html" class="hover:text-amber-400 transition">Gallery</a>
+      <a data-nav="reviews" href="reviews.html" class="hover:text-amber-400 transition">Reviews</a>
+      <a data-nav="contact" href="contact.html" class="hover:text-amber-400 transition">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:+15551234567" class="hidden md:inline-flex items-center gap-2 bg-amber-500 hover:bg-amber-400 text-[#0b3d5c] font-bold text-sm px-5 py-2.5 rounded-full transition">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+        (555) 123-4567
+      </a>
+      <button id="menuBtn" class="md:hidden p-2 -mr-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="closed md:hidden bg-[#082c44] border-t border-white/10">
+    <nav class="px-5 py-4 flex flex-col gap-1 text-base font-semibold" aria-label="Mobile">
+      <a data-nav="home" href="index.html" class="py-2.5 border-b border-white/5">Home</a>
+      <a data-nav="services" href="services.html" class="py-2.5 border-b border-white/5">Services</a>
+      <a data-nav="about" href="about.html" class="py-2.5 border-b border-white/5">About</a>
+      <a data-nav="gallery" href="gallery.html" class="py-2.5 border-b border-white/5">Gallery</a>
+      <a data-nav="reviews" href="reviews.html" class="py-2.5 border-b border-white/5">Reviews</a>
+      <a data-nav="contact" href="contact.html" class="py-2.5">Contact</a>
+      <a href="tel:+15551234567" class="mt-3 text-center bg-amber-500 text-[#0b3d5c] font-bold py-3 rounded-xl">Call (555) 123-4567</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- PAGE HERO -->
+  <section class="bg-[#0b3d5c] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-24">
+      <p class="reveal text-amber-400 font-bold text-sm uppercase tracking-[0.18em]">Gallery</p>
+      <h1 class="reveal font-display font-extrabold text-4xl md:text-6xl mt-4">Sample work, real standards</h1>
+      <p class="reveal text-lg text-slate-300 mt-4 max-w-xl">A look at the kind of work our crews do every day. Sample photos, click any image to view it larger.</p>
+    </div>
+  </section>
+
+  <!-- GALLERY GRID -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <button class="reveal g-item group relative rounded-3xl overflow-hidden shadow-md text-left" data-cap="Emergency pipe repair (sample photo)">
+        <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80" alt="Emergency pipe repair" class="h-64 w-full object-cover">
+        <span class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#082c44]/90 to-transparent text-white text-sm font-semibold px-5 pt-10 pb-4">Emergency pipe repair <span class="text-amber-300">(sample photo)</span></span>
+      </button>
+      <button class="reveal g-item group relative rounded-3xl overflow-hidden shadow-md text-left" data-cap="Drain line service (sample photo)">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80" alt="Drain line service" class="h-64 w-full object-cover">
+        <span class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#082c44]/90 to-transparent text-white text-sm font-semibold px-5 pt-10 pb-4">Drain line service <span class="text-amber-300">(sample photo)</span></span>
+      </button>
+      <button class="reveal g-item group relative rounded-3xl overflow-hidden shadow-md text-left" data-cap="Water heater install prep (sample photo)">
+        <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?auto=format&fit=crop&w=800&q=80" alt="Water heater install prep" class="h-64 w-full object-cover">
+        <span class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#082c44]/90 to-transparent text-white text-sm font-semibold px-5 pt-10 pb-4">Water heater install prep <span class="text-amber-300">(sample photo)</span></span>
+      </button>
+      <button class="reveal g-item group relative rounded-3xl overflow-hidden shadow-md text-left" data-cap="In-home fixture work (sample photo)">
+        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80" alt="In-home fixture work" class="h-64 w-full object-cover">
+        <span class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#082c44]/90 to-transparent text-white text-sm font-semibold px-5 pt-10 pb-4">In-home fixture work <span class="text-amber-300">(sample photo)</span></span>
+      </button>
+      <button class="reveal g-item group relative rounded-3xl overflow-hidden shadow-md text-left" data-cap="On-site consultation (sample photo)">
+        <img src="https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?auto=format&fit=crop&w=800&q=80" alt="On-site consultation" class="h-64 w-full object-cover">
+        <span class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#082c44]/90 to-transparent text-white text-sm font-semibold px-5 pt-10 pb-4">On-site consultation <span class="text-amber-300">(sample photo)</span></span>
+      </button>
+      <button class="reveal g-item group relative rounded-3xl overflow-hidden shadow-md text-left" data-cap="Sewer camera inspection (sample photo)">
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&h=640&q=80" alt="Sewer camera inspection" class="h-64 w-full object-cover">
+        <span class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-[#082c44]/90 to-transparent text-white text-sm font-semibold px-5 pt-10 pb-4">Sewer camera inspection <span class="text-amber-300">(sample photo)</span></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="hiddenx fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button id="lbClose" aria-label="Close viewer" class="absolute top-5 right-5 text-white text-4xl leading-none hover:text-amber-400">&times;</button>
+    <button id="lbPrev" aria-label="Previous image" class="absolute left-3 md:left-8 text-white text-4xl hover:text-amber-400">&#8592;</button>
+    <button id="lbNext" aria-label="Next image" class="absolute right-3 md:right-8 text-white text-4xl hover:text-amber-400">&#8594;</button>
+    <figure class="max-w-4xl w-full text-center">
+      <img id="lbImg" src="" alt="" class="max-h-[78vh] w-auto mx-auto rounded-2xl shadow-2xl">
+      <figcaption id="lbCap" class="text-slate-300 font-semibold mt-4"></figcaption>
+    </figure>
+  </div>
+
+  <!-- CTA -->
+  <section class="bg-amber-500 text-[#0b3d5c]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <h2 class="reveal font-display font-extrabold text-2xl md:text-4xl">Want results like these?</h2>
+        <p class="reveal font-medium mt-1">Book a visit and see the PureFlow difference.</p>
+      </div>
+      <a href="tel:+15551234567" class="reveal shrink-0 bg-[#0b3d5c] text-white font-bold px-8 py-4 rounded-full hover:bg-[#082c44] transition">Call (555) 123-4567</a>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-[#082c44] text-slate-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid gap-10 md:grid-cols-4">
+    <div>
+      <p class="font-display font-extrabold text-white text-lg">PureFlow <span class="text-amber-400">Plumbing</span></p>
+      <p class="text-sm mt-3 text-slate-400">Denver plumbers for repairs, installs and emergencies. Upfront pricing, tidy work, same-day service.</p>
+    </div>
+    <div>
+      <p class="font-bold text-white mb-4">Pages</p>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="index.html" class="hover:text-amber-400">Home</a></li>
+        <li><a href="services.html" class="hover:text-amber-400">Services</a></li>
+        <li><a href="about.html" class="hover:text-amber-400">About</a></li>
+        <li><a href="gallery.html" class="hover:text-amber-400">Gallery</a></li>
+        <li><a href="reviews.html" class="hover:text-amber-400">Reviews</a></li>
+        <li><a href="contact.html" class="hover:text-amber-400">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold text-white mb-4">Services</p>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="services.html" class="hover:text-amber-400">Drain cleaning</a></li>
+        <li><a href="services.html" class="hover:text-amber-400">Water heaters</a></li>
+        <li><a href="services.html" class="hover:text-amber-400">Leak repair</a></li>
+        <li><a href="services.html" class="hover:text-amber-400">Sewer lines</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold text-white mb-4">Contact</p>
+      <a href="tel:+15551234567" class="text-amber-400 font-bold text-lg">(555) 123-4567</a>
+      <p class="text-sm mt-2 text-slate-400">Mon-Fri 8am-6pm<br>Sat 9am-2pm<br>Sun: emergency only</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-slate-500">
+      <p>Copyright <span data-year></span> PureFlow Plumbing Co. Demo website concept. Content is illustrative, not a real business.</p>
+      <p>Sample photos via Unsplash.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="callBar" class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white border-t border-slate-200 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
+  <div class="grid grid-cols-2 gap-3 p-3">
+    <a href="tel:+15551234567" class="bg-amber-500 text-[#0b3d5c] font-bold text-center py-3.5 rounded-xl">Call Now</a>
+    <a href="services.html#estimator" class="bg-[#0b3d5c] text-white font-bold text-center py-3.5 rounded-xl">Free Estimate</a>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

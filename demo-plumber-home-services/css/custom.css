@@ -1,0 +1,68 @@
+/* PureFlow Plumbing Co. - demo concept. Shared custom styles on top of Tailwind CDN. */
+
+:root {
+  --brand: #0b3d5c;
+  --brand-dark: #082c44;
+  --accent: #f59e0b;
+  --accent-dark: #d97706;
+}
+
+/* Demo concept banner */
+.demo-strip {
+  background: #0b3d5c;
+  color: #eaf6fb;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 9px 18px;
+  letter-spacing: 0.01em;
+}
+.demo-strip strong { color: #fcd34d; }
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* Testimonial slider */
+.tst-track { display: flex; transition: transform 0.55s ease; }
+.tst-slide { min-width: 100%; }
+.tst-dot { width: 10px; height: 10px; border-radius: 9999px; background: #cbd5e1; cursor: pointer; transition: background 0.25s, transform 0.25s; border: 0; padding: 0; }
+.tst-dot.active { background: var(--accent); transform: scale(1.25); }
+
+/* FAQ accordion */
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+.faq-item.open .faq-answer { max-height: 300px; }
+.faq-item .faq-chevron { transition: transform 0.3s ease; }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-item.open { border-color: var(--accent); }
+
+/* Lightbox */
+#lightbox { transition: opacity 0.3s ease; }
+#lightbox.hiddenx { opacity: 0; pointer-events: none; }
+
+/* Mobile nav panel */
+#mobileMenu { transition: transform 0.32s ease, opacity 0.32s ease; transform-origin: top; }
+#mobileMenu.closed { transform: scaleY(0.6); opacity: 0; pointer-events: none; }
+
+/* Sticky mobile call bar */
+#callBar { transform: translateY(110%); transition: transform 0.35s ease; }
+#callBar.show { transform: translateY(0); }
+
+/* Hero photo treatment */
+.hero-photo { box-shadow: 0 30px 60px -20px rgba(8, 44, 68, 0.45); }
+
+/* Gallery hover */
+.g-item img { transition: transform 0.5s ease; }
+.g-item:hover img { transform: scale(1.06); }
+
+/* Estimator range slider styling */
+input[type="range"] { accent-color: var(--accent); }
+
+/* Focus visibility */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
