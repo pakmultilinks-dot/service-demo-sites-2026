@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="TrailBuddy Dog Walking, dog walking and trail hikes serving the San Francisco, CA metro. Solo walks, group hikes, puppy visits. Call (555) 712-5308.">
+<title>TrailBuddy Dog Walking | Dog Walker in San Francisco, CA | Demo Website</title>
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f5ec; --surface:#ffffff; --surface2:#e6ecdb;
+  --ink:#1e2b22; --muted:#5c6f5d;
+  --sky:#3a9bd4; --sky-deep:#2273a8; --sky-soft:#d9ecf9;
+  --forest:#2d6a4f; --forest-deep:#1e4d38; --forest-soft:#dcead9;
+  --earth:#d9a441; --earth-soft:#f7ead0;
+  --line:#d3dcc9;
+  --shadow:0 20px 48px rgba(30,77,56,.14); --shadow-sm:0 10px 26px rgba(30,43,34,.09);
+  --r:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{margin:0;min-width:320px;overflow-x:hidden;background:var(--bg);color:var(--ink);
+  font-family:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.68;
+  text-rendering:optimizeLegibility}
+body.menu-open{overflow:hidden}
+h1,h2,h3{font-family:"Fjalla One",sans-serif;line-height:1.12;margin:0 0 .55em;font-weight:400;letter-spacing:.005em}
+h1{font-size:clamp(2.4rem,5.6vw,4rem)}
+h2{font-size:clamp(1.75rem,3.8vw,2.6rem)}
+h3{font-size:1.18rem;margin:0 0 .4em}
+p{margin:0 0 1em}
+a{color:inherit}
+.container{width:min(1160px,calc(100% - 40px));margin-inline:auto}
+.section{padding:88px 0;position:relative}
+.section-alt{background:var(--surface2)}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:.78rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--forest-deep);margin-bottom:16px}
+.kicker .pin{width:10px;height:10px;border-radius:50%;background:var(--earth);box-shadow:0 0 0 4px var(--earth-soft)}
+.lead{font-size:1.1rem;color:var(--muted);max-width:40rem}
+
+/* demo strip */
+.demo-strip{background:var(--forest-deep);color:#eef4e8;text-align:center;font-size:.82rem;font-weight:600;
+  padding:10px 20px;position:relative;z-index:60;line-height:1.5}
+.demo-strip strong{color:#ffd98a}
+
+/* header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-wrap{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-family:"Fjalla One",sans-serif;
+  font-size:1.35rem;letter-spacing:.01em}
+.brand-mark{width:46px;height:46px;flex:none;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--sky),var(--sky-deep));box-shadow:var(--shadow-sm);overflow:hidden}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{padding:12px 15px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.96rem;color:var(--muted)}
+.nav-links a:hover{color:var(--forest-deep);background:var(--forest-soft)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;
+  font-weight:800;text-decoration:none;border-radius:999px;padding:15px 30px;font-size:1rem;min-height:50px;
+  transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-forest{background:linear-gradient(135deg,var(--forest),var(--forest-deep));color:#fff;
+  box-shadow:0 12px 28px rgba(30,77,56,.4)}
+.btn-sky{background:linear-gradient(135deg,var(--sky),var(--sky-deep));color:#fff;
+  box-shadow:0 12px 28px rgba(34,115,168,.4)}
+.btn-outline{background:rgba(255,255,255,.12);color:#fff;border:2px solid rgba(255,255,255,.7)}
+.menu-btn{display:none;background:none;border:2px solid var(--line);border-radius:10px;padding:10px 16px;
+  cursor:pointer;color:var(--ink);font-weight:700;min-height:44px;font-size:.95rem}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:104px 0 0;color:#fff;
+  background:linear-gradient(180deg,#7cc0e8 0%,#4aa3d8 34%,#3a8fc4 60%,#2d6a4f 100%)}
+.hero-inner{padding-bottom:30px;position:relative;z-index:2}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center}
+.hero .kicker{color:#fff}
+.hero .kicker .pin{background:#ffd98a;box-shadow:0 0 0 4px rgba(255,217,138,.25)}
+.hero h1{color:#fff;text-shadow:0 3px 18px rgba(8,30,45,.35)}
+.hero h1 .sun{color:#ffe9ad}
+.hero p.lead{color:#eef7fd}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pill{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.55);border-radius:999px;
+  padding:9px 18px;font-size:.87rem;font-weight:700;color:#fff;display:inline-flex;align-items:center;gap:9px;
+  backdrop-filter:blur(4px)}
+.pill .tick{color:#ffe9ad}
+.hero-art{position:relative;min-height:400px}
+.sun-disc{position:absolute;top:2%;right:8%;width:110px;height:110px;border-radius:50%;
+  background:radial-gradient(circle at 40% 35%,#fff6d8,#ffd964);
+  box-shadow:0 0 60px rgba(255,217,100,.8);animation:glow 5s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 50px rgba(255,217,100,.7)}50%{box-shadow:0 0 80px rgba(255,217,100,.95)}}
+.trail-svg{position:absolute;inset:0;width:100%;height:100%}
+.hero-card{position:absolute;background:rgba(255,255,255,.97);color:var(--ink);border-radius:16px;
+  box-shadow:var(--shadow);padding:18px 20px;max-width:250px}
+.hero-card h4{margin:0 0 6px;font-size:.98rem;font-weight:800;font-family:"Source Sans 3",sans-serif}
+.hero-card p{margin:0;font-size:.85rem;color:var(--muted)}
+.hc1{top:6%;left:0;animation:float 7s ease-in-out infinite}
+.hc2{bottom:24%;right:0;animation:float 8.5s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.hills{position:relative;z-index:1;display:block;width:100%;height:auto;margin-bottom:-2px}
+
+/* trust row */
+.trail-posts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.post{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px 22px;
+  text-align:center;box-shadow:var(--shadow-sm);position:relative}
+.post::before{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:18px;height:18px;
+  border-radius:50%;background:var(--earth);border:3px solid #fff;box-shadow:var(--shadow-sm)}
+.post .tic{font-size:2.1rem;display:block;margin-bottom:8px}
+.post strong{display:block;font-size:.95rem;margin-bottom:4px}
+.post span{font-size:.84rem;color:var(--muted)}
+
+/* services */
+.grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;
+  box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease;position:relative}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.card .trail-dot{position:absolute;top:26px;right:26px;width:14px;height:14px;border-radius:50%;
+  background:var(--sky);box-shadow:0 0 0 5px var(--sky-soft)}
+.card .icon{width:60px;height:60px;border-radius:16px;display:grid;place-items:center;font-size:1.7rem;
+  background:linear-gradient(135deg,var(--forest-soft),#cfe4c6);margin-bottom:18px}
+.card p{color:var(--muted);font-size:.95rem;margin:0}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-art{position:relative;min-height:380px;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);
+  background:linear-gradient(180deg,#9fd3f0 0%,#cfe8d8 55%,#8fb98a 100%)}
+.report-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;
+  margin-top:24px;box-shadow:var(--shadow-sm)}
+.report-card .rc-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.report-card .rc-head .dot{width:12px;height:12px;border-radius:50%;background:var(--forest)}
+.report-card ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:.93rem;color:var(--muted)}
+.report-card li{display:flex;gap:10px;align-items:center}
+.about-tag{position:absolute;bottom:22px;left:22px;right:22px;background:rgba(255,255,255,.96);
+  border-radius:14px;padding:16px 20px;font-size:.9rem;color:var(--muted)}
+.about-tag strong{color:var(--forest-deep)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:42px;position:relative}
+.steps::before{content:"";position:absolute;top:34px;left:6%;right:6%;border-top:3px dashed var(--forest);
+  opacity:.45}
+.step{text-align:center;padding:0 18px;position:relative}
+.step .num{display:inline-grid;place-items:center;width:68px;height:68px;border-radius:50%;
+  background:linear-gradient(135deg,var(--sky),var(--sky-deep));color:#fff;
+  font-family:"Fjalla One",sans-serif;font-size:1.5rem;margin-bottom:16px;position:relative;z-index:1;
+  border:4px solid var(--bg);box-shadow:var(--shadow-sm)}
+.step:nth-child(even) .num{background:linear-gradient(135deg,var(--forest),var(--forest-deep))}
+.step p{color:var(--muted);font-size:.93rem;margin:0}
+
+/* gallery */
+.trail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.trail-panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  box-shadow:var(--shadow-sm)}
+.trail-art{height:220px;position:relative;overflow:hidden}
+.ta-park{background:linear-gradient(180deg,#a5d8f3 0%,#cfe8d8 60%,#7ba873 100%)}
+.ta-hill{background:linear-gradient(180deg,#8fc7ee 0%,#e8d9a8 55%,#5d8a5a 100%)}
+.ta-beach{background:linear-gradient(180deg,#9fd3f0 0%,#f2e3bb 62%,#7fb6d9 100%)}
+.trail-label{position:absolute;top:14px;left:14px;background:rgba(30,43,34,.85);color:#fff;font-size:.74rem;
+  font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:7px 16px;border-radius:999px}
+.trail-body{padding:24px 26px}
+.trail-body .dist{display:inline-block;background:var(--sky-soft);color:var(--sky-deep);font-weight:800;
+  font-size:.8rem;border-radius:999px;padding:5px 14px;margin-bottom:10px}
+.trail-body p{color:var(--muted);font-size:.93rem;margin:0}
+
+/* testimonials */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.testi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;
+  box-shadow:var(--shadow-sm);border-bottom:6px solid var(--forest)}
+.testi blockquote{margin:6px 0 18px;font-size:.98rem;line-height:1.7;font-style:italic}
+.testi .who{font-weight:800;color:var(--forest-deep);font-size:.93rem}
+.sample-tag{display:inline-block;background:var(--forest-soft);border:1px solid var(--forest);color:var(--forest-deep);
+  font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;
+  padding:4px 12px;margin-bottom:10px}
+
+/* faq */
+.faq-list{margin-top:36px;max-width:820px}
+.faq-item{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.faq-q{width:100%;background:none;border:0;cursor:pointer;text-align:left;font:inherit;font-weight:700;
+  font-size:1.03rem;color:var(--ink);padding:19px 22px;display:flex;justify-content:space-between;
+  align-items:center;gap:16px;min-height:58px}
+.faq-q .plus{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;
+  background:var(--forest);color:#fff;font-size:1.25rem;font-weight:800;transition:transform .2s}
+.faq-item.open .faq-q .plus{transform:rotate(45deg);background:var(--sky)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease}
+.faq-a p{padding:0 22px 20px;color:var(--muted);font-size:.96rem;margin:0}
+.faq-item.open .faq-a{max-height:340px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;margin-top:38px}
+.contact-card{background:var(--surface);border:1px solid var(--line);border-radius:22px;
+  padding:38px 36px;box-shadow:var(--shadow)}
+.phone-big{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:800;color:var(--forest-deep);text-decoration:none}
+.phone-big:hover{text-decoration:underline}
+.hours{width:100%;border-collapse:collapse;margin-top:8px}
+.hours td{padding:10px 4px;border-bottom:1px solid var(--line);font-size:.95rem}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.form-field{margin-bottom:16px}
+.form-field label{display:block;font-weight:700;font-size:.92rem;margin-bottom:6px}
+.form-field input,.form-field textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;
+  padding:13px 15px;font:inherit;font-size:1rem;background:#fcfdf9;min-height:48px}
+.form-field textarea{min-height:120px;resize:vertical}
+.form-field input:focus,.form-field textarea:focus{outline:2px solid var(--sky);border-color:var(--sky)}
+.form-note{background:var(--sky-soft);border:1px solid var(--sky);border-radius:12px;padding:14px 18px;
+  font-size:.92rem;margin-top:16px}
+.area-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.area{background:var(--surface2);border:1px solid var(--line);border-radius:999px;padding:9px 18px;
+  font-weight:600;font-size:.92rem;color:var(--forest-deep)}
+.cta-band{margin-top:26px;background:linear-gradient(135deg,var(--forest),var(--forest-deep));color:#fff;
+  border-radius:22px;padding:46px 42px;box-shadow:var(--shadow);display:flex;flex-wrap:wrap;gap:24px;
+  align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.cta-band h2{color:#fff;margin:0 0 8px}
+.cta-band p{color:#dcead9;margin:0;max-width:34rem}
+
+footer.site{background:var(--forest-deep);color:#b9cdbd;padding:38px 0;font-size:.88rem}
+footer.site .container{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer.site strong{color:#fff;font-family:"Fjalla One",sans-serif;font-size:1.12rem;letter-spacing:.02em}
+
+@media (max-width:900px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .hero-art{min-height:320px}
+  .grid-cards,.trail-grid,.testi-grid{grid-template-columns:1fr}
+  .trail-posts{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr;gap:28px}
+  .steps::before{display:none}
+  .nav-links{position:fixed;inset:81px 0 auto 0;background:#fff;border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:stretch;padding:14px 20px 22px;gap:4px;display:none;box-shadow:var(--shadow)}
+  body.menu-open .nav-links{display:flex}
+  .menu-btn{display:inline-block}
+  .section{padding:62px 0}
+}
+@media (max-width:560px){
+  .trail-posts,.steps{grid-template-columns:1fr}
+  .cta-band{padding:36px 26px}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-strip">
+  Demo Website Concept: free sample mockup made for <strong>TrailBuddy Dog Walking</strong>. Content is illustrative, not a real business.
+</div>
+
+<header class="site">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 32 32">
+          <path d="M3 24 L13 8 L19 17 L23 12 L29 24 Z" fill="#2d6a4f"/>
+          <path d="M13 8 L16 13 L10 13 Z" fill="#fff"/>
+          <circle cx="23" cy="7" r="3.4" fill="#ffd964"/>
+        </svg>
+      </span>
+      TrailBuddy
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-forest nav-cta" href="tel:+15557125308" style="padding:11px 22px;min-height:44px">&#9742; (555) 712-5308</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="container hero-grid">
+      <div>
+        <span class="kicker"><span class="pin"></span> Dog Walking, San Francisco CA Metro</span>
+        <h1>Real trail miles <span class="sun">for city dogs.</span></h1>
+        <p class="lead">TrailBuddy takes San Francisco dogs beyond the block: leashed trail hikes, park adventures, and reliable daily walks, with GPS-tracked routes and photo updates after every outing.</p>
+        <div class="hero-cta">
+          <a class="btn btn-forest" href="tel:+15557125308">&#9742; Call (555) 712-5308</a>
+          <a class="btn btn-outline" href="#services">See services</a>
+        </div>
+        <div class="hero-badges">
+          <span class="pill"><span class="tick">&#10003;</span> Insured and bonded</span>
+          <span class="pill"><span class="tick">&#10003;</span> Free meet-and-greet</span>
+          <span class="pill"><span class="tick">&#10003;</span> GPS-tracked walks</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun-disc"></div>
+        <svg class="trail-svg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
+          <path d="M40 330 C120 300 90 220 170 210 C240 202 220 140 300 130" fill="none" stroke="#fff" stroke-width="7" stroke-dasharray="2 16" stroke-linecap="round" opacity=".9"/>
+          <g>
+            <ellipse cx="90" cy="250" rx="34" ry="26" fill="#8a5a3b"/>
+            <ellipse cx="90" cy="258" rx="22" ry="17" fill="#a9764f"/>
+            <circle cx="80" cy="248" r="4" fill="#1e2b22"/><circle cx="100" cy="248" r="4" fill="#1e2b22"/>
+            <ellipse cx="90" cy="258" rx="6" ry="4.5" fill="#1e2b22"/>
+            <ellipse cx="62" cy="232" rx="10" ry="16" fill="#8a5a3b"/><ellipse cx="118" cy="232" rx="10" ry="16" fill="#8a5a3b"/>
+            <path d="M56 276 q-14 26 -6 48 M124 276 q14 26 6 48" stroke="#8a5a3b" stroke-width="12" fill="none" stroke-linecap="round"/>
+          </g>
+          <g>
+            <ellipse cx="300" cy="180" rx="26" ry="20" fill="#5b3a24"/>
+            <ellipse cx="300" cy="186" rx="16" ry="12" fill="#7a5233"/>
+            <circle cx="292" cy="178" r="3.4" fill="#1e2b22"/><circle cx="308" cy="178" r="3.4" fill="#1e2b22"/>
+            <ellipse cx="280" cy="164" rx="8" ry="12" fill="#5b3a24"/><ellipse cx="320" cy="164" rx="8" ry="12" fill="#5b3a24"/>
+            <path d="M282 200 q-10 20 -4 36 M318 200 q10 20 4 36" stroke="#5b3a24" stroke-width="9" fill="none" stroke-linecap="round"/>
+          </g>
+          <g fill="#2d6a4f">
+            <path d="M330 320 l14 -34 14 34 z"/><rect x="341" y="320" width="6" height="16"/>
+            <path d="M30 300 l12 -28 12 28 z"/><rect x="39" y="300" width="5" height="13"/>
+          </g>
+        </svg>
+        <div class="hero-card hc1"><h4>&#128205; GPS-tracked routes</h4><p>See exactly where your dog walked, with distance and duration.</p></div>
+        <div class="hero-card hc2"><h4>&#128247; Photo updates</h4><p>Trail pics and a report card after every single outing.</p></div>
+      </div>
+    </div>
+  </div>
+  <svg class="hills" viewBox="0 0 1440 190" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,120 C180,60 320,150 520,110 C720,70 900,140 1100,100 C1240,75 1340,105 1440,90 L1440,190 L0,190 Z" fill="#3f7d58"/>
+    <path d="M0,150 C220,100 420,170 640,140 C860,110 1080,165 1280,140 C1360,130 1400,140 1440,135 L1440,190 L0,190 Z" fill="#2d6a4f"/>
+    <path d="M0,175 C260,140 520,185 780,165 C1040,145 1240,180 1440,165 L1440,190 L0,190 Z" fill="#1e4d38"/>
+  </svg>
+</section>
+
+<section class="section" style="padding-top:64px">
+  <div class="container">
+    <span class="kicker"><span class="pin"></span> Why TrailBuddy</span>
+    <h2>More than a walk around the block.</h2>
+    <p class="lead">Built for dogs with energy to burn and owners with cameras to fill.</p>
+    <div class="trail-posts">
+      <div class="post"><span class="tic">&#128247;</span><strong>Photo updates</strong><span>Trail pics after every walk</span></div>
+      <div class="post"><span class="tic">&#128205;</span><strong>GPS-tracked walks</strong><span>Route, distance, and time logged</span></div>
+      <div class="post"><span class="tic">&#129309;</span><strong>Insured and bonded</strong><span>Vetted, trained walkers</span></div>
+      <div class="post"><span class="tic">&#128062;</span><strong>Free meet-and-greet</strong><span>We meet your dog first</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="services">
+  <div class="container">
+    <span class="kicker"><span class="pin"></span> What we do</span>
+    <h2>Walks for every kind of dog.</h2>
+    <p class="lead">From high-energy trail hounds to slow-and-steady seniors, there is a walk with your dog's name on it.</p>
+    <div class="grid-cards">
+      <div class="card"><span class="trail-dot"></span><div class="icon">&#128062;</div><h3>Solo Neighborhood Walks</h3><p>One-on-one walks at your dog's pace, perfect for reactive or shy dogs that do best solo.</p></div>
+      <div class="card"><span class="trail-dot"></span><div class="icon">&#127956;</div><h3>Group Trail Hikes</h3><p>Small, matched groups hitting real trails for 60 to 90 minutes of sniffing, climbing, and socializing.</p></div>
+      <div class="card"><span class="trail-dot"></span><div class="icon">&#128054;</div><h3>Puppy Visits and Play Breaks</h3><p>Midday potty breaks, playtime, and basic manners practice for puppies under a year old.</p></div>
+      <div class="card"><span class="trail-dot"></span><div class="icon">&#9968;</div><h3>Weekend Adventure Hikes</h3><p>Half-day excursions to bigger trails outside the city for dogs that need a real expedition.</p></div>
+      <div class="card"><span class="trail-dot"></span><div class="icon">&#128150;</div><h3>Senior Dog Strolls</h3><p>Gentle, unhurried walks for older dogs, with plenty of sniff breaks and a walker who never rushes.</p></div>
+      <div class="card"><span class="trail-dot"></span><div class="icon">&#127968;</div><h3>Drop-In Check-Ins</h3><p>Quick home visits for feeding, fresh water, potty breaks, and some company while you are away.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <span class="kicker"><span class="pin"></span> Our story</span>
+    <h2>Built for dogs that need more.</h2>
+    <div class="about-grid">
+      <div>
+        <p class="lead">TrailBuddy started when our founder's border collie made it clear that a 15-minute loop around the block was not cutting it. So we built the walking service we wished existed: real trails, real exercise, and total transparency for the owner back at the office.</p>
+        <p class="lead">Our walkers know the city's best dog-friendly trails, carry first-aid kits and plenty of water, and treat every dog like their own. You get the route, the photos, and one very tired, very happy dog.</p>
+        <div class="report-card">
+          <div class="rc-head"><span class="dot"></span><strong>Every walk ends with a report card</strong></div>
+          <ul>
+            <li>&#10003; GPS route map with distance and duration</li>
+            <li>&#10003; Photos from the trail</li>
+            <li>&#10003; Potty, water, and behavior notes</li>
+          </ul>
+        </div>
+      </div>
+      <div class="about-art" aria-hidden="true">
+        <svg viewBox="0 0 400 380" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+          <circle cx="320" cy="60" r="34" fill="#ffd964" opacity=".9"/>
+          <path d="M0 260 L120 120 L200 200 L280 90 L400 240 L400 380 L0 380 Z" fill="#5d8a5a"/>
+          <path d="M120 120 L150 155 L118 158 L100 140 Z" fill="#fff" opacity=".9"/>
+          <path d="M280 90 L312 128 L278 132 L258 112 Z" fill="#fff" opacity=".9"/>
+          <path d="M0 300 C100 270 200 310 300 285 C340 278 370 290 400 285 L400 380 L0 380 Z" fill="#2d6a4f"/>
+          <path d="M40 330 C110 315 90 270 160 262" fill="none" stroke="#fff" stroke-width="5" stroke-dasharray="2 12" stroke-linecap="round"/>
+          <g><ellipse cx="160" cy="240" rx="24" ry="18" fill="#8a5a3b"/><circle cx="152" cy="234" r="3" fill="#1e2b22"/><circle cx="168" cy="234" r="3" fill="#1e2b22"/><ellipse cx="140" cy="222" rx="7" ry="11" fill="#8a5a3b"/><ellipse cx="180" cy="222" rx="7" ry="11" fill="#8a5a3b"/></g>
+          <g fill="#1e4d38"><path d="M330 330 l12 -30 12 30 z"/><path d="M60 345 l10 -24 10 24 z"/></g>
+        </svg>
+        <div class="about-tag"><strong>Safety first, always.</strong><br>Leashed on every trail, first-aid trained walkers, and small groups matched by size and temperament.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="process">
+  <div class="container">
+    <span class="kicker"><span class="pin"></span> How it works</span>
+    <h2>From first sniff to tired pup.</h2>
+    <p class="lead">Getting started takes one phone call.</p>
+    <div class="steps">
+      <div class="step"><span class="num">1</span><h3>Free meet-and-greet</h3><p>We meet you and your dog, learn their quirks, and plan the right walks.</p></div>
+      <div class="step"><span class="num">2</span><h3>Pick your schedule</h3><p>Daily walks, weekly hikes, or a mix. Recurring slots are yours to keep.</p></div>
+      <div class="step"><span class="num">3</span><h3>We walk, you watch</h3><p>GPS tracking and photo updates land on your phone during every outing.</p></div>
+      <div class="step"><span class="num">4</span><h3>Happy, tired dog</h3><p>Your dog comes home exercised, watered, and ready for a nap.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="container">
+    <span class="kicker"><span class="pin"></span> Favorite routes</span>
+    <h2>Where the tails go.</h2>
+    <p class="lead">A few of the routes our walkers and their four-legged clients love most.</p>
+    <div class="trail-grid">
+      <div class="trail-panel">
+        <div class="trail-art ta-park" aria-hidden="true">
+          <span class="trail-label">City favorite</span>
+          <svg viewBox="0 0 300 220" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+            <ellipse cx="150" cy="200" rx="170" ry="60" fill="#7ba873"/>
+            <g fill="#2d6a4f"><path d="M60 170 l16 -40 16 40 z"/><rect x="72" y="170" width="8" height="20"/><path d="M230 175 l14 -34 14 34 z"/><rect x="240" y="175" width="7" height="18"/></g>
+            <path d="M0 190 C80 175 140 200 220 185 C250 180 275 188 300 184" fill="none" stroke="#e8dcc0" stroke-width="14"/>
+            <g><ellipse cx="150" cy="150" rx="26" ry="20" fill="#c98d5e"/><circle cx="142" cy="144" r="3.4" fill="#1e2b22"/><circle cx="158" cy="144" r="3.4" fill="#1e2b22"/><ellipse cx="128" cy="130" rx="8" ry="12" fill="#c98d5e"/><ellipse cx="172" cy="130" rx="8" ry="12" fill="#c98d5e"/></g>
+            <circle cx="250" cy="50" r="24" fill="#ffd964" opacity=".85"/>
+          </svg>
+        </div>
+        <div class="trail-body"><span class="dist">Easy loop, about 2 miles</span><h3>Park Loop Ramble</h3><p>Shady paths, open lawns for fetch, and plenty of sniffing spots for social pups.</p></div>
+      </div>
+      <div class="trail-panel">
+        <div class="trail-art ta-hill" aria-hidden="true">
+          <span class="trail-label">Best views</span>
+          <svg viewBox="0 0 300 220" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+            <path d="M0 180 L100 60 L170 140 L230 50 L300 170 L300 220 L0 220 Z" fill="#5d8a5a"/>
+            <path d="M100 60 L122 88 L96 92 L80 76 Z" fill="#fff" opacity=".85"/>
+            <path d="M230 50 L250 76 L226 80 L210 64 Z" fill="#fff" opacity=".85"/>
+            <path d="M40 220 C100 200 90 160 150 150" fill="none" stroke="#e8dcc0" stroke-width="12"/>
+            <g><ellipse cx="150" cy="128" rx="24" ry="18" fill="#5b3a24"/><circle cx="143" cy="123" r="3.2" fill="#fff"/><circle cx="157" cy="123" r="3.2" fill="#fff"/><ellipse cx="130" cy="112" rx="7" ry="11" fill="#5b3a24"/><ellipse cx="170" cy="112" rx="7" ry="11" fill="#5b3a24"/></g>
+          </svg>
+        </div>
+        <div class="trail-body"><span class="dist">Moderate climb, about 3 miles</span><h3>Hilltop Vista Trek</h3><p>A workout with a payoff: panoramic views and a well-earned water break at the top.</p></div>
+      </div>
+      <div class="trail-panel">
+        <div class="trail-art ta-beach" aria-hidden="true">
+          <span class="trail-label">Weekend special</span>
+          <svg viewBox="0 0 300 220" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+            <rect x="0" y="150" width="300" height="70" fill="#7fb6d9"/>
+            <path d="M0 150 C60 140 120 160 180 148 C220 141 260 152 300 146 L300 160 C240 168 180 156 120 164 C80 169 40 162 0 168 Z" fill="#f2e3bb"/>
+            <path d="M20 175 q20 -8 40 0 q20 8 40 0 M160 182 q20 -8 40 0 q20 8 40 0" stroke="#fff" stroke-width="4" fill="none" opacity=".7"/>
+            <g><ellipse cx="120" cy="128" rx="26" ry="20" fill="#8a5a3b"/><circle cx="112" cy="122" r="3.4" fill="#1e2b22"/><circle cx="128" cy="122" r="3.4" fill="#1e2b22"/><ellipse cx="98" cy="108" rx="8" ry="12" fill="#8a5a3b"/><ellipse cx="142" cy="108" rx="8" ry="12" fill="#8a5a3b"/></g>
+            <circle cx="80" cy="110" r="12" fill="#ff6f61"/>
+          </svg>
+        </div>
+        <div class="trail-body"><span class="dist">Sandy adventure, about 2.5 miles</span><h3>Shoreline Romp</h3><p>Weekend beach walks with splashing, digging, and the happiest tired dogs in the city.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="testimonials">
+  <div class="container">
+    <span class="kicker"><span class="pin"></span> Kind words</span>
+    <h2>Tails are wagging.</h2>
+    <div class="testi-grid">
+      <div class="testi">
+        <span class="sample-tag">Sample testimonial</span>
+        <blockquote>&ldquo;Our husky comes home happily exhausted after every trail hike. The photo updates are honestly the best part of my workday.&rdquo;</blockquote>
+        <div class="who">Sample Client, Daly City</div>
+      </div>
+      <div class="testi">
+        <span class="sample-tag">Sample testimonial</span>
+        <blockquote>&ldquo;Reliable every single day, rain or shine. My senior beagle adores his walker and I never worry.&rdquo;</blockquote>
+        <div class="who">Sample Client, South San Francisco</div>
+      </div>
+      <div class="testi">
+        <span class="sample-tag">Sample testimonial</span>
+        <blockquote>&ldquo;The weekend adventure hikes are worth every penny. My dog sleeps for hours afterward and I get the cutest trail photos.&rdquo;</blockquote>
+        <div class="who">Sample Client, Oakland</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <span class="kicker"><span class="pin"></span> Common questions</span>
+    <h2>Trail talk.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How long are the walks?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Solo walks run 30 or 60 minutes. Group trail hikes run 60 to 90 minutes including drive time to the trailhead, and weekend adventure hikes are half-day outings. Every walk is GPS-tracked so you see the real distance.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you walk in the rain?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes, we walk rain or shine, and we towel dogs off at the door afterward. In truly dangerous weather like lightning or extreme heat, we will contact you to reschedule or switch to an indoor play visit.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How many dogs are in a group hike?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Groups are capped at four dogs, matched by size, energy, and temperament. Reactive or anxious dogs are always offered solo walks instead.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Will I get updates during the walk?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Every outing ends with a report card: GPS route map, distance, duration, photos, and notes on water, potty, and behavior. For longer hikes, your walker may send mid-hike photo updates too.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What areas do you serve?<span class="plus">+</span></button>
+        <div class="faq-a"><p>We serve San Francisco and nearby Peninsula and East Bay neighborhoods listed below. Weekend adventure hikes pick up from anywhere in our service area.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What is your cancellation policy?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Life happens. Cancel or reschedule by 8 PM the night before at no charge. Same-day cancellations are billed at the full walk rate since your walker held the slot.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <span class="kicker"><span class="pin"></span> Get in touch</span>
+    <h2>Book your free meet-and-greet.</h2>
+    <p class="lead">Call to schedule, or send a message and we will call you back to meet your dog.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Request a meet-and-greet</h3>
+        <form id="contactForm" novalidate>
+          <div class="form-field">
+            <label for="fName">Name</label>
+            <input id="fName" name="name" type="text" autocomplete="name" placeholder="Your name">
+          </div>
+          <div class="form-field">
+            <label for="fPhone">Phone</label>
+            <input id="fPhone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 000-0000">
+          </div>
+          <div class="form-field">
+            <label for="fMsg">Tell us about your dog</label>
+            <textarea id="fMsg" name="message" placeholder="Breed, age, energy level, and what kind of walks you need"></textarea>
+          </div>
+          <button class="btn btn-forest" type="submit" style="width:100%">Send message</button>
+          <div class="form-note" id="formNote" hidden></div>
+        </form>
+      </div>
+      <div class="contact-card">
+        <h3>Call or text</h3>
+        <p><a class="phone-big" href="tel:+15557125308">(555) 712-5308</a></p>
+        <table class="hours">
+          <tr><td>Monday to Friday</td><td>7:00 AM - 7:00 PM</td></tr>
+          <tr><td>Saturday and Sunday</td><td>8:00 AM - 5:00 PM</td></tr>
+        </table>
+        <h3 style="margin-top:26px">Service area</h3>
+        <div class="area-list">
+          <span class="area">San Francisco</span><span class="area">Daly City</span><span class="area">South San Francisco</span>
+          <span class="area">San Bruno</span><span class="area">Millbrae</span><span class="area">Burlingame</span>
+          <span class="area">San Mateo</span><span class="area">Oakland</span><span class="area">Berkeley</span>
+          <span class="area">Sausalito</span><span class="area">Pacifica</span>
+        </div>
+      </div>
+    </div>
+    <div class="cta-band">
+      <div>
+        <h2>Your dog's new favorite person is one call away.</h2>
+        <p>Free meet-and-greet for every new client. No commitment, just a walk in the park.</p>
+      </div>
+      <a class="btn btn-sky" href="tel:+15557125308">&#9742; (555) 712-5308</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <span><strong>TrailBuddy Dog Walking</strong> &nbsp;Demo Website Concept. Content is illustrative. Not affiliated with any real business.</span>
+    <span>Serving the San Francisco, CA metro.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var menuBtn = document.getElementById('menuBtn');
+  menuBtn.addEventListener('click', function(){
+    var open = document.body.classList.toggle('menu-open');
+    menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuBtn.textContent = open ? 'Close' : 'Menu';
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click', function(){
+      document.body.classList.remove('menu-open');
+      menuBtn.setAttribute('aria-expanded','false');
+      menuBtn.textContent = 'Menu';
+    });
+  });
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var item = btn.parentElement;
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+      if(!wasOpen){
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+  var form = document.getElementById('contactForm');
+  var note = document.getElementById('formNote');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    note.textContent = 'Demo only: this form does not send anything. To reach the business, call (555) 712-5308.';
+    note.hidden = false;
+    form.reset();
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="FreshHue Painting Co. Painter serving Chicago, IL metro. Interior painting, exterior painting, cabinets, color consulting. Demo website concept. Call (555) 649-0138.">
+<meta name="theme-color" content="#ffffff">
+<title>FreshHue Painting Co. | Chicago Painter | Demo Website Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdfcf9; --surface:#ffffff; --ink:#233038; --muted:#687c86; --line:#e8e2d6;
+  --coral:#ff6b5e; --sun:#ffb703; --sky:#3fa7e8; --leaf:#5fae4f; --grape:#8b5fbf; --navy:#233038;
+  --r:22px; --shadow:0 16px 40px rgba(35,48,56,.1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--ink);font-family:"Poppins",system-ui,sans-serif;font-size:16px;line-height:1.65;min-width:320px;overflow-x:hidden}
+body.menu-open{overflow:hidden}
+h1,h2,h3{font-weight:800;line-height:1.2;letter-spacing:-.015em;margin-bottom:.55em}
+h1{font-size:clamp(2.2rem,5.6vw,3.9rem)}
+h1 .hl-coral{color:var(--coral)} h1 .hl-sky{color:var(--sky)} h1 .hl-leaf{color:var(--leaf)}
+h2{font-size:clamp(1.6rem,3.6vw,2.4rem)}
+h3{font-size:1.1rem;margin-bottom:.4em}
+p{margin-bottom:1em}
+a{color:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.section{padding:86px 0}
+.kicker{display:inline-block;font-weight:700;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,var(--coral),var(--sun),var(--sky));border-radius:999px;padding:8px 18px;margin-bottom:16px}
+.lead{color:var(--muted);font-size:1.08rem;max-width:42rem}
+/* demo strip */
+.demo-strip{background:linear-gradient(90deg,var(--coral),var(--sun),var(--sky),var(--leaf));color:#fff;text-align:center;font-size:.8rem;font-weight:600;padding:10px 18px;position:relative;z-index:70;text-shadow:0 1px 3px rgba(0,0,0,.25)}
+.demo-strip strong{color:#fff}
+/* header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:3px solid;border-image:linear-gradient(90deg,var(--coral),var(--sun),var(--sky),var(--leaf)) 1}
+.nav-wrap{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;font-size:1.08rem}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a.nlink{padding:10px 14px;text-decoration:none;font-weight:600;font-size:.93rem;color:var(--muted);border-radius:12px;min-height:44px;display:inline-flex;align-items:center}
+.nav-links a.nlink:hover{color:var(--coral);background:#fff2ef}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;font-weight:700;text-decoration:none;border-radius:999px;padding:15px 28px;font-size:1rem;min-height:48px;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-paint{background:linear-gradient(90deg,var(--coral),#e04a3c);color:#fff;box-shadow:0 10px 26px rgba(255,107,94,.4)}
+.btn-ghost{background:#fff;color:var(--ink);border:2px solid var(--line)}
+.btn-ghost:hover{border-color:var(--sky)}
+.nav-cta{padding:11px 20px !important;font-size:.92rem !important}
+.menu-btn{display:none;background:#fff;border:2px solid var(--line);border-radius:12px;padding:11px 16px;cursor:pointer;font-weight:700;min-height:44px;min-width:44px}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:96px 0 110px;background:#fff}
+.drip-edge{position:absolute;top:0;left:0;right:0;height:34px;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center;position:relative}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.pill{background:#fff;border:2px solid var(--line);border-radius:999px;padding:9px 16px;font-size:.85rem;font-weight:600;color:var(--muted);display:inline-flex;align-items:center;gap:9px}
+.pill .sw{width:16px;height:16px;border-radius:5px;flex:none}
+/* roller art */
+.hero-art{position:relative;min-height:440px}
+.wall{position:absolute;left:8%;right:8%;top:6%;bottom:14%;background:linear-gradient(180deg,#fff,#f3ede1);border:3px solid var(--line);border-radius:18px;overflow:hidden}
+.stripe{position:absolute;top:0;bottom:0;width:16%}
+.roller{position:absolute;left:20%;top:8%;width:44%;height:64px;animation:roll 5s ease-in-out infinite}
+.roller .head{height:40px;border-radius:14px;background:repeating-linear-gradient(90deg,#fff 0 10px,#f3ede1 10px 20px);border:3px solid #9aa7b0;box-shadow:0 8px 18px rgba(0,0,0,.18)}
+.roller .stick{width:12px;height:110px;background:linear-gradient(180deg,#c9a06a,#a37a45);margin:0 auto;border-radius:6px}
+@keyframes roll{0%,100%{transform:translateY(0)}50%{transform:translateY(56px)}}
+.pdrip{position:absolute;width:12px;border-radius:0 0 8px 8px;animation:dripfall 3s ease-in infinite}
+@keyframes dripfall{0%{transform:translateY(-8px) scaleY(.5);opacity:0}20%{opacity:1}100%{transform:translateY(120px) scaleY(1.2);opacity:0}}
+.swatches{position:absolute;bottom:0;left:6%;right:6%;display:flex;gap:10px;justify-content:center}
+.swatch{flex:1;max-width:86px;height:96px;border-radius:14px 14px 8px 8px;box-shadow:var(--shadow);border:3px solid #fff;transform:rotate(-2deg);transition:transform .2s}
+.swatch:nth-child(2n){transform:rotate(2deg)}
+.swatch:hover{transform:rotate(0) translateY(-6px)}
+.fcard{position:absolute;background:#fff;border:2px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:16px 18px;max-width:230px;z-index:2}
+.fcard b{font-size:.88rem;display:block;margin-bottom:4px}
+.fcard p{margin:0;font-size:.82rem;color:var(--muted)}
+.fc1{top:2%;right:0;animation:float 7s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+/* trust row */
+.trust{background:var(--bg);border-top:2px solid var(--line);border-bottom:2px solid var(--line);padding:26px 0}
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tbadge{background:#fff;border:2px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;align-items:center;gap:14px}
+.tbadge .tic{width:46px;height:46px;flex:none;border-radius:14px;display:grid;place-items:center;color:#fff;font-weight:800}
+.tbadge b{font-size:.9rem;display:block;line-height:1.35}
+.tbadge small{color:var(--muted);font-size:.8rem}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.svc{background:#fff;border:2px solid var(--line);border-radius:var(--r);padding:32px 28px;transition:transform .18s,box-shadow .18s,border-color .18s}
+.svc:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:var(--shadow)}
+.svc .icon{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;margin-bottom:18px;color:#fff;font-weight:800}
+.svc p{color:var(--muted);font-size:.95rem;margin:0}
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-art{position:relative;min-height:400px;background:#fff;border:3px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow)}
+.colorfan{position:absolute;left:10%;right:10%;top:10%;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.chip{height:120px;border-radius:12px;box-shadow:0 8px 18px rgba(0,0,0,.12);transform:rotate(-4deg)}
+.chip:nth-child(2n){transform:rotate(3deg)}
+.chip span{display:block;background:rgba(255,255,255,.85);margin:88px 8px 0;font-size:.62rem;font-weight:700;text-align:center;border-radius:6px;padding:2px}
+.about-art .plate{position:absolute;bottom:8%;left:10%;right:10%;background:var(--navy);color:#fff;border-radius:16px;padding:20px 22px}
+.plate b{font-size:.95rem;display:block;margin-bottom:6px;color:var(--sun)}
+.plate p{font-size:.86rem;color:#cfd8dc;margin:0}
+/* process */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
+.pstep{background:#fff;border:2px solid var(--line);border-radius:var(--r);padding:30px 26px;position:relative;overflow:hidden}
+.pstep::before{content:"";position:absolute;top:0;left:0;right:0;height:8px}
+.pstep:nth-child(1)::before{background:var(--coral)} .pstep:nth-child(2)::before{background:var(--sun)}
+.pstep:nth-child(3)::before{background:var(--sky)} .pstep:nth-child(4)::before{background:var(--leaf)}
+.pstep .n{font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:10px}
+.pstep p{color:var(--muted);font-size:.93rem;margin:0}
+/* gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}
+.gal{background:#fff;border:2px solid var(--line);border-radius:var(--r);overflow:hidden}
+.gal .art{height:200px;position:relative}
+.gal .cap{padding:18px 20px}
+.gal .cap b{font-size:.94rem}
+.gal .cap p{color:var(--muted);font-size:.85rem;margin:6px 0 0}
+.p1 .half{position:absolute;top:0;bottom:0;width:50%}
+.p1 .before{background:#cfc8ba;left:0}
+.p1 .after{background:linear-gradient(160deg,#3fa7e8,#2a7fc0);right:0}
+.p1 .divider{position:absolute;left:50%;top:0;bottom:0;width:6px;background:#fff;transform:translateX(-50%);box-shadow:0 0 10px rgba(0,0,0,.2)}
+.p1 .lbl{position:absolute;top:10px;font-size:.7rem;font-weight:800;background:rgba(0,0,0,.55);color:#fff;padding:4px 10px;border-radius:6px}
+.p2{background:#f3ede1}
+.p2 .cab{position:absolute;left:26%;right:26%;top:26%;bottom:18%;background:linear-gradient(135deg,#8b5fbf,#6a4496);border-radius:10px;box-shadow:0 12px 24px rgba(0,0,0,.25)}
+.p2 .knob{position:absolute;left:48%;top:52%;width:14px;height:14px;border-radius:50%;background:#fff}
+.p3{background:#fff}
+.p3 .mural{position:absolute;left:16%;right:16%;top:20%;bottom:20%;border-radius:14px;background:conic-gradient(from 40deg,var(--coral),var(--sun),var(--leaf),var(--sky),var(--grape),var(--coral));box-shadow:0 12px 24px rgba(0,0,0,.18)}
+/* testimonials */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.testi{background:#fff;border:2px solid var(--line);border-radius:var(--r);padding:30px 28px;transform:rotate(-.5deg)}
+.testi:nth-child(2){transform:rotate(.5deg)} .testi:nth-child(3){transform:rotate(-.3deg)}
+.sample-flag{display:inline-block;font-size:.66rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:#fff2ef;color:#c24a3e;border:2px solid var(--coral);border-radius:8px;padding:5px 10px;margin-bottom:12px}
+.testi p{font-size:.96rem;color:#3c4a53;font-style:italic}
+.testi .who{color:var(--muted);font-size:.85rem;font-weight:600;font-style:normal}
+/* faq */
+.faq-list{max-width:840px;margin-top:36px}
+.faq{background:#fff;border:2px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden}
+.faq button{width:100%;background:none;border:0;color:var(--ink);font-size:1rem;font-weight:700;text-align:left;padding:20px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:56px}
+.faq button .pm{flex:none;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--coral),var(--sun));color:#fff;display:grid;place-items:center;font-size:1.25rem}
+.faq .ans{max-height:0;overflow:hidden;transition:max-height .28s ease}
+.faq .ans p{padding:0 22px 22px;color:var(--muted);font-size:.95rem;margin:0}
+.faq.open{border-color:var(--coral)}
+.faq.open .ans{max-height:340px}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.ccard{background:#fff;border:2px solid var(--line);border-radius:24px;padding:38px 34px;box-shadow:var(--shadow)}
+.ccard h3{font-size:1.3rem;margin-bottom:14px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.84rem;font-weight:700;color:var(--muted);margin-bottom:7px}
+.field input,.field textarea{width:100%;background:var(--bg);border:2px solid var(--line);border-radius:14px;color:var(--ink);font-size:1rem;padding:13px 15px;min-height:48px;font-family:inherit}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:2px solid var(--sky);border-color:var(--sky)}
+.form-note{display:none;background:#eef7fd;border:2px solid var(--sky);border-radius:14px;padding:14px 16px;color:#1d5d86;font-size:.9rem;margin-top:14px}
+.phone-big{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:800;color:var(--coral);text-decoration:none;display:inline-block;margin:6px 0 12px}
+.phone-big:hover{text-decoration:underline}
+.hours{width:100%;border-collapse:collapse;margin-top:8px}
+.hours td{padding:10px 4px;border-bottom:2px solid var(--line);font-size:.94rem}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.area-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.area{background:var(--bg);border:2px solid var(--line);border-radius:999px;padding:9px 18px;font-weight:600;font-size:.9rem}
+.paint-band{margin-top:24px;background:linear-gradient(90deg,var(--coral),var(--sun),var(--leaf),var(--sky));border-radius:24px;padding:44px 40px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.3)}
+.paint-band h2{color:#fff;margin-bottom:8px}
+.paint-band p{margin:0;max-width:36rem;color:#fff}
+.paint-band .btn{background:#fff;color:var(--ink);text-shadow:none}
+footer.site{border-top:3px solid;border-image:linear-gradient(90deg,var(--coral),var(--sun),var(--sky),var(--leaf)) 1;padding:36px 0;color:var(--muted);font-size:.88rem;background:#fff}
+footer.site .container{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+@media (max-width:900px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .svc-grid,.testi-grid{grid-template-columns:1fr}
+  .proc{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:1fr}
+  .trust-row{grid-template-columns:1fr 1fr}
+  .hero-art{min-height:360px}
+  .nav-links{position:fixed;top:78px;left:0;right:0;background:#fff;border-bottom:3px solid var(--line);flex-direction:column;align-items:stretch;padding:14px 20px 22px;gap:6px;display:none;z-index:49}
+  body.menu-open .nav-links{display:flex}
+  .menu-btn{display:inline-block}
+  .section{padding:60px 0}
+}
+@media (max-width:520px){.proc,.trust-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-strip"><strong>Demo Website Concept:</strong> free sample mockup made for <strong>FreshHue Painting Co.</strong> Content is illustrative, not a real business.</div>
+<header class="site">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top">
+      <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><rect x="2" y="2" width="38" height="38" rx="12" fill="#fff" stroke="#233038" stroke-width="2.5"/><path d="M14 30c-3-1-5-4-4-8 2-6 8-4 9-9 1-3 4-4 6-2 3 3 1 8 5 11 3 2 2 7-2 8-4 2-10 2-14 0z" fill="#ff6b5e"/><path d="M16 28c-2-2-2-5 0-7" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+      FreshHue Painting Co.
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="nlink" href="#services">Services</a>
+      <a class="nlink" href="#about">About</a>
+      <a class="nlink" href="#process">Process</a>
+      <a class="nlink" href="#gallery">Work</a>
+      <a class="nlink" href="#reviews">Reviews</a>
+      <a class="nlink" href="#faq">FAQ</a>
+      <a class="nlink" href="#contact">Contact</a>
+      <a class="btn btn-paint nav-cta" href="tel:+15556490138">&#9742; (555) 649-0138</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+  </div>
+</header>
+<main id="top">
+<section class="hero">
+  <svg class="drip-edge" viewBox="0 0 1200 34" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 0h1200v10c-30 0-40 18-60 18s-24-14-52-14-30 22-58 22-26-16-54-16-30 12-58 12-28-10-56-10-30 16-58 16-28-12-56-12-30 8-58 8-28-8-56-8-30 14-58 14-28-10-56-10-30 8-58 8-28-8-56-8-30 12-58 12-28-8-56-8-26 6-52 6v-16z" fill="#ff6b5e"/>
+    <path d="M0 0h1200v6c-60 0-80 10-120 10s-60-6-110-6-70 8-110 8-70-6-110-6-70 8-110 8-70-6-110-6-70 8-110 8-70-6-110-6-70 8-110 8v-14z" fill="#3fa7e8" opacity=".8"/>
+  </svg>
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker">Painter, Chicago IL Metro</span>
+      <h1>Rooms that feel <span class="hl-coral">brand new</span>, in any <span class="hl-sky">color</span> you love.</h1>
+      <p class="lead">FreshHue Painting Co. brings crisp lines and rich color to Chicago-area homes: interiors, exteriors, cabinets, and color consulting. Tidy crews, premium paints, and finishes that make you smile every time you walk in.</p>
+      <div class="hero-cta">
+        <a class="btn btn-paint" href="tel:+15556490138">&#9742; Call (555) 649-0138</a>
+        <a class="btn btn-ghost" href="#services">See services</a>
+      </div>
+      <div class="hero-badges">
+        <span class="pill"><span class="sw" style="background:var(--coral)"></span>Licensed, bonded and insured</span>
+        <span class="pill"><span class="sw" style="background:var(--sun)"></span>Free estimates</span>
+        <span class="pill"><span class="sw" style="background:var(--sky)"></span>Same-week starts</span>
+        <span class="pill"><span class="sw" style="background:var(--leaf)"></span>Locally owned</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="wall">
+        <div class="stripe" style="left:8%;background:var(--coral);opacity:.85"></div>
+        <div class="stripe" style="left:30%;background:var(--sun);opacity:.85"></div>
+        <div class="stripe" style="left:52%;background:var(--sky);opacity:.85"></div>
+        <div class="stripe" style="left:74%;background:var(--leaf);opacity:.85"></div>
+        <div class="roller">
+          <div class="head"></div>
+          <div class="stick"></div>
+        </div>
+        <span class="pdrip" style="left:32%;top:6%;height:60px;background:var(--sun)"></span>
+        <span class="pdrip" style="left:56%;top:6%;height:80px;background:var(--sky);animation-delay:1.1s"></span>
+        <span class="pdrip" style="left:76%;top:6%;height:52px;background:var(--leaf);animation-delay:2s"></span>
+      </div>
+      <div class="swatches">
+        <span class="swatch" style="background:var(--coral)"></span>
+        <span class="swatch" style="background:var(--sun)"></span>
+        <span class="swatch" style="background:var(--leaf)"></span>
+        <span class="swatch" style="background:var(--sky)"></span>
+        <span class="swatch" style="background:var(--grape)"></span>
+      </div>
+      <div class="fcard fc1"><b>Stuck on a color?</b><p>Free color consulting with every interior project.</p></div>
+    </div>
+  </div>
+</section>
+<section class="trust" aria-label="Trust signals">
+  <div class="container trust-row">
+    <div class="tbadge"><span class="tic" style="background:var(--coral)">&#10003;</span><div><b>Licensed, bonded and insured</b><small>Trade-standard credentials</small></div></div>
+    <div class="tbadge"><span class="tic" style="background:var(--sun)">&#10003;</span><div><b>Premium paints only</b><small>Top-shelf brands, lasting finish</small></div></div>
+    <div class="tbadge"><span class="tic" style="background:var(--sky)">&#10003;</span><div><b>Tidy, respectful crews</b><small>Furniture protected, daily cleanup</small></div></div>
+    <div class="tbadge"><span class="tic" style="background:var(--leaf)">&#10003;</span><div><b>Locally owned</b><small>Chicago metro based</small></div></div>
+  </div>
+</section>
+<section class="section" id="services">
+  <div class="container">
+    <span class="kicker">Services</span>
+    <h2>Every surface, beautifully covered.</h2>
+    <p class="lead">Residential painting across the Chicago metro. Service list is illustrative.</p>
+    <div class="svc-grid">
+      <article class="svc"><span class="icon" style="background:var(--coral)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4h12v6H4zM16 7h3a1 1 0 0 1 1 1v9a3 3 0 0 1-3 3h-2v-2h2a1 1 0 0 0 1-1V7"/></svg></span><h3>Interior Painting</h3><p>Walls, ceilings, and trim with crisp lines and smooth, even coverage in any sheen.</p></article>
+      <article class="svc"><span class="icon" style="background:var(--sky)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></span><h3>Exterior Painting</h3><p>Siding, brick, and trim prepped and painted to stand up to Chicago winters.</p></article>
+      <article class="svc"><span class="icon" style="background:var(--grape)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="5" y="4" width="14" height="16" rx="2"/><path d="M9 10h.01M9 14h.01M13 12h4"/></svg></span><h3>Cabinet Refinishing</h3><p>Factory-smooth cabinet finishes that transform kitchens for a fraction of replacement cost.</p></article>
+      <article class="svc"><span class="icon" style="background:var(--sun)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></svg></span><h3>Color Consulting</h3><p>Guided color selection for your light, space, and style. Included with interior projects.</p></article>
+      <article class="svc"><span class="icon" style="background:var(--leaf)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 20h16M6 20V9l6-5 6 5v11M10 20v-5h4v5"/></svg></span><h3>Drywall and Repair</h3><p>Patching, skim coating, and texture matching so walls look flawless under new paint.</p></article>
+      <article class="svc"><span class="icon" style="background:var(--navy)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/></svg></span><h3>Move-In and Rental Refresh</h3><p>Fast, clean repaints for new homeowners and landlords turning units between tenants.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section" id="about" style="background:#fff;border-top:2px solid var(--line);border-bottom:2px solid var(--line)">
+  <div class="container about-grid">
+    <div class="about-art" aria-hidden="true">
+      <div class="colorfan">
+        <span class="chip" style="background:var(--coral)"><span>Coral Pop</span></span>
+        <span class="chip" style="background:var(--sun)"><span>Sun Beam</span></span>
+        <span class="chip" style="background:var(--leaf)"><span>Garden Leaf</span></span>
+        <span class="chip" style="background:var(--sky)"><span>Lake Sky</span></span>
+        <span class="chip" style="background:var(--grape)"><span>Grape Soda</span></span>
+      </div>
+      <div class="plate"><b>Our painting promise</b><p>Premium paint, careful prep, crisp lines, and a walk-through where we fix anything that is not perfect.</p></div>
+    </div>
+    <div>
+      <span class="kicker">Our story</span>
+      <h2>Painters who treat your home like a canvas.</h2>
+      <p class="lead">FreshHue Painting Co. is a Chicago-metro painting company with a simple philosophy: prep is everything. We spend the time on masking, patching, and priming so the finish looks incredible for years, not months.</p>
+      <p style="color:var(--muted)">Our crews are tidy, friendly, and local. Furniture gets covered, floors get protected, and every day ends with a full cleanup. You will barely know we were there, except for the beautiful walls.</p>
+    </div>
+  </div>
+</section>
+<section class="section" id="process">
+  <div class="container">
+    <span class="kicker">How it works</span>
+    <h2>From swatch to stunning.</h2>
+    <div class="proc">
+      <div class="pstep"><span class="n">Step 01</span><h3>Free estimate</h3><p>We measure, discuss colors, and give one clear price in writing.</p></div>
+      <div class="pstep"><span class="n">Step 02</span><h3>Color and prep</h3><p>Final color choices, full masking, patching, and priming where needed.</p></div>
+      <div class="pstep"><span class="n">Step 03</span><h3>The painting</h3><p>Premium paint applied in proper coats, with crisp cut lines throughout.</p></div>
+      <div class="pstep"><span class="n">Step 04</span><h3>Walk-through</h3><p>We inspect every wall together and touch up anything less than perfect.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="gallery" style="background:#fff;border-top:2px solid var(--line);border-bottom:2px solid var(--line)">
+  <div class="container">
+    <span class="kicker">Sample work</span>
+    <h2>Illustrative project panels.</h2>
+    <p class="lead">Stylized panels showing typical painting work. Artwork is illustrative, not photographs of real jobs.</p>
+    <div class="gal-grid">
+      <div class="gal"><div class="art p1" aria-hidden="true"><div class="half before"></div><div class="half after"></div><div class="divider"></div><span class="lbl" style="left:8px">Before</span><span class="lbl" style="right:8px">After</span></div><div class="cap"><b>Interior repaints</b><p>Dated walls made fresh and modern.</p></div></div>
+      <div class="gal"><div class="art p2" aria-hidden="true"><div class="cab"></div><div class="knob"></div></div><div class="cap"><b>Cabinet refinishing</b><p>Factory-smooth kitchen transformations.</p></div></div>
+      <div class="gal"><div class="art p3" aria-hidden="true"><div class="mural"></div></div><div class="cap"><b>Accent walls</b><p>Bold color where it counts.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="reviews">
+  <div class="container">
+    <span class="kicker">Kind words</span>
+    <h2>What neighbors say.</h2>
+    <p class="lead">The quotes below are illustrative samples written for this demo, not real customer reviews.</p>
+    <div class="testi-grid">
+      <div class="testi"><span class="sample-flag">Sample testimonial</span><p>"They painted our whole first floor and I could not find a single drip or missed spot. The color consultant nailed our palette."</p><div class="who">Sample Client, Chicago</div></div>
+      <div class="testi"><span class="sample-flag">Sample testimonial</span><p>"Crew covered everything, worked quietly, and cleaned up so well my kids did not notice until they saw the new walls."</p><div class="who">Sample Client, Naperville</div></div>
+      <div class="testi"><span class="sample-flag">Sample testimonial</span><p>"Cabinets look brand new for a fraction of replacement cost. The finish is perfectly smooth, like factory work."</p><div class="who">Sample Client, Schaumburg</div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="faq" style="background:#fff;border-top:2px solid var(--line);border-bottom:2px solid var(--line)">
+  <div class="container">
+    <span class="kicker">Good to know</span>
+    <h2>Painting questions, answered.</h2>
+    <div class="faq-list">
+      <div class="faq"><button aria-expanded="false">How much does it cost to paint a room?<span class="pm">+</span></button><div class="ans"><p>It depends on room size, ceiling height, wall condition, and paint choice. We measure on site and give a written flat price, and estimates are always free.</p></div></div>
+      <div class="faq"><button aria-expanded="false">Do I need to move my furniture?<span class="pm">+</span></button><div class="ans"><p>Just the small valuables. We move and carefully cover larger furniture and protect floors with drop cloths.</p></div></div>
+      <div class="faq"><button aria-expanded="false">What paint brands do you use?<span class="pm">+</span></button><div class="ans"><p>We use premium-grade paints from top manufacturers, chosen for durability and finish quality. We will recommend the right line for your space and budget.</p></div></div>
+      <div class="faq"><button aria-expanded="false">How long does an interior project take?<span class="pm">+</span></button><div class="ans"><p>Most single rooms take one to two days including prep. Whole-home interiors typically run three to seven days. You get a written schedule before we start.</p></div></div>
+      <div class="faq"><button aria-expanded="false">Can you help me pick colors?<span class="pm">+</span></button><div class="ans"><p>Yes, color consulting is included with every interior project. We bring large swatches and consider your lighting, flooring, and furniture.</p></div></div>
+      <div class="faq"><button aria-expanded="false">Do you paint in winter?<span class="pm">+</span></button><div class="ans"><p>Interiors, yes, all year. Exteriors depend on temperature and weather; we schedule exterior work for suitable conditions and will be honest about timing.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="contact">
+  <div class="container">
+    <span class="kicker">Get in touch</span>
+    <h2>Let us add some color.</h2>
+    <p class="lead">Free estimates across the Chicago metro. Call or send the demo form.</p>
+    <div class="contact-grid">
+      <div class="ccard">
+        <h3>Request a free estimate</h3>
+        <form id="demoForm" novalidate>
+          <div class="field"><label for="fName">Name</label><input id="fName" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
+          <div class="field"><label for="fPhone">Phone</label><input id="fPhone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 000-0000"></div>
+          <div class="field"><label for="fMsg">Message</label><textarea id="fMsg" name="message" placeholder="What would you like painted? Rooms, exterior, cabinets"></textarea></div>
+          <button class="btn btn-paint" type="submit" style="width:100%">Send request</button>
+          <div class="form-note" id="formNote">This is a demo form. On a real site this would reach FreshHue Painting Co. For now, please call <a href="tel:+15556490138" style="color:#c24a3e;font-weight:700">(555) 649-0138</a>.</div>
+        </form>
+      </div>
+      <div class="ccard">
+        <h3>Call or text</h3>
+        <a class="phone-big" href="tel:+15556490138">(555) 649-0138</a>
+        <p style="color:var(--muted)">FreshHue Painting Co.<br>Serving the Chicago, IL metro</p>
+        <table class="hours">
+          <tr><td>Monday to Friday</td><td>8:00 AM - 6:00 PM</td></tr>
+          <tr><td>Saturday</td><td>9:00 AM - 3:00 PM</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+        </table>
+        <h3 style="margin-top:26px">Service area</h3>
+        <div class="area-list">
+          <span class="area">Chicago</span><span class="area">Naperville</span><span class="area">Aurora</span><span class="area">Schaumburg</span><span class="area">Elgin</span><span class="area">Joliet</span><span class="area">Bolingbrook</span><span class="area">Palatine</span><span class="area">Evanston</span><span class="area">Oak Park</span><span class="area">Waukegan</span><span class="area">Skokie</span>
+        </div>
+      </div>
+    </div>
+    <div class="paint-band">
+      <div><h2>Thinking about a fresh look?</h2><p>One call gets you a free estimate, color guidance, and a crew that treats your home with care.</p></div>
+      <a class="btn" href="tel:+15556490138">&#9742; (555) 649-0138</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site">
+  <div class="container">
+    <span><strong style="color:#233038">FreshHue Painting Co.</strong></span>
+    <span>Demo Website Concept. Content is illustrative. Not affiliated with any real business.</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  menuBtn.addEventListener('click',function(){document.body.classList.toggle('menu-open');});
+  document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open');});});
+  document.querySelectorAll('.faq button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.parentElement, open=item.classList.contains('open');
+      document.querySelectorAll('.faq').forEach(function(f){f.classList.remove('open');f.querySelector('button').setAttribute('aria-expanded','false');});
+      if(!open){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+    });
+  });
+  document.getElementById('demoForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('formNote').style.display='block';});
+})();
+</script>
+</body>
+</html>

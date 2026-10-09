@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="GreenScape Lawn Care. Landscaper serving Raleigh, NC metro. Lawn mowing, landscaping, mulch, seasonal cleanup. Demo website concept. Call (555) 874-2360.">
+<meta name="theme-color" content="#2e7d32">
+<title>GreenScape Lawn Care | Raleigh Landscaper | Demo Website Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --leaf:#2e7d32; --leaf-d:#1b5e20; --leaf-l:#dcedc8; --leaf-xl:#f1f8e9;
+  --earth:#8d6e4a; --earth-d:#5d4426; --bark:#4a3521;
+  --sky:#7fb6d5;
+  --bg:#faf8f2; --surface:#ffffff;
+  --ink:#2c3a26; --muted:#6d7f63; --line:#e2dcc9;
+  --r:26px; --shadow:0 18px 44px rgba(46,90,40,.14);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--ink);font-family:"Nunito Sans",system-ui,sans-serif;font-size:16px;line-height:1.7;min-width:320px;overflow-x:hidden}
+body.menu-open{overflow:hidden}
+h1,h2,h3{font-family:"Lora",Georgia,serif;font-weight:600;line-height:1.22;margin-bottom:.55em}
+h1{font-size:clamp(2.2rem,5.4vw,3.7rem)}
+h1 em{font-style:italic;color:var(--leaf)}
+h2{font-size:clamp(1.6rem,3.5vw,2.35rem)}
+h3{font-size:1.1rem;margin-bottom:.4em;font-family:"Nunito Sans";font-weight:800}
+p{margin-bottom:1em}
+a{color:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.section{padding:88px 0}
+.kicker{display:inline-block;font-weight:800;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--leaf-d);margin-bottom:16px}
+.kicker::before{content:"❧ ";color:var(--leaf)}
+.lead{color:var(--muted);font-size:1.08rem;max-width:42rem}
+/* demo strip */
+.demo-strip{background:linear-gradient(90deg,var(--leaf-d),var(--leaf));color:#fff;text-align:center;font-size:.8rem;font-weight:600;padding:10px 18px;position:relative;z-index:70}
+.demo-strip strong{color:#fff}
+/* header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(250,248,242,.94);backdrop-filter:blur(12px);border-bottom:2px solid var(--line)}
+.nav-wrap{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:"Lora",serif;font-weight:700;font-size:1.18rem;color:var(--leaf-d)}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a.nlink{padding:10px 14px;text-decoration:none;font-weight:700;font-size:.93rem;color:var(--muted);border-radius:999px;min-height:44px;display:inline-flex;align-items:center}
+.nav-links a.nlink:hover{color:var(--leaf-d);background:var(--leaf-l)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;font-weight:800;text-decoration:none;border-radius:999px;padding:15px 28px;font-size:1rem;min-height:48px;transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-leaf{background:linear-gradient(135deg,var(--leaf),var(--leaf-d));color:#fff;box-shadow:0 10px 26px rgba(46,125,50,.4)}
+.btn-ghost{background:#fff;color:var(--leaf-d);border:2px solid var(--line)}
+.btn-ghost:hover{border-color:var(--leaf)}
+.nav-cta{padding:11px 20px !important;font-size:.92rem !important}
+.menu-btn{display:none;background:#fff;border:2px solid var(--line);border-radius:999px;padding:11px 16px;cursor:pointer;font-weight:800;min-height:44px;min-width:44px;color:var(--leaf-d)}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:100px 0 110px;background:linear-gradient(180deg,var(--leaf-xl) 0%,var(--bg) 70%)}
+.hero-blob{position:absolute;top:-140px;right:-120px;width:480px;height:480px;background:radial-gradient(circle,rgba(46,125,50,.18),transparent 70%);border-radius:42% 58% 55% 45%/48% 44% 56% 52%}
+.hero-blob.b2{top:auto;bottom:-160px;left:-140px;right:auto;width:420px;height:420px;background:radial-gradient(circle,rgba(141,110,74,.16),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center;position:relative}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.pill{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:.85rem;font-weight:700;color:var(--muted);display:inline-flex;align-items:center;gap:9px;box-shadow:0 4px 12px rgba(46,90,40,.08)}
+.pill .lf{color:var(--leaf);font-size:1rem}
+/* yard art */
+.hero-art{position:relative;min-height:440px}
+.hill{position:absolute;left:2%;right:2%;bottom:4%;height:56%;background:linear-gradient(180deg,#7fbf6a,#4c9a44);border-radius:48% 52% 40% 40%/70% 70% 30% 30%;box-shadow:var(--shadow)}
+.mower{position:absolute;left:24%;bottom:30%;width:150px;height:90px;animation:mow 7s ease-in-out infinite}
+@keyframes mow{0%,100%{transform:translateX(0)}50%{transform:translateX(60px)}}
+.mower .body{position:absolute;left:20px;top:10px;width:100px;height:44px;background:linear-gradient(180deg,var(--leaf),var(--leaf-d));border-radius:14px}
+.mower .handle{position:absolute;left:100px;top:-26px;width:8px;height:44px;background:var(--bark);transform:rotate(24deg);border-radius:4px}
+.mower .wheel{position:absolute;bottom:0;width:34px;height:34px;border-radius:50%;background:#3a3a3a;border:6px solid #222}
+.mower .wheel.w1{left:24px} .mower .wheel.w2{left:92px}
+.mower .wheel::after{content:"";position:absolute;inset:6px;border-radius:50%;background:#777}
+.tree{position:absolute;bottom:38%;width:20px}
+.tree .trunk{width:20px;height:60px;background:var(--bark);border-radius:8px;margin:0 auto}
+.tree .top{width:110px;height:110px;background:radial-gradient(circle at 40% 35%,#8fd07a,#3f8a38);border-radius:46% 54% 50% 50%/52% 48% 52% 48%;margin:0 auto -20px;position:relative;z-index:1;animation:sway 6s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+.tree.t1{left:8%} .tree.t2{right:10%;transform:scale(.75)}
+.leafp{position:absolute;width:14px;height:14px;background:#66b356;border-radius:0 70% 0 70%;animation:drift 5s ease-in infinite}
+@keyframes drift{0%{transform:translateY(-20px) rotate(0);opacity:0}20%{opacity:1}100%{transform:translateY(150px) rotate(220deg);opacity:0}}
+.fcard{position:absolute;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:16px 18px;max-width:238px;z-index:2}
+.fcard b{font-family:"Lora";font-size:.92rem;display:block;margin-bottom:4px;color:var(--leaf-d)}
+.fcard p{margin:0;font-size:.82rem;color:var(--muted)}
+.fc1{top:2%;right:2%;animation:float 7.5s ease-in-out infinite}
+.fc2{bottom:2%;left:4%;animation:float 9s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+/* trust row */
+.trust{background:#fff;border-top:2px solid var(--line);border-bottom:2px solid var(--line);padding:26px 0}
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tbadge{background:var(--leaf-xl);border:1px solid var(--line);border-radius:20px;padding:16px 18px;display:flex;align-items:center;gap:14px}
+.tbadge .tic{width:46px;height:46px;flex:none;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 4px 10px rgba(46,90,40,.12)}
+.tbadge b{font-size:.9rem;display:block;line-height:1.35}
+.tbadge small{color:var(--muted);font-size:.8rem}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:32px 28px;transition:transform .18s,box-shadow .18s}
+.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.svc .icon{width:56px;height:56px;border-radius:50% 46% 52% 48%;background:linear-gradient(135deg,var(--leaf),var(--leaf-d));display:grid;place-items:center;margin-bottom:18px}
+.svc p{color:var(--muted);font-size:.95rem;margin:0}
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-art{position:relative;min-height:400px;background:linear-gradient(160deg,var(--leaf-xl),#e4efe0);border-radius:34% 40% 38% 42%/30% 32% 38% 40%;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.about-art .sun{position:absolute;top:10%;right:14%;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle at 40% 40%,#ffe9a8,#f5c542);box-shadow:0 0 40px 12px rgba(245,197,66,.35)}
+.about-art .bed{position:absolute;left:12%;right:12%;bottom:12%;height:30%;background:linear-gradient(180deg,#a9805a,#7d5c3a);border-radius:20px;box-shadow:0 10px 24px rgba(0,0,0,.2)}
+.about-art .plant{position:absolute;bottom:36%;width:8px;height:44px;background:var(--leaf-d);border-radius:4px}
+.about-art .bloom{position:absolute;width:22px;height:22px;border-radius:50%}
+.about-art .note{position:absolute;top:12%;left:12%;background:rgba(255,255,255,.92);border-radius:14px;padding:14px 18px;font-size:.86rem;color:var(--muted);max-width:220px}
+.note b{color:var(--leaf-d);font-family:"Lora";display:block;margin-bottom:2px}
+/* process */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
+.pstep{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;text-align:center}
+.pstep .seed{width:60px;height:60px;margin:0 auto 16px;border-radius:50%;background:var(--leaf-xl);display:grid;place-items:center;font-size:1.5rem}
+.pstep p{color:var(--muted);font-size:.93rem;margin:0}
+/* gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}
+.gal{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.gal .art{height:200px;position:relative}
+.gal .cap{padding:18px 20px}
+.gal .cap b{font-family:"Lora";font-size:.95rem}
+.gal .cap p{color:var(--muted);font-size:.85rem;margin:6px 0 0}
+.y1{background:linear-gradient(180deg,#bfe3f2 55%,#7fbf6a 55%)}
+.y1 .stripey{position:absolute;left:0;right:0;top:55%;bottom:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.18) 0 26px,transparent 26px 52px)}
+.y1 .house{position:absolute;left:36%;right:36%;top:26%;bottom:46%;background:#fff;border-radius:8px 8px 0 0;box-shadow:0 8px 18px rgba(0,0,0,.18)}
+.y1 .roof{position:absolute;left:32%;right:32%;top:18%;height:12%;background:var(--bark);clip-path:polygon(50% 0,100% 100%,0 100%)}
+.y2{background:linear-gradient(180deg,#d9ecd2 60%,#6b4f33 60%)}
+.y2 .bush{position:absolute;width:70px;height:70px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#8fd07a,#3f8a38)}
+.y2 .path{position:absolute;left:44%;right:44%;top:60%;bottom:0;background:#e8dcc0}
+.y3{background:linear-gradient(180deg,#f5e6c8 62%,#5d4426 62%)}
+.y3 .pile{position:absolute;left:36%;right:36%;top:44%;height:20%;background:radial-gradient(ellipse at 50% 80%,#8d6e4a,#5d4426);border-radius:50%}
+.y3 .rake{position:absolute;left:24%;top:30%;width:8px;height:44%;background:#a37a45;transform:rotate(18deg);border-radius:4px}
+/* testimonials */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.testi{background:#fff;border:1px solid var(--line);border-left:8px solid var(--leaf);border-radius:18px;padding:30px 28px}
+.sample-flag{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--leaf-l);color:var(--leaf-d);border-radius:999px;padding:5px 12px;margin-bottom:12px}
+.testi p{font-size:.96rem;color:#42513b;font-style:italic;font-family:"Lora"}
+.testi .who{color:var(--muted);font-size:.85rem;font-weight:700;font-style:normal;font-family:"Nunito Sans"}
+/* faq */
+.faq-list{max-width:840px;margin-top:36px}
+.faq{background:#fff;border:1px solid var(--line);border-radius:18px;margin-bottom:12px;overflow:hidden}
+.faq button{width:100%;background:none;border:0;color:var(--ink);font-size:1rem;font-weight:800;text-align:left;padding:20px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:56px}
+.faq button .pm{flex:none;width:34px;height:34px;border-radius:50%;background:var(--leaf);color:#fff;display:grid;place-items:center;font-size:1.2rem}
+.faq .ans{max-height:0;overflow:hidden;transition:max-height .28s ease}
+.faq .ans p{padding:0 22px 22px;color:var(--muted);font-size:.95rem;margin:0}
+.faq.open .ans{max-height:340px}
+.faq.open{border-color:var(--leaf)}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.ccard{background:#fff;border:1px solid var(--line);border-radius:28px;padding:38px 34px;box-shadow:var(--shadow)}
+.ccard h3{font-size:1.35rem;margin-bottom:14px;font-family:"Lora"}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.84rem;font-weight:800;color:var(--muted);margin-bottom:7px}
+.field input,.field textarea{width:100%;background:var(--bg);border:2px solid var(--line);border-radius:16px;color:var(--ink);font-size:1rem;padding:13px 15px;min-height:48px;font-family:inherit}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:2px solid var(--leaf);border-color:var(--leaf)}
+.form-note{display:none;background:var(--leaf-xl);border:2px solid var(--leaf);border-radius:16px;padding:14px 16px;color:var(--leaf-d);font-size:.9rem;margin-top:14px}
+.phone-big{font-family:"Lora";font-size:clamp(1.8rem,4vw,2.5rem);color:var(--leaf-d);text-decoration:none;display:inline-block;margin:6px 0 12px}
+.phone-big:hover{text-decoration:underline}
+.hours{width:100%;border-collapse:collapse;margin-top:8px}
+.hours td{padding:10px 4px;border-bottom:1px solid var(--line);font-size:.94rem}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.area-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.area{background:var(--leaf-xl);border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-weight:700;font-size:.9rem;color:var(--leaf-d)}
+.garden-band{margin-top:24px;background:linear-gradient(120deg,var(--leaf-d),var(--leaf));border-radius:28px;padding:44px 40px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;color:#fff}
+.garden-band h2{color:#fff;margin-bottom:8px}
+.garden-band p{margin:0;max-width:36rem;color:#e6f2e3}
+.garden-band .btn{background:#fff;color:var(--leaf-d)}
+footer.site{border-top:2px solid var(--line);padding:36px 0;color:var(--muted);font-size:.88rem;background:#fff}
+footer.site .container{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+@media (max-width:900px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .svc-grid,.testi-grid{grid-template-columns:1fr}
+  .proc{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:1fr}
+  .trust-row{grid-template-columns:1fr 1fr}
+  .hero-art{min-height:360px}
+  .nav-links{position:fixed;top:78px;left:0;right:0;background:var(--bg);border-bottom:2px solid var(--line);flex-direction:column;align-items:stretch;padding:14px 20px 22px;gap:6px;display:none;z-index:49}
+  body.menu-open .nav-links{display:flex}
+  .menu-btn{display:inline-block}
+  .section{padding:62px 0}
+}
+@media (max-width:520px){.proc,.trust-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-strip"><strong>Demo Website Concept:</strong> free sample mockup made for <strong>GreenScape Lawn Care</strong>. Content is illustrative, not a real business.</div>
+<header class="site">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top">
+      <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><circle cx="21" cy="21" r="19" fill="#f1f8e9" stroke="#2e7d32" stroke-width="2.5"/><path d="M21 32c0-8 0-12 0-16M21 16c-4 0-8-3-9-8 5 0 8 2 9 5 1-3 4-5 9-5-1 5-5 8-9 8z" stroke="#2e7d32" stroke-width="2.5" fill="#7fbf6a" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      GreenScape Lawn Care
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="nlink" href="#services">Services</a>
+      <a class="nlink" href="#about">About</a>
+      <a class="nlink" href="#process">Process</a>
+      <a class="nlink" href="#gallery">Work</a>
+      <a class="nlink" href="#reviews">Reviews</a>
+      <a class="nlink" href="#faq">FAQ</a>
+      <a class="nlink" href="#contact">Contact</a>
+      <a class="btn btn-leaf nav-cta" href="tel:+15558742360">&#9742; (555) 874-2360</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+  </div>
+</header>
+<main id="top">
+<section class="hero">
+  <div class="hero-blob"></div><div class="hero-blob b2"></div>
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker">Landscaper, Raleigh NC Metro</span>
+      <h1>A lawn you will <em>love</em> coming home to.</h1>
+      <p class="lead">GreenScape Lawn Care keeps Raleigh-area yards healthy and beautiful: regular mowing, landscape beds, mulch, and seasonal cleanups. Friendly crews, tidy edges, and a lawn that turns heads on the street.</p>
+      <div class="hero-cta">
+        <a class="btn btn-leaf" href="tel:+15558742360">&#9742; Call (555) 874-2360</a>
+        <a class="btn btn-ghost" href="#services">See services</a>
+      </div>
+      <div class="hero-badges">
+        <span class="pill"><span class="lf">❧</span>Licensed, bonded and insured</span>
+        <span class="pill"><span class="lf">❧</span>Free estimates</span>
+        <span class="pill"><span class="lf">❧</span>Weekly and biweekly plans</span>
+        <span class="pill"><span class="lf">❧</span>Locally owned</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="hill"></div>
+      <div class="tree t1"><div class="top"></div><div class="trunk"></div></div>
+      <div class="tree t2"><div class="top"></div><div class="trunk"></div></div>
+      <div class="mower"><div class="handle"></div><div class="body"></div><div class="wheel w1"></div><div class="wheel w2"></div></div>
+      <span class="leafp" style="left:20%;top:6%"></span>
+      <span class="leafp" style="left:60%;top:2%;animation-delay:1.6s"></span>
+      <span class="leafp" style="left:80%;top:10%;animation-delay:3s"></span>
+      <div class="fcard fc1"><b>Weekly mowing plans</b><p>Same day, same crew, stripes every time.</p></div>
+      <div class="fcard fc2"><b>Free yard walk-through</b><p>We quote on site and tailor the plan to your grass.</p></div>
+    </div>
+  </div>
+</section>
+<section class="trust" aria-label="Trust signals">
+  <div class="container trust-row">
+    <div class="tbadge"><span class="tic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>Licensed, bonded and insured</b><small>Trade-standard credentials</small></div></div>
+    <div class="tbadge"><span class="tic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><path d="M12 22V10M12 10C12 6 9 3 4 3c0 5 3 7 8 7zM12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/></svg></span><div><b>Healthy-turf focus</b><small>Right cut, right height</small></div></div>
+    <div class="tbadge"><span class="tic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><div><b>Reliable schedule</b><small>Same day every week</small></div></div>
+    <div class="tbadge"><span class="tic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></span><div><b>Locally owned</b><small>Raleigh metro based</small></div></div>
+  </div>
+</section>
+<section class="section" id="services">
+  <div class="container">
+    <span class="kicker">Services</span>
+    <h2>Everything your yard needs.</h2>
+    <p class="lead">Lawn and landscape care across the Raleigh metro. Service list is illustrative.</p>
+    <div class="svc-grid">
+      <article class="svc"><span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 20h10M6 20v-6h8v6M14 14l6-6M18 4l2 2-4 1z"/></svg></span><h3>Lawn Mowing</h3><p>Weekly and biweekly mowing with crisp edges, clean blow-off, and healthy cut heights for Triangle grass.</p></article>
+      <article class="svc"><span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 22V10M12 10C12 6 9 3 4 3c0 5 3 7 8 7zM12 14c0-4 3-7 8-7 0 5-3 7-8 7z"/></svg></span><h3>Landscape Beds</h3><p>Bed design, planting, and refreshes with plants chosen for Carolina soil and sun.</p></article>
+      <article class="svc"><span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 16c2-6 6-9 8-9s6 3 8 9H4zM12 7V3"/></svg></span><h3>Mulch and Pine Straw</h3><p>Fresh mulch and pine straw that makes beds pop and keeps weeds down.</p></article>
+      <article class="svc"><span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></span><h3>Hedge Trimming</h3><p>Shaping and health pruning for hedges, shrubs, and small ornamentals.</p></article>
+      <article class="svc"><span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 3c3 4 3 8 0 12-3-4-3-8 0-12zM5 21h14"/></svg></span><h3>Seasonal Cleanup</h3><p>Spring wake-ups and fall leaf cleanups that reset your yard for the season ahead.</p></article>
+      <article class="svc"><span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2v20M4 6l16 12M20 6L4 18" opacity="0"/><path d="M7 14c-2 0-3 1-3 3 3 0 5-1 6-3M17 10c2 0 3-1 3-3-3 0-5 1-6 3M12 3v18"/></svg></span><h3>Aeration and Overseeding</h3><p>Fall aeration and overseeding for thicker, healthier turf the following spring.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section" id="about" style="background:#fff;border-top:2px solid var(--line);border-bottom:2px solid var(--line)">
+  <div class="container about-grid">
+    <div class="about-art" aria-hidden="true">
+      <div class="sun"></div>
+      <div class="note"><b>Grown for the Triangle</b>Plans tuned to local grass types, clay soil, and Carolina seasons.</div>
+      <div class="bed"></div>
+      <div class="plant" style="left:24%"></div><span class="bloom" style="left:calc(24% - 7px);bottom:calc(36% + 44px);background:#e88bb0"></span>
+      <div class="plant" style="left:46%"></div><span class="bloom" style="left:calc(46% - 7px);bottom:calc(36% + 44px);background:#f5c542"></span>
+      <div class="plant" style="left:68%"></div><span class="bloom" style="left:calc(68% - 7px);bottom:calc(36% + 44px);background:#e88bb0"></span>
+    </div>
+    <div>
+      <span class="kicker">Our story</span>
+      <h2>Yard people, through and through.</h2>
+      <p class="lead">GreenScape Lawn Care is a Raleigh-metro lawn and landscape company founded on a love of great-looking yards. We treat every lawn like it is going in a neighborhood photo contest.</p>
+      <p style="color:var(--muted)">Our crews show up on the same day each visit, communicate clearly, and leave gates closed and edges crisp. Whether it is weekly mowing or a full bed makeover, your yard is in careful hands.</p>
+    </div>
+  </div>
+</section>
+<section class="section" id="process">
+  <div class="container">
+    <span class="kicker">How it works</span>
+    <h2>From overgrown to outstanding.</h2>
+    <div class="proc">
+      <div class="pstep"><span class="seed">🌱</span><h3>Free walk-through</h3><p>We tour your yard together and talk goals, trouble spots, and budget.</p></div>
+      <div class="pstep"><span class="seed">📋</span><h3>Clear plan and price</h3><p>You get a written plan and one honest price before anything starts.</p></div>
+      <div class="pstep"><span class="seed">🌿</span><h3>The transformation</h3><p>Our crew does the work neatly, with care for your plants and property.</p></div>
+      <div class="pstep"><span class="seed">🌻</span><h3>Ongoing care</h3><p>Weekly or biweekly visits keep everything looking its best all season.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="gallery" style="background:#fff;border-top:2px solid var(--line);border-bottom:2px solid var(--line)">
+  <div class="container">
+    <span class="kicker">Sample work</span>
+    <h2>Illustrative project panels.</h2>
+    <p class="lead">Stylized panels showing typical lawn and landscape work. Artwork is illustrative, not photographs of real jobs.</p>
+    <div class="gal-grid">
+      <div class="gal"><div class="art y1" aria-hidden="true"><div class="stripey"></div><div class="house"></div><div class="roof"></div></div><div class="cap"><b>Signature mowing</b><p>Crisp stripes and sharp edges.</p></div></div>
+      <div class="gal"><div class="art y2" aria-hidden="true"><div class="bush" style="left:16%;top:30%"></div><div class="bush" style="right:16%;top:26%;transform:scale(.8)"></div><div class="path"></div></div><div class="cap"><b>Bed makeovers</b><p>Fresh plants, clean lines, fresh mulch.</p></div></div>
+      <div class="gal"><div class="art y3" aria-hidden="true"><div class="pile"></div><div class="rake"></div></div><div class="cap"><b>Fall cleanups</b><p>Leaves gone, beds tucked in for winter.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="reviews">
+  <div class="container">
+    <span class="kicker">Kind words</span>
+    <h2>What neighbors say.</h2>
+    <p class="lead">The quotes below are illustrative samples written for this demo, not real customer reviews.</p>
+    <div class="testi-grid">
+      <div class="testi"><span class="sample-flag">Sample testimonial</span><p>"Our lawn has never looked this good. Same crew every Friday, edges like a ballfield, and they always close the gate."</p><div class="who">Sample Client, Raleigh</div></div>
+      <div class="testi"><span class="sample-flag">Sample testimonial</span><p>"They redesigned our front beds and it looks like a different house. The plants they picked are thriving a year later."</p><div class="who">Sample Client, Cary</div></div>
+      <div class="testi"><span class="sample-flag">Sample testimonial</span><p>"Fall cleanup crew took away what felt like a mountain of leaves in one afternoon. Yard looked brand new."</p><div class="who">Sample Client, Apex</div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="faq" style="background:#fff;border-top:2px solid var(--line);border-bottom:2px solid var(--line)">
+  <div class="container">
+    <span class="kicker">Good to know</span>
+    <h2>Lawn questions, answered.</h2>
+    <div class="faq-list">
+      <div class="faq"><button aria-expanded="false">How often should my lawn be mowed?<span class="pm">+</span></button><div class="ans"><p>During the growing season, weekly is best for most Triangle lawns. In slower periods, biweekly works well. We recommend a schedule after seeing your grass.</p></div></div>
+      <div class="faq"><button aria-expanded="false">Do you offer one-time cleanups?<span class="pm">+</span></button><div class="ans"><p>Yes. Spring and fall cleanups, storm debris removal, and one-time overgrowth taming are all available alongside our recurring plans.</p></div></div>
+      <div class="faq"><button aria-expanded="false">What is included in a mowing visit?<span class="pm">+</span></button><div class="ans"><p>Mowing at the right height for your grass type, edging along walks and beds, trimming around obstacles, and a full blow-off of hard surfaces.</p></div></div>
+      <div class="faq"><button aria-expanded="false">Can you help with brown spots?<span class="pm">+</span></button><div class="ans"><p>We will assess the cause, which could be grubs, fungus, drought stress, or mower issues, and recommend the right fix. Aeration and overseeding in fall help a lot.</p></div></div>
+      <div class="faq"><button aria-expanded="false">Do I need to be home during service?<span class="pm">+</span></button><div class="ans"><p>No. Most customers are not home. Just make sure gates are unlocked and pets are inside, and we handle the rest.</p></div></div>
+      <div class="faq"><button aria-expanded="false">Are you insured?<span class="pm">+</span></button><div class="ans"><p>Yes. We are licensed, bonded and insured, and our crews are trained to work carefully around your home, plants, and property.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="contact">
+  <div class="container">
+    <span class="kicker">Get in touch</span>
+    <h2>Let us walk your yard.</h2>
+    <p class="lead">Free walk-throughs and estimates across the Raleigh metro.</p>
+    <div class="contact-grid">
+      <div class="ccard">
+        <h3>Request a free walk-through</h3>
+        <form id="demoForm" novalidate>
+          <div class="field"><label for="fName">Name</label><input id="fName" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
+          <div class="field"><label for="fPhone">Phone</label><input id="fPhone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 000-0000"></div>
+          <div class="field"><label for="fMsg">Message</label><textarea id="fMsg" name="message" placeholder="Tell us about your yard: mowing, beds, cleanup"></textarea></div>
+          <button class="btn btn-leaf" type="submit" style="width:100%">Send request</button>
+          <div class="form-note" id="formNote">This is a demo form. On a real site this would reach GreenScape Lawn Care. For now, please call <a href="tel:+15558742360" style="color:#1b5e20;font-weight:700">(555) 874-2360</a>.</div>
+        </form>
+      </div>
+      <div class="ccard">
+        <h3>Call or text</h3>
+        <a class="phone-big" href="tel:+15558742360">(555) 874-2360</a>
+        <p style="color:var(--muted)">GreenScape Lawn Care<br>Serving the Raleigh, NC metro</p>
+        <table class="hours">
+          <tr><td>Monday to Friday</td><td>8:00 AM - 6:00 PM</td></tr>
+          <tr><td>Saturday</td><td>9:00 AM - 2:00 PM</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+        </table>
+        <h3 style="margin-top:26px">Service area</h3>
+        <div class="area-list">
+          <span class="area">Raleigh</span><span class="area">Cary</span><span class="area">Durham</span><span class="area">Chapel Hill</span><span class="area">Apex</span><span class="area">Morrisville</span><span class="area">Wake Forest</span><span class="area">Garner</span><span class="area">Holly Springs</span><span class="area">Knightdale</span><span class="area">Fuquay-Varina</span><span class="area">Clayton</span>
+        </div>
+      </div>
+    </div>
+    <div class="garden-band">
+      <div><h2>Ready for the best-looking yard on the street?</h2><p>One call gets you a free walk-through, an honest price, and a crew that cares about your lawn.</p></div>
+      <a class="btn" href="tel:+15558742360">&#9742; (555) 874-2360</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site">
+  <div class="container">
+    <span><strong style="color:#1b5e20;font-family:Lora,serif">GreenScape Lawn Care</strong></span>
+    <span>Demo Website Concept. Content is illustrative. Not affiliated with any real business.</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  menuBtn.addEventListener('click',function(){document.body.classList.toggle('menu-open');});
+  document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open');});});
+  document.querySelectorAll('.faq button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.parentElement, open=item.classList.contains('open');
+      document.querySelectorAll('.faq').forEach(function(f){f.classList.remove('open');f.querySelector('button').setAttribute('aria-expanded','false');});
+      if(!open){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+    });
+  });
+  document.getElementById('demoForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('formNote').style.display='block';});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="GatherRound Catering, full-service event catering for the Las Vegas, NV metro. Weddings, corporate events, and private parties. Demo website concept. Call (555) 164-8529.">
+<meta name="theme-color" content="#f7f3ea">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>GatherRound Catering | Las Vegas, NV Event Catering | Demo Website</title>
+<style>
+:root{
+  --bg:#f7f3ea; --surface:#fffdf8; --surface2:#efe9da;
+  --ink:#1e2b23; --muted:#5f6d63;
+  --gold:#b98a2e; --gold-soft:#f2e4c4; --gold-deep:#8a6418;
+  --green:#14342a; --green-soft:#dce8df;
+  --line:#ddd2b8;
+  --shadow:0 24px 60px rgba(20,52,42,.10); --shadow-sm:0 10px 28px rgba(20,52,42,.08);
+  --r:18px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;min-width:320px;background:var(--bg);color:var(--ink);
+  font-family:"Jost","Segoe UI",system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.7;font-weight:400}
+body.menu-open{overflow:hidden}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.15;margin:0 0 .55em;font-weight:600}
+h1{font-size:clamp(2.4rem,5.4vw,4rem);letter-spacing:.005em}
+h2{font-size:clamp(1.9rem,3.8vw,2.7rem)}
+h3{font-family:"Jost",sans-serif;font-weight:600;font-size:1.08rem;letter-spacing:.02em;margin:0 0 .4em}
+p{margin:0 0 1em}
+.container{width:min(1120px,calc(100% - 44px));margin-inline:auto}
+.container-narrow{width:min(760px,calc(100% - 44px));margin-inline:auto;text-align:center}
+.section{padding:92px 0}
+.section-alt{background:var(--surface2)}
+.kicker{display:inline-block;font-weight:600;font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:16px}
+.lead{font-size:1.1rem;color:var(--muted);max-width:38rem}
+.container-narrow .lead{margin-inline:auto}
+a{color:inherit}
+.rule{display:flex;align-items:center;gap:14px;justify-content:center;margin:18px auto 0;max-width:420px}
+.rule::before,.rule::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,var(--gold))}
+.rule::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.rule span{color:var(--gold);font-size:1.1rem}
+
+/* demo strip */
+.demo-strip{background:var(--green);color:#f3ead2;text-align:center;font-size:.82rem;font-weight:500;padding:10px 20px;position:relative;z-index:60;letter-spacing:.02em}
+.demo-strip strong{color:#fff}
+
+/* header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(247,243,234,.92);border-bottom:1px solid var(--line);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-wrap{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none}
+.brand-mark{width:44px;height:44px;border-radius:50%;flex:none;display:grid;place-items:center;
+  background:radial-gradient(circle at 32% 30%,var(--gold-soft),var(--gold) 70%);border:1px solid var(--gold-deep);box-shadow:var(--shadow-sm)}
+.brand-text{line-height:1.25}
+.brand-text b{font-family:"Cormorant Garamond",serif;font-size:1.28rem;font-weight:700;display:block;letter-spacing:.02em}
+.brand-text small{font-size:.68rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{padding:12px 14px;border-radius:10px;text-decoration:none;font-weight:500;font-size:.95rem;color:var(--muted);min-height:44px;display:inline-flex;align-items:center;letter-spacing:.03em}
+.nav-links a:hover{color:var(--green)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;
+  font-weight:600;text-decoration:none;border-radius:999px;padding:16px 32px;font-size:1rem;min-height:54px;
+  transition:transform .15s ease,box-shadow .15s ease;font-family:"Jost",sans-serif;letter-spacing:.05em}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--green),#0d241c);color:#f7f3ea;box-shadow:0 12px 28px rgba(20,52,42,.28)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold-deep));color:#fff;box-shadow:0 12px 28px rgba(185,138,46,.3)}
+.btn-outline{background:transparent;color:var(--green);border:1.5px solid var(--gold)}
+.menu-btn{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;padding:10px 16px;cursor:pointer;color:var(--ink);font-weight:600;min-height:44px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:110px 0 100px;text-align:center;
+  background:radial-gradient(1000px 480px at 50% -12%,var(--gold-soft) 0%,transparent 62%),var(--bg)}
+.hero-inner{position:relative;z-index:2}
+.hero .kicker{border:1px solid var(--gold);border-radius:999px;padding:9px 22px;background:rgba(255,253,248,.7)}
+.hero h1{max-width:16em;margin-inline:auto}
+.hero h1 em{font-style:italic;color:var(--gold-deep)}
+.hero .lead{margin-inline:auto}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;justify-content:center}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;justify-content:center}
+.pill{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 18px;
+  font-size:.88rem;font-weight:500;color:var(--muted);display:inline-flex;align-items:center;gap:8px}
+.pill i{color:var(--gold);font-style:normal}
+.hero-art{position:relative;max-width:860px;margin:56px auto 0;min-height:300px;border-radius:26px;overflow:hidden;
+  background:linear-gradient(135deg,#20382d,#0f211a);border:1px solid var(--gold);box-shadow:var(--shadow)}
+.hero-art .arch{position:absolute;inset:26px;border:1px solid rgba(185,138,46,.55);border-radius:200px 200px 18px 18px}
+.hero-art .table{position:absolute;left:12%;right:12%;bottom:16%;height:26px;border-radius:999px;background:linear-gradient(180deg,#f2e4c4,#c9a44a)}
+.hero-art .cloche{position:absolute;bottom:calc(16% + 26px);left:50%;transform:translateX(-50%);width:120px;height:60px;
+  border-radius:60px 60px 0 0;background:linear-gradient(180deg,#e9cf8f,#a8791f);box-shadow:var(--shadow-sm)}
+.hero-art .cloche::after{content:"";position:absolute;top:-9px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:var(--gold-deep)}
+.hero-card{position:absolute;background:rgba(255,253,248,.94);border:1px solid var(--line);border-radius:14px;
+  box-shadow:var(--shadow);padding:14px 18px;text-align:left;max-width:230px;backdrop-filter:blur(4px)}
+.hero-card h4{margin:0 0 4px;font-size:.92rem;font-weight:600;font-family:"Jost",sans-serif}
+.hero-card p{margin:0;font-size:.82rem;color:var(--muted)}
+.hc1{top:8%;left:4%;animation:float 7s ease-in-out infinite}
+.hc2{bottom:8%;right:4%;animation:float 8.5s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* badges row */
+.badges-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.badge-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px 22px;text-align:center;box-shadow:var(--shadow-sm)}
+.badge-card .ico{width:56px;height:56px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;
+  background:radial-gradient(circle at 32% 30%,var(--gold-soft),#e3c988);border:1px solid var(--gold)}
+.badge-card p{margin:0;font-size:.9rem;color:var(--muted)}
+
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:38px 32px;text-align:center;
+  box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease;position:relative;overflow:hidden}
+.svc:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.svc::after{content:"";position:absolute;left:32px;right:32px;bottom:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .2s}
+.svc:hover::after{opacity:1}
+.svc .icon{width:64px;height:64px;margin:0 auto 18px;border-radius:50%;display:grid;place-items:center;font-size:1.7rem;
+  background:var(--green-soft);border:1px solid var(--gold)}
+.svc p{color:var(--muted);font-size:.95rem;margin:0}
+
+/* story */
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:44px}
+.story-art{border-radius:24px;min-height:380px;position:relative;overflow:hidden;border:1px solid var(--gold);
+  background:radial-gradient(320px 220px at 70% 25%,rgba(185,138,46,.28),transparent 60%),linear-gradient(150deg,#f2e9d5,#e2d4b4);box-shadow:var(--shadow)}
+.story-art .plate{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:230px;height:230px;border-radius:50%;
+  background:radial-gradient(circle,#fffdf8 55%,#e9dcc0 56%,#d9c69a 100%);border:2px solid var(--gold);box-shadow:var(--shadow)}
+.story-art .plate::after{content:"\2726  \2726  \2726";position:absolute;inset:0;display:grid;place-items:center;color:var(--gold);font-size:1.6rem;letter-spacing:.6em}
+.story-art .cap{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:var(--gold-deep);font-size:.82rem;font-weight:600;letter-spacing:.08em}
+
+/* steps timeline */
+.timeline{max-width:760px;margin:48px auto 0;position:relative;padding-left:8px}
+.timeline::before{content:"";position:absolute;left:31px;top:10px;bottom:10px;width:2px;background:linear-gradient(180deg,var(--gold),var(--green))}
+.tstep{position:relative;padding:0 0 38px 76px}
+.tstep:last-child{padding-bottom:0}
+.tstep .num{position:absolute;left:0;top:0;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;
+  font-family:"Cormorant Garamond",serif;font-size:1.6rem;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--gold),var(--gold-deep));
+  border:3px solid var(--bg);box-shadow:var(--shadow-sm)}
+.tstep h3{font-size:1.2rem}
+.tstep p{color:var(--muted);margin:0}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
+.gpanel{border-radius:var(--r);min-height:210px;position:relative;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
+.gpanel .art{position:absolute;inset:0;display:grid;place-items:center;font-size:3rem}
+.gpanel .label{position:absolute;left:14px;bottom:12px;background:rgba(20,52,42,.8);color:#f7f3ea;
+  font-size:.78rem;font-weight:600;letter-spacing:.04em;padding:7px 14px;border-radius:999px}
+.g1{background:linear-gradient(150deg,#efe3c8,#d9c69a)}
+.g2{background:linear-gradient(150deg,#dce8df,#b9cfc0)}
+.g3{background:linear-gradient(150deg,#f2e4c4,#c9a44a)}
+.g4{background:linear-gradient(150deg,#e7ddc9,#c2b28c)}
+
+/* testimonials */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.testi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:34px 30px;box-shadow:var(--shadow-sm);position:relative}
+.testi::before{content:"\201C";position:absolute;top:10px;right:22px;font-family:"Cormorant Garamond",serif;font-size:4rem;color:var(--gold-soft);line-height:1}
+.testi .sample-tag{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold-deep);border:1px solid var(--gold);border-radius:6px;padding:5px 12px;margin-bottom:14px}
+.testi blockquote{margin:0 0 14px;font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-style:italic;color:var(--ink)}
+.testi cite{font-style:normal;font-weight:600;color:var(--muted);font-size:.88rem;letter-spacing:.05em}
+
+/* faq */
+.faq{max-width:800px;margin:44px auto 0}
+.faq-item{background:var(--surface);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.faq-q{width:100%;background:none;border:0;color:var(--ink);font:inherit;font-weight:600;font-size:1.04rem;text-align:left;
+  padding:22px 24px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:64px;font-family:"Jost",sans-serif}
+.faq-q .plus{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--gold);color:var(--gold-deep);font-size:1.25rem;transition:transform .2s,background .2s}
+.faq-item.open .faq-q .plus{transform:rotate(45deg);background:var(--gold);color:#fff}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-a p{padding:0 24px 22px;margin:0;color:var(--muted)}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:48px}
+.contact-card{background:var(--green);color:#f3ead2;border-radius:24px;padding:42px 38px;box-shadow:var(--shadow)}
+.contact-card h3{color:#fff;font-family:"Cormorant Garamond",serif;font-size:1.6rem}
+.contact-card .muted{color:#c9d6cc}
+.phone-big{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:600;color:#f2d98c;text-decoration:none;letter-spacing:.02em}
+.phone-big:hover{text-decoration:underline}
+.hours{width:100%;border-collapse:collapse;margin-top:10px}
+.hours td{padding:10px 4px;border-bottom:1px solid rgba(243,234,210,.18);font-size:.95rem}
+.hours td:last-child{text-align:right;color:#c9d6cc}
+.contact-card.form-card{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.contact-card.form-card h3{color:var(--ink)}
+form.demo label{display:block;font-weight:600;font-size:.9rem;margin:16px 0 6px;letter-spacing:.03em}
+form.demo input,form.demo textarea{width:100%;background:#fff;border:1.5px solid var(--line);border-radius:10px;
+  color:var(--ink);font:inherit;padding:13px 15px;min-height:52px}
+form.demo textarea{min-height:120px;resize:vertical}
+form.demo input:focus,form.demo textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.demo-note{display:none;background:#fbf4dd;border:1.5px dashed var(--gold);border-radius:10px;
+  padding:14px 16px;margin-top:18px;font-size:.92rem;color:var(--gold-deep)}
+.area-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.area{background:rgba(185,138,46,.12);border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-weight:500;font-size:.92rem;color:var(--muted)}
+.cta-band{margin-top:28px;background:linear-gradient(135deg,#14342a,#0d241c);border-radius:24px;padding:52px 44px;
+  display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;box-shadow:var(--shadow);border:1px solid var(--gold)}
+.cta-band h2{color:#fff;margin:0 0 10px}
+.cta-band p{color:#c9d6cc;margin:0;max-width:34rem}
+
+footer.site{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:.88rem}
+footer.site .container{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+
+@media (max-width:900px){
+  .story-grid,.contact-grid{grid-template-columns:1fr}
+  .svc-grid,.testi-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+  .badges-row{grid-template-columns:1fr 1fr}
+  .nav-links{position:fixed;inset:80px 0 auto 0;background:var(--bg);border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:stretch;padding:14px 22px 22px;gap:4px;display:none;z-index:55}
+  body.menu-open .nav-links{display:flex}
+  .menu-btn{display:inline-block}
+  .section{padding:64px 0}
+  .hc1,.hc2{position:static;max-width:none;margin:10px 0}
+}
+@media (max-width:560px){
+  .gallery{grid-template-columns:1fr}
+  .badges-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-strip">
+  <strong>Demo Website Concept:</strong> free sample mockup made for <strong>GatherRound Catering</strong>. Content is illustrative, not a real business.
+</div>
+
+<header class="site">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top" aria-label="GatherRound Catering home">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3c2.2 3.2 2.2 6.4 0 9.6-2.2-3.2-2.2-6.4 0-9.6z" fill="#14342a"/><path d="M5 14c3.5.4 6.2 2.4 7 6-3.4-.4-6.2-2.6-7-6zM19 14c-3.5.4-6.2 2.4-7 6 3.4-.4 6.2-2.6 7-6z" fill="#14342a"/></svg>
+      </span>
+      <span class="brand-text"><b>GatherRound</b><small>Catering</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#story">Our Story</a>
+      <a href="#process">Planning</a>
+      <a href="#reviews">Kind Words</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-primary" href="tel:+15551648529" style="padding:12px 22px;min-height:44px">&#9742; (555) 164-8529</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="container-narrow hero-inner">
+    <span class="kicker">Event Catering, Las Vegas NV Metro</span>
+    <h1>Unforgettable events begin <em>around the table.</em></h1>
+    <p class="lead">GatherRound Catering designs menus, service, and presentation for weddings, corporate gatherings, and private celebrations across the Las Vegas metro. You enjoy the evening; we handle every detail.</p>
+    <div class="hero-cta">
+      <a class="btn btn-primary" href="tel:+15551648529">&#9742; Call (555) 164-8529</a>
+      <a class="btn btn-outline" href="#services">See services</a>
+    </div>
+    <div class="hero-badges">
+      <span class="pill"><i>&#10003;</i> Free estimates</span>
+      <span class="pill"><i>&#10003;</i> Same-day consultations</span>
+      <span class="pill"><i>&#10003;</i> Locally owned</span>
+    </div>
+    <div class="rule" aria-hidden="true"><span>&#10022;</span></div>
+  </div>
+  <div class="container">
+    <div class="hero-art" aria-hidden="true">
+      <div class="arch"></div>
+      <div class="table"></div>
+      <div class="cloche"></div>
+      <div class="hero-card hc1"><h4>Tastings available</h4><p>Sample the menu before you commit, for weddings and large events.</p></div>
+      <div class="hero-card hc2"><h4>Full-service team</h4><p>Setup, service staff, and breakdown, all handled in house.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="container-narrow">
+      <span class="kicker">What we do</span>
+      <h2>Catering for every kind of gathering.</h2>
+      <p class="lead">Service descriptions are illustrative. Menus are built around your event, your guests, and your budget.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc"><div class="icon">&#128141;</div><h3>Wedding Catering</h3><p>Plated dinners, buffets, and stations designed with you, from cocktail hour to the last dance.</p></div>
+      <div class="svc"><div class="icon">&#128188;</div><h3>Corporate Events</h3><p>Conferences, holiday parties, and client dinners with polished, on-time service.</p></div>
+      <div class="svc"><div class="icon">&#127881;</div><h3>Private Parties</h3><p>Milestone birthdays, anniversaries, and backyard celebrations, scaled to your guest list.</p></div>
+      <div class="svc"><div class="icon">&#129346;</div><h3>Passed Hors d'oeuvres</h3><p>Cocktail receptions with roaming trays and elegant bites that keep conversation flowing.</p></div>
+      <div class="svc"><div class="icon">&#127874;</div><h3>Dessert and Late-Night Stations</h3><p>Mini desserts, coffee service, and late-night bites that end the evening on a high note.</p></div>
+      <div class="svc"><div class="icon">&#127859;</div><h3>Drop-Off and Staffed Service</h3><p>Choose simple drop-off platters or a fully staffed team with rentals and bar coordination.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="story">
+  <div class="container">
+    <div class="container-narrow">
+      <span class="kicker">Our story</span>
+      <h2>Hospitality, the old-fashioned way.</h2>
+    </div>
+    <div class="story-grid">
+      <div class="story-art" aria-hidden="true"><div class="plate"></div><span class="cap">ILLUSTRATIVE ART, NOT A PHOTO</span></div>
+      <div>
+        <p>GatherRound was built on a belief that a catered event should feel effortless for the host. We plan the menu around your guests, show up early, and stay until the last plate is cleared.</p>
+        <p>Our team cooks from scratch, sources thoughtfully, and treats a 20-person dinner party with the same care as a 300-guest wedding. The details are the difference, and details are our business.</p>
+        <p style="color:var(--muted)">Copy is illustrative. No founding dates, addresses, or credentials are claimed here.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="container">
+    <div class="container-narrow">
+      <span class="kicker">How it works</span>
+      <h2>Planning, step by step.</h2>
+      <p class="lead">A calm, organized process from first call to final toast.</p>
+    </div>
+    <div class="timeline">
+      <div class="tstep"><span class="num">1</span><h3>Consultation</h3><p>We talk through your date, venue, guest count, and the feeling you want the event to have.</p></div>
+      <div class="tstep"><span class="num">2</span><h3>Menu design and tasting</h3><p>A custom proposal with menu options, followed by a tasting for weddings and large events.</p></div>
+      <div class="tstep"><span class="num">3</span><h3>Coordination</h3><p>We align with your venue, planner, and vendors on timing, rentals, and service style.</p></div>
+      <div class="tstep"><span class="num">4</span><h3>Event day</h3><p>Our team arrives early, serves beautifully, and leaves the space spotless.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="gallery">
+  <div class="container">
+    <div class="container-narrow">
+      <span class="kicker">Recent events</span>
+      <h2>Scenes from the season.</h2>
+      <p class="lead">Illustrative art panels stand in for photos in this demo mockup.</p>
+    </div>
+    <div class="gallery">
+      <div class="gpanel g1"><span class="art" aria-hidden="true">&#127874;</span><span class="label">Wedding reception</span></div>
+      <div class="gpanel g2"><span class="art" aria-hidden="true">&#129346;</span><span class="label">Cocktail hour</span></div>
+      <div class="gpanel g3"><span class="art" aria-hidden="true">&#127881;</span><span class="label">Gala dinner</span></div>
+      <div class="gpanel g4"><span class="art" aria-hidden="true">&#127859;</span><span class="label">Chef's station</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <div class="container">
+    <div class="container-narrow">
+      <span class="kicker">Kind words</span>
+      <h2>Notes from our hosts.</h2>
+      <p class="lead">These are sample testimonials written for this demo, not real client reviews.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi"><span class="sample-tag">Sample testimonial</span><blockquote>"Every course arrived on time and looked beautiful. Our guests are still talking about the dinner."</blockquote><cite>SAMPLE CLIENT, LAS VEGAS</cite></div>
+      <div class="testi"><span class="sample-tag">Sample testimonial</span><blockquote>"They handled our 200-person holiday party like it was effortless. Flawless from setup to cleanup."</blockquote><cite>SAMPLE CLIENT, HENDERSON</cite></div>
+      <div class="testi"><span class="sample-tag">Sample testimonial</span><blockquote>"The tasting sold us immediately. On the wedding day we never worried about a thing."</blockquote><cite>SAMPLE CLIENT, SUMMERLIN</cite></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <div class="container-narrow">
+      <span class="kicker">Good to know</span>
+      <h2>Frequently asked questions.</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How far in advance should we book?<span class="plus">+</span></button><div class="faq-a"><p>Weddings typically book three to six months out; corporate and private events often need less lead time. Call and we will confirm availability for your date.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Do you accommodate dietary restrictions?<span class="plus">+</span></button><div class="faq-a"><p>Yes. Vegetarian, vegan, gluten-free, and allergy-conscious menus are built into the planning process, not added as an afterthought.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Can we do a tasting before committing?<span class="plus">+</span></button><div class="faq-a"><p>Tastings are available for weddings and large events once a proposal is in place. Ask during your consultation.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Do you provide staff and rentals?<span class="plus">+</span></button><div class="faq-a"><p>We can provide servers, bartenders, and event staff, and coordinate rentals like tables, linens, and glassware through trusted partners.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">What is your minimum guest count?<span class="plus">+</span></button><div class="faq-a"><p>Minimums vary by service style and season. Drop-off service works for smaller groups; staffed events scale up from there.</p></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Do you travel outside Las Vegas?<span class="plus">+</span></button><div class="faq-a"><p>We serve the greater Las Vegas metro and can discuss travel for special venues nearby. Travel fees depend on distance and setup needs.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="container-narrow">
+      <span class="kicker">Get in touch</span>
+      <h2>Let's plan something wonderful.</h2>
+      <p class="lead">Call for a free estimate, or send your event details and we will respond shortly.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Call or text</h3>
+        <p><a class="phone-big" href="tel:+15551648529">(555) 164-8529</a></p>
+        <table class="hours" aria-label="Consultation hours">
+          <tr><td>Monday to Friday</td><td>9:00 AM, 6:00 PM</td></tr>
+          <tr><td>Saturday</td><td>10:00 AM, 4:00 PM</td></tr>
+          <tr><td>Sunday</td><td>By appointment</td></tr>
+        </table>
+        <h3 style="margin-top:28px;font-size:1.25rem">Areas we serve</h3>
+        <div class="area-list">
+          <span class="area" style="border-color:rgba(243,234,210,.25);color:#c9d6cc">Las Vegas</span><span class="area" style="border-color:rgba(243,234,210,.25);color:#c9d6cc">Henderson</span><span class="area" style="border-color:rgba(243,234,210,.25);color:#c9d6cc">Summerlin</span><span class="area" style="border-color:rgba(243,234,210,.25);color:#c9d6cc">North Las Vegas</span><span class="area" style="border-color:rgba(243,234,210,.25);color:#c9d6cc">Paradise</span><span class="area" style="border-color:rgba(243,234,210,.25);color:#c9d6cc">Enterprise</span><span class="area" style="border-color:rgba(243,234,210,.25);color:#c9d6cc">Spring Valley</span><span class="area" style="border-color:rgba(243,234,210,.25);color:#c9d6cc">Boulder City</span>
+        </div>
+      </div>
+      <div class="contact-card form-card">
+        <h3>Request a proposal</h3>
+        <form class="demo" id="demoForm">
+          <label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" required>
+          <label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" required>
+          <label for="f-msg">Event details</label><textarea id="f-msg" name="message" placeholder="Date, guest count, venue, occasion..."></textarea>
+          <button class="btn btn-gold" type="submit" style="margin-top:20px;width:100%">Send request</button>
+        </form>
+        <p class="demo-note" id="demoNote">Demo form only: this message was not sent anywhere. Call <a href="tel:+15551648529">(555) 164-8529</a> to reach the business.</p>
+      </div>
+    </div>
+    <div class="cta-band">
+      <div><h2>Your date is waiting.</h2><p>Popular weekends book up early. Call today for a free, no-pressure estimate.</p></div>
+      <a class="btn btn-gold" href="tel:+15551648529">&#9742; (555) 164-8529</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <span><strong>GatherRound Catering</strong>, Las Vegas, NV metro.</span>
+    <span>Demo Website Concept. Content is illustrative. Not affiliated with any real business.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn');
+  btn.addEventListener('click',function(){
+    var open=document.body.classList.toggle('menu-open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(a){
+    a.addEventListener('click',function(){document.body.classList.remove('menu-open');btn.setAttribute('aria-expanded','false');});
+  });
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var q=item.querySelector('.faq-q'),a=item.querySelector('.faq-a');
+    q.addEventListener('click',function(){
+      var open=item.classList.toggle('open');
+      q.setAttribute('aria-expanded',open?'true':'false');
+      a.style.maxHeight=open?a.scrollHeight+'px':'0';
+    });
+  });
+  var form=document.getElementById('demoForm'),note=document.getElementById('demoNote');
+  form.addEventListener('submit',function(e){e.preventDefault();note.style.display='block';note.scrollIntoView({behavior:'smooth',block:'center'});});
+})();
+</script>
+</body>
+</html>

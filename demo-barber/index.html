@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d0b08">
+<meta name="description" content="SharpLine Barbershop, barber in Los Angeles CA. Haircuts, skin fades, beard sculpting, hot towel shaves. Call (555) 518-2746.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>SharpLine Barbershop, Los Angeles CA, Demo Website</title>
+<style>
+:root{
+  --bg:#0d0b08; --bg2:#14110b; --surface:#1a1610; --surface2:#221c12;
+  --ink:#f3ead8; --muted:#b9a98a; --faint:#8a7c62;
+  --gold:#c9a227; --gold-soft:#e8cf7a; --gold-deep:#8f6f14;
+  --line:#2c2517; --cream:#f6efdd;
+  --shadow:0 22px 55px rgba(0,0,0,.5); --shadow-sm:0 10px 26px rgba(0,0,0,.35);
+  --r-lg:20px; --r-md:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{margin:0;min-width:320px;background:var(--bg);color:var(--ink);
+  font-family:"Inter","Segoe UI",system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.7;text-rendering:optimizeLegibility}
+body.menu-open{overflow:hidden}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.15;margin:0 0 .55em;font-weight:700}
+h1{font-size:clamp(2.3rem,5.4vw,3.9rem);letter-spacing:-.01em}
+h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}
+h3{font-size:1.05rem;font-family:"Inter",sans-serif;font-weight:700;margin:0 0 .4em}
+p{margin:0 0 1em}
+a{color:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.section{padding:88px 0}
+.section-alt{background:var(--bg2)}
+.kicker{display:inline-block;font-weight:700;font-size:.76rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold-soft);border:1px solid var(--gold-deep);border-radius:999px;padding:8px 18px;margin-bottom:16px;
+  background:rgba(201,162,39,.08)}
+.lead{font-size:1.1rem;color:var(--muted);max-width:38rem}
+.gold-rule{width:72px;height:3px;background:linear-gradient(90deg,var(--gold),transparent);border:0;margin:0 0 18px}
+
+/* demo strip */
+.demo-strip{background:#c9a227;color:#141005;text-align:center;font-size:.82rem;font-weight:600;
+  padding:9px 20px;position:relative;z-index:60;letter-spacing:.01em}
+.demo-strip strong{font-weight:800}
+.demo-strip a{color:#141005;font-weight:800;text-decoration:underline}
+
+/* header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(13,11,8,.9);
+  border-bottom:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nav-wrap{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;font-size:1.04rem;
+  font-family:"Playfair Display",serif;letter-spacing:.01em}
+.brand-mark{width:42px;height:42px;border-radius:50%;flex:none;display:grid;place-items:center;
+  background:radial-gradient(circle at 32% 28%,#e8cf7a,#c9a227 60%,#8f6f14);box-shadow:var(--shadow-sm)}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;font-size:.94rem;color:var(--muted)}
+.nav-links a:hover{color:var(--gold-soft);background:rgba(201,162,39,.1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;cursor:pointer;
+  font-weight:700;text-decoration:none;border-radius:12px;padding:14px 28px;font-size:1rem;
+  transition:transform .15s ease,box-shadow .15s ease;box-shadow:var(--shadow-sm);min-height:48px}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:linear-gradient(135deg,#e8cf7a,#c9a227 60%,#a8851d);color:#141005}
+.btn-ghost{background:transparent;color:var(--cream);border:1.5px solid var(--line);box-shadow:none}
+.btn-ghost:hover{border-color:var(--gold)}
+.menu-btn{display:none;background:none;border:1.5px solid var(--line);border-radius:10px;padding:9px 14px;
+  cursor:pointer;color:var(--ink);font-weight:700;min-height:44px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:100px 0 90px;
+  background:
+    radial-gradient(900px 420px at 92% -8%,rgba(201,162,39,.14) 0%,transparent 60%),
+    radial-gradient(700px 400px at -10% 110%,rgba(201,162,39,.08) 0%,transparent 55%),var(--bg)}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+.hero p.lead{font-size:1.14rem;max-width:35rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.pill{background:rgba(201,162,39,.08);border:1px solid var(--gold-deep);border-radius:999px;padding:8px 17px;
+  font-size:.87rem;font-weight:600;color:var(--gold-soft);display:inline-flex;align-items:center;gap:8px}
+.hero-art{position:relative;min-height:420px}
+.pole{position:absolute;left:50%;top:4%;bottom:8%;width:92px;transform:translateX(-50%);border-radius:46px;
+  background:repeating-linear-gradient(-38deg,#e8cf7a 0 22px,#14110b 22px 44px,#f6efdd 44px 66px,#14110b 66px 88px);
+  box-shadow:var(--shadow), inset 0 0 0 6px #2c2517, inset 12px 0 22px rgba(0,0,0,.45)}
+.pole-cap{position:absolute;left:50%;transform:translateX(-50%);width:120px;height:26px;border-radius:13px;
+  background:linear-gradient(180deg,#e8cf7a,#8f6f14);box-shadow:var(--shadow-sm)}
+.pole-cap.top{top:0}.pole-cap.bottom{bottom:4%}
+.ring{position:absolute;border:2px solid rgba(201,162,39,.35);border-radius:50%}
+.ring-a{width:280px;height:280px;left:8%;top:12%}
+.ring-b{width:170px;height:170px;right:6%;bottom:10%}
+.hero-card{position:absolute;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--gold);
+  border-radius:16px;box-shadow:var(--shadow);padding:18px 20px;max-width:250px}
+.hero-card h4{margin:0 0 6px;font-size:.95rem;font-weight:800;color:var(--gold-soft)}
+.hero-card p{margin:0;font-size:.85rem;color:var(--muted)}
+.hc1{top:6%;left:0;animation:float 7s ease-in-out infinite}
+.hc2{bottom:8%;right:0;animation:float 8.5s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* trust row */
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.trust{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:24px 22px;
+  display:flex;gap:14px;align-items:flex-start}
+.trust .ticon{width:46px;height:46px;border-radius:50%;flex:none;display:grid;place-items:center;font-size:1.3rem;
+  background:rgba(201,162,39,.12);border:1px solid var(--gold-deep)}
+.trust h3{margin:0 0 4px}
+.trust p{margin:0;font-size:.9rem;color:var(--muted)}
+
+/* cards */
+.grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:32px 28px;
+  box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),transparent);opacity:0;transition:opacity .2s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--gold-deep)}
+.card:hover::before{opacity:1}
+.card .icon{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;font-size:1.5rem;
+  background:rgba(201,162,39,.12);border:1px solid var(--gold-deep);margin-bottom:18px}
+.card p{color:var(--muted);font-size:.95rem;margin:0}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:20px}
+.about-copy p{color:var(--muted)}
+.about-art{position:relative;min-height:380px;border-radius:var(--r-lg);overflow:hidden;
+  background:linear-gradient(150deg,#1d1810,#0d0b08 70%);border:1px solid var(--line);box-shadow:var(--shadow)}
+.about-art .crest{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:40px}
+.about-art .crest h3{font-family:"Playfair Display",serif;font-size:2.2rem;color:var(--gold-soft);margin:0 0 10px}
+.about-art .crest p{color:var(--muted);font-size:.95rem;max-width:22rem;margin:0}
+.corner{position:absolute;width:56px;height:56px;border:2px solid var(--gold-deep)}
+.corner.tl{top:16px;left:16px;border-right:0;border-bottom:0}
+.corner.tr{top:16px;right:16px;border-left:0;border-bottom:0}
+.corner.bl{bottom:16px;left:16px;border-right:0;border-top:0}
+.corner.br{bottom:16px;right:16px;border-left:0;border-top:0}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px;counter-reset:step}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:34px 30px;position:relative}
+.step .num{font-family:"Playfair Display",serif;font-size:3rem;color:var(--gold);line-height:1;margin-bottom:12px}
+.step p{color:var(--muted);font-size:.95rem;margin:0}
+.step h3{color:var(--gold-soft)}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:44px}
+.gpanel{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);background:var(--surface);
+  box-shadow:var(--shadow-sm);transition:transform .18s ease}
+.gpanel:hover{transform:translateY(-4px)}
+.gart{height:190px;position:relative;overflow:hidden}
+.gcap{padding:16px 18px}
+.gcap h3{margin:0 0 4px;font-size:.98rem}
+.gcap p{margin:0;font-size:.85rem;color:var(--muted)}
+.g1{background:repeating-linear-gradient(-38deg,#c9a227 0 20px,#14110b 20px 40px)}
+.g2{background:radial-gradient(circle at 30% 30%,#e8cf7a,#8f6f14 75%)}
+.g3{background:linear-gradient(150deg,#221c12,#0d0b08);display:grid;place-items:center;color:var(--gold-soft);font-size:3rem}
+.g4{background:conic-gradient(from 40deg,#c9a227,#14110b,#e8cf7a,#14110b,#c9a227)}
+
+/* testimonials */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.testi{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:30px 28px;
+  position:relative;box-shadow:var(--shadow-sm)}
+.testi .qmark{font-family:"Playfair Display",serif;font-size:3rem;color:var(--gold-deep);line-height:1}
+.testi blockquote{margin:10px 0 16px;color:var(--cream);font-size:1rem;font-style:italic}
+.testi .who{font-weight:700;font-size:.92rem;color:var(--gold-soft)}
+.sample-tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  background:rgba(201,162,39,.14);border:1px dashed var(--gold-deep);color:var(--gold-soft);
+  border-radius:6px;padding:5px 10px;margin-bottom:10px}
+
+/* faq */
+.faq{max-width:800px;margin:36px auto 0}
+.faq-item{border:1px solid var(--line);border-radius:var(--r-md);margin-bottom:12px;background:var(--surface);overflow:hidden}
+.faq-q{width:100%;background:none;border:0;color:var(--ink);font:inherit;font-weight:700;font-size:1rem;
+  text-align:left;padding:20px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:60px}
+.faq-q .plus{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--gold-deep);color:var(--gold-soft);
+  display:grid;place-items:center;font-size:1.1rem;transition:transform .2s}
+.faq-item.open .faq-q .plus{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);font-size:.96rem}
+.faq-a div{padding:0 22px 22px}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px}
+.contact-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);
+  padding:40px 38px;box-shadow:var(--shadow)}
+.phone-big{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:800;color:var(--gold-soft);text-decoration:none;
+  font-family:"Playfair Display",serif}
+.phone-big:hover{text-decoration:underline}
+.hours{width:100%;border-collapse:collapse;margin-top:10px}
+.hours td{padding:10px 4px;border-bottom:1px solid var(--line);font-size:.95rem}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:7px;color:var(--cream)}
+.field input,.field textarea{width:100%;background:var(--bg2);border:1px solid var(--line);border-radius:10px;
+  color:var(--ink);font:inherit;padding:13px 15px;min-height:48px}
+.field input:focus,.field textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.field textarea{min-height:120px;resize:vertical}
+.form-note{display:none;margin-top:16px;background:rgba(201,162,39,.1);border:1px solid var(--gold-deep);
+  border-radius:10px;padding:14px 16px;color:var(--gold-soft);font-size:.92rem}
+.area-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.area{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:9px 18px;
+  font-weight:600;font-size:.9rem;color:var(--muted)}
+.cta-banner{background:linear-gradient(135deg,#221c12,#14110b);border:1px solid var(--gold-deep);
+  border-radius:var(--r-lg);padding:48px 44px;box-shadow:var(--shadow);margin-top:28px;
+  display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.cta-banner h2{margin:0 0 8px}
+.cta-banner p{color:var(--muted);margin:0;max-width:34rem}
+
+footer.site{border-top:1px solid var(--line);padding:36px 0;color:var(--faint);font-size:.88rem}
+footer.site .container{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-art{min-height:330px}
+  .grid-cards,.steps,.trust-row,.testi-grid,.contact-grid,.about-grid{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .nav-links{position:fixed;inset:78px 0 auto 0;background:var(--bg);border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:stretch;padding:14px 20px 20px;gap:6px;display:none}
+  body.menu-open .nav-links{display:flex}
+  .nav-links a{padding:13px 14px}
+  .menu-btn{display:inline-block}
+  .section{padding:60px 0}
+  .nav-wrap .btn-gold.nav-cta{padding:12px 20px}
+}
+@media (max-width:520px){
+  .gallery{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-strip">
+  Demo Website Concept: free sample mockup made for <strong>SharpLine Barbershop</strong>. Content is illustrative, not a real business.
+</div>
+
+<header class="site">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#141005" stroke-width="1.9" stroke-linecap="round">
+          <circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/>
+          <path d="M8.2 7.4 20 19M8.2 16.6 20 5"/>
+        </svg>
+      </span>
+      SharpLine Barbershop
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a class="btn btn-gold nav-cta" href="tel:+15555182746" style="padding:11px 20px">&#9742; (555) 518-2746</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker">Barbershop, Los Angeles CA</span>
+      <h1>Classic cuts. Sharp lines. Zero guesswork.</h1>
+      <p class="lead">SharpLine Barbershop serves Los Angeles with precision haircuts, clean fades, and old-school hot towel shaves. Walk in or book ahead, either way you leave looking sharp.</p>
+      <div class="hero-cta">
+        <a class="btn btn-gold" href="tel:+15555182746">&#9742; Call (555) 518-2746</a>
+        <a class="btn btn-ghost" href="#services">See services</a>
+      </div>
+      <div class="hero-badges">
+        <span class="pill">&#10003; Licensed barbers</span>
+        <span class="pill">&#10003; Walk-ins welcome</span>
+        <span class="pill">&#10003; Same-day appointments</span>
+        <span class="pill">&#10003; Free consultations</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="ring ring-a"></div>
+      <div class="ring ring-b"></div>
+      <div class="pole"></div>
+      <div class="pole-cap top"></div>
+      <div class="pole-cap bottom"></div>
+      <div class="hero-card hc1"><h4>Walk-ins welcome</h4><p>No appointment? Take a seat. Chairs turn over fast most days.</p></div>
+      <div class="hero-card hc2"><h4>Clean tools, every chair</h4><p>Fresh blades, sanitized clippers, and a tidy station for every cut.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="trust">
+  <div class="container">
+    <span class="kicker">Why SharpLine</span>
+    <h2>The chair regulars keep coming back to.</h2>
+    <div class="trust-row">
+      <div class="trust"><div class="ticon">&#10003;</div><div><h3>Licensed barbers</h3><p>Trained, licensed professionals behind every chair.</p></div></div>
+      <div class="trust"><div class="ticon">&#9201;</div><div><h3>On-time chairs</h3><p>Appointments start when they are scheduled to start.</p></div></div>
+      <div class="trust"><div class="ticon">&#128136;</div><div><h3>Sanitized tools</h3><p>Fresh blades and disinfected clippers for every client.</p></div></div>
+      <div class="trust"><div class="ticon">&#128178;</div><div><h3>Honest pricing</h3><p>You know the price before the cape goes on.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="services">
+  <div class="container">
+    <span class="kicker">What we do</span>
+    <h2>Cuts, fades, and shaves, done right.</h2>
+    <p class="lead">Our most-booked services. Call for current pricing and availability.</p>
+    <div class="grid-cards">
+      <div class="card"><div class="icon">&#9986;</div><h3>Signature Haircut</h3><p>Consultation, precision cut, hot lather neckline, and style finish. The full classic experience.</p></div>
+      <div class="card"><div class="icon">&#128135;</div><h3>Skin Fade</h3><p>Seamless fades from bald to blended, cleaned up with crisp line work.</p></div>
+      <div class="card"><div class="icon">&#129492;</div><h3>Beard Sculpt and Trim</h3><p>Shape, line-up, and conditioning so the beard matches the cut.</p></div>
+      <div class="card"><div class="icon">&#129468;&#8205;&#129469;&#8205;&#129467;</div><h3>Hot Towel Shave</h3><p>Traditional straight-razor shave with hot towels and a cooling finish.</p></div>
+      <div class="card"><div class="icon">&#129489;</div><h3>Kids Cuts</h3><p>Patient, friendly cuts for young clients, with a style that is easy to manage at home.</p></div>
+      <div class="card"><div class="icon">&#127775;</div><h3>Gray Blending</h3><p>Subtle camouflage color that softens gray without looking dyed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <span class="kicker">Our story</span>
+    <h2>An old-school shop with a modern edge.</h2>
+    <hr class="gold-rule">
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>SharpLine Barbershop is a neighborhood barbershop in Los Angeles built around one idea: a great haircut should never be a gamble. Our barbers take the time to understand what you want, then cut with the precision that only comes from years behind the chair.</p>
+        <p>We keep the classics alive, hot towel shaves, straight-razor line-ups, and honest conversation, while staying current on modern styles, fades, and texture work. Every station is sanitized between clients, every tool is fresh, and every price is quoted up front.</p>
+        <p>Whether you are a regular who likes it the same every time or trying a new look, you will get the same care: a real consultation, a careful cut, and a finish you can recreate at home.</p>
+      </div>
+      <div class="about-art" aria-hidden="true">
+        <div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+        <div class="crest">
+          <h3>SharpLine</h3>
+          <p>Precision cuts, classic shaves, and a shop that treats you like a regular from visit one.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="process">
+  <div class="container">
+    <span class="kicker">How it works</span>
+    <h2>In the chair in three easy steps.</h2>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><h3>Book or walk in</h3><p>Call ahead to reserve a chair, or just walk in. Same-day spots open up regularly.</p></div>
+      <div class="step"><div class="num">02</div><h3>Consult and cut</h3><p>Your barber talks through the look, then gets to work with clean, precise technique.</p></div>
+      <div class="step"><div class="num">03</div><h3>Finish and style</h3><p>Hot lather neckline, styling, and tips so the cut looks just as good tomorrow.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gallery">
+  <div class="container">
+    <span class="kicker">The shop</span>
+    <h2>A look inside SharpLine.</h2>
+    <p class="lead">Illustrative artwork panels, not photographs of the shop.</p>
+    <div class="gallery">
+      <div class="gpanel"><div class="gart g1"></div><div class="gcap"><h3>The Pole</h3><p>The classic sign of a real barbershop.</p></div></div>
+      <div class="gpanel"><div class="gart g2"></div><div class="gcap"><h3>Gold Standard</h3><p>Premium products, honest recommendations.</p></div></div>
+      <div class="gpanel"><div class="gart g3">&#9986;</div><div class="gcap"><h3>Fresh Blades</h3><p>A new blade for every straight-razor service.</p></div></div>
+      <div class="gpanel"><div class="gart g4"></div><div class="gcap"><h3>The Finish</h3><p>Hot towel, cool down, walk out sharp.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="reviews">
+  <div class="container">
+    <span class="kicker">Reviews</span>
+    <h2>What clients say.</h2>
+    <p class="lead">Sample testimonials shown for illustration only.</p>
+    <div class="testi-grid">
+      <div class="testi">
+        <span class="sample-tag">Sample testimonial</span>
+        <div class="qmark">&ldquo;</div>
+        <blockquote>Best fade I have had in Los Angeles. The barber actually listened to what I asked for and the line-up was razor sharp.</blockquote>
+        <div class="who">Sample Client, Los Angeles</div>
+      </div>
+      <div class="testi">
+        <span class="sample-tag">Sample testimonial</span>
+        <div class="qmark">&ldquo;</div>
+        <blockquote>Walked in on a Saturday and was in the chair within twenty minutes. The hot towel shave alone is worth the visit.</blockquote>
+        <div class="who">Sample Client, Burbank</div>
+      </div>
+      <div class="testi">
+        <span class="sample-tag">Sample testimonial</span>
+        <div class="qmark">&ldquo;</div>
+        <blockquote>They take their time with my son and he actually enjoys getting his hair cut now. Clean shop, fair prices, great people.</blockquote>
+        <div class="who">Sample Client, Glendale</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <span class="kicker">FAQ</span>
+    <h2>Common questions.</h2>
+    <div class="faq">
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Do I need an appointment, or can I walk in?<span class="plus">+</span></button><div class="faq-a"><div>Both work. Appointments guarantee your time slot, and walk-ins are welcome whenever a chair is open. Saturdays fill up fast, so calling ahead is smart.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How long does a typical haircut take?<span class="plus">+</span></button><div class="faq-a"><div>Most cuts take 30 to 45 minutes including consultation and styling. Skin fades and beard work can add a little extra time.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">What is the difference between a fade and a skin fade?<span class="plus">+</span></button><div class="faq-a"><div>A skin fade blends all the way down to the skin at the bottom, while a regular fade leaves a short length. Not sure which suits you? Your barber will recommend one during the consultation.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">Do you cut kids hair?<span class="plus">+</span></button><div class="faq-a"><div>Yes, we cut kids hair and keep it patient and low-pressure. First-timers are welcome, just let us know it is their first visit when you book.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">How do I know the price before I sit down?<span class="plus">+</span></button><div class="faq-a"><div>Every service is quoted up front before the cape goes on. If you want extras like a beard trim added, we confirm the total first.</div></div></div>
+      <div class="faq-item"><button class="faq-q" aria-expanded="false">What payment methods do you accept?<span class="plus">+</span></button><div class="faq-a"><div>We accept all major credit and debit cards as well as cash. Tips can be added by card or left in cash.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <span class="kicker">Get in touch</span>
+    <h2>Book your chair.</h2>
+    <p class="lead">Call to book, or send a message and we will get back to you. Demo form below does not send real messages.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Call or text</h3>
+        <p><a class="phone-big" href="tel:+15555182746">(555) 518-2746</a></p>
+        <p style="color:var(--muted)">Serving the Los Angeles metro area.</p>
+        <table class="hours">
+          <tr><td>Monday to Friday</td><td>9:00 AM - 8:00 PM</td></tr>
+          <tr><td>Saturday</td><td>8:00 AM - 6:00 PM</td></tr>
+          <tr><td>Sunday</td><td>10:00 AM - 4:00 PM</td></tr>
+        </table>
+        <div class="area-list">
+          <span class="area">Hollywood</span><span class="area">Burbank</span><span class="area">Glendale</span>
+          <span class="area">Pasadena</span><span class="area">Culver City</span><span class="area">Santa Monica</span>
+          <span class="area">Long Beach</span><span class="area">Downtown LA</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>Request an appointment</h3>
+        <form id="demoForm" novalidate>
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 000-0000"></div>
+          <div class="field"><label for="f-msg">Message</label><textarea id="f-msg" name="message" placeholder="Service you want and a good time to reach you"></textarea></div>
+          <button class="btn btn-gold" type="submit" style="width:100%">Send request</button>
+          <div class="form-note" id="formNote">This is a demo website. Your message was not sent anywhere.</div>
+        </form>
+      </div>
+    </div>
+    <div class="cta-banner">
+      <div>
+        <h2>Need a cut today?</h2>
+        <p>Same-day appointments open up all the time. Call now and we will get you in the next open chair.</p>
+      </div>
+      <a class="btn btn-gold" href="tel:+15555182746">&#9742; (555) 518-2746</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <span>SharpLine Barbershop. Demo Website Concept. Content is illustrative. Not affiliated with any real business.</span>
+    <span>Los Angeles, CA metro</span>
+  </div>
+</footer>
+
+<script>
+var menuBtn = document.getElementById('menuBtn');
+menuBtn.addEventListener('click', function () {
+  var open = document.body.classList.toggle('menu-open');
+  menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  menuBtn.textContent = open ? 'Close' : 'Menu';
+});
+document.querySelectorAll('.nav-links a').forEach(function (a) {
+  a.addEventListener('click', function () {
+    document.body.classList.remove('menu-open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.textContent = 'Menu';
+  });
+});
+document.querySelectorAll('.faq-item').forEach(function (item) {
+  var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+  q.addEventListener('click', function () {
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function (o) {
+      o.classList.remove('open');
+      o.querySelector('.faq-a').style.maxHeight = null;
+      o.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+    });
+    if (!isOpen) {
+      item.classList.add('open');
+      a.style.maxHeight = a.scrollHeight + 'px';
+      q.setAttribute('aria-expanded', 'true');
+    }
+  });
+});
+document.getElementById('demoForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  document.getElementById('formNote').style.display = 'block';
+});
+</script>
+</body>
+</html>

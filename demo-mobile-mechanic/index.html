@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#15384f">
+<meta name="description" content="WrenchWay Mobile Auto Repair, mobile mechanic in Houston, TX. We come to you for brakes, batteries, diagnostics, oil changes. Call (555) 193-5847.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>WrenchWay Mobile Auto Repair, Houston TX Mechanic, Demo Website</title>
+<style>
+:root{
+  --steel:#1d4e6b; --steel-dark:#12344a; --steel-deep:#0c2536;
+  --orange:#f96d00; --orange-dark:#d65a00; --orange-soft:#fff1e3;
+  --bg:#f5f7f9; --surface:#ffffff; --surface2:#e8eef3;
+  --ink:#17272f; --muted:#546a78; --line:#d3dee6;
+  --shadow:0 18px 46px rgba(18,52,74,.14); --shadow-sm:0 8px 22px rgba(18,52,74,.08);
+  --r-lg:22px; --r-md:16px; --r-sm:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:92px}
+body{margin:0;min-width:320px;background:var(--bg);color:var(--ink);
+  font-family:"Barlow","Segoe UI",system-ui,sans-serif;font-size:16px;line-height:1.65;
+  text-rendering:optimizeLegibility}
+body.menu-open{overflow:hidden}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;line-height:1.12;margin:0 0 .55em;
+  font-weight:800;letter-spacing:.01em;text-transform:uppercase}
+h1{font-size:clamp(2.4rem,6vw,4rem);letter-spacing:.005em}
+h2{font-size:clamp(1.9rem,4.2vw,2.9rem)}
+h3{font-size:1.28rem;letter-spacing:.03em}
+p{margin:0 0 1em}
+a{color:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.section{padding:84px 0}
+.section-alt{background:var(--surface2)}
+.kicker{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:.8rem;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--orange-dark);margin-bottom:12px}
+.kicker::before{content:"";width:34px;height:4px;background:repeating-linear-gradient(-55deg,var(--orange) 0 6px,transparent 6px 12px);border-radius:2px}
+.lead{font-size:1.12rem;color:var(--muted);max-width:40rem}
+.stripe{height:10px;background:repeating-linear-gradient(-55deg,var(--orange) 0 22px,var(--steel-deep) 22px 44px)}
+
+/* demo strip */
+.demo-strip{background:var(--steel-deep);color:#eef6fb;text-align:center;font-size:.82rem;font-weight:600;
+  padding:10px 20px;letter-spacing:.01em;position:relative;z-index:60}
+.demo-strip strong{color:#ffb066}
+.demo-strip a{color:#ffb066;font-weight:700;text-decoration:underline}
+
+/* header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(12,37,54,.97);
+  border-bottom:3px solid var(--orange);box-shadow:0 6px 24px rgba(12,37,54,.25)}
+.nav-wrap{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:18px;color:#fff}
+.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;
+  font-size:1.25rem;font-family:"Barlow Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase}
+.brand svg{flex:none}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-links a{padding:11px 14px;border-radius:9px;text-decoration:none;font-weight:600;font-size:.95rem;color:#cfe0ea}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;
+  font-weight:700;text-decoration:none;border-radius:12px;padding:15px 30px;font-size:1rem;
+  transition:transform .15s ease,box-shadow .15s ease;min-height:52px}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#fff;box-shadow:var(--shadow-sm)}
+.btn-steel{background:var(--steel);color:#fff}
+.btn-ghost{background:transparent;color:var(--ink);border:2px solid var(--line);box-shadow:none}
+.btn-white{background:#fff;color:var(--steel-dark)}
+.nav-cta{background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#fff;padding:12px 22px;border-radius:12px;
+  text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:9px;min-height:48px}
+.menu-btn{display:none;background:none;border:2px solid rgba(255,255,255,.35);color:#fff;border-radius:10px;
+  padding:10px 15px;cursor:pointer;font-weight:700;font-family:"Barlow",sans-serif;min-height:44px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--steel-deep) 0%,var(--steel-dark) 55%,#0a1f2e 100%);color:#fff}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;
+  background:repeating-linear-gradient(-55deg,var(--orange) 0 22px,var(--steel-deep) 22px 44px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;padding:88px 0 104px}
+.hero .lead{color:#b9cfdb}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.pill{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:999px;
+  padding:9px 17px;font-size:.87rem;font-weight:600;color:#dcebf4;display:inline-flex;align-items:center;gap:8px}
+.hero-art{position:relative;min-height:400px}
+.garage-bay{position:absolute;inset:6% 4% 10% 4%;background:linear-gradient(180deg,#1d4e6b,#12344a);
+  border-radius:26px;border:1px solid rgba(255,255,255,.14);box-shadow:var(--shadow);overflow:hidden}
+.garage-bay::before{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,transparent 0 70px,rgba(255,255,255,.04) 70px 74px)}
+.lift{position:absolute;left:12%;right:12%;bottom:16%;height:14px;border-radius:8px;background:var(--orange)}
+.lift::before,.lift::after{content:"";position:absolute;bottom:-86px;width:16px;height:86px;background:#2c5671;border-radius:6px}
+.lift::before{left:14%}.lift::after{right:14%}
+.car{position:absolute;left:16%;right:16%;bottom:calc(16% + 100px);height:76px}
+.car svg{width:100%;height:100%}
+.hero-card{position:absolute;background:#fff;color:var(--ink);border-radius:18px;box-shadow:var(--shadow);
+  padding:18px 20px;max-width:250px;border-top:5px solid var(--orange)}
+.hero-card h4{margin:0 0 6px;font-size:.98rem;font-weight:700}
+.hero-card p{margin:0;font-size:.86rem;color:var(--muted)}
+.hc1{top:2%;left:0;animation:float 7s ease-in-out infinite}
+.hc2{bottom:3%;right:0;animation:float 8.5s ease-in-out infinite reverse}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* trust row */
+.trust-row{background:#fff;border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.trust-item{display:flex;align-items:center;gap:14px;padding:24px 22px;border-left:1px solid var(--line)}
+.trust-item:first-child{border-left:0}
+.trust-item .ticon{width:48px;height:48px;flex:none;border-radius:14px;background:var(--orange-soft);
+  display:grid;place-items:center}
+.trust-item h3{margin:0 0 2px;font-size:1.05rem;letter-spacing:.04em}
+.trust-item p{margin:0;font-size:.87rem;color:var(--muted)}
+
+/* services */
+.grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:30px 28px;
+  box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--orange);
+  transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.card:hover::before{transform:scaleX(1)}
+.card .icon{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;
+  background:linear-gradient(135deg,var(--steel),var(--steel-dark));color:#fff}
+.card p{color:var(--muted);font-size:.96rem;margin:0}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center;margin-top:36px}
+.about-panel{background:var(--steel-deep);border-radius:var(--r-lg);padding:44px;color:#fff;position:relative;overflow:hidden}
+.about-panel::after{content:"";position:absolute;right:-40px;top:-40px;width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(249,109,0,.5),transparent 70%)}
+.about-panel h3{color:#ffb066}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:22px;text-align:center}
+.stat b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:2rem;color:var(--orange-dark)}
+.stat span{font-size:.86rem;color:var(--muted)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:42px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:32px 26px;
+  position:relative;box-shadow:var(--shadow-sm)}
+.step .num{font-family:"Barlow Condensed",sans-serif;font-size:3.2rem;color:var(--orange);line-height:1;
+  display:block;margin-bottom:10px}
+.step h3{margin-bottom:6px}
+.step p{color:var(--muted);font-size:.94rem;margin:0}
+.step + .step::before{content:"";position:absolute;left:-20px;top:44px;width:18px;height:3px;background:var(--orange);border-radius:2px}
+
+/* gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.panel{border-radius:var(--r-lg);overflow:hidden;position:relative;min-height:250px;box-shadow:var(--shadow-sm);
+  border:1px solid var(--line);display:flex;align-items:flex-end}
+.panel .cap{position:relative;z-index:2;background:rgba(12,37,54,.88);color:#fff;width:100%;padding:16px 20px}
+.panel .cap b{display:block;font-family:"Barlow Condensed",sans-serif;letter-spacing:.05em;font-size:1.08rem;text-transform:uppercase}
+.panel .cap span{font-size:.84rem;color:#b9cfdb}
+.p1{background:linear-gradient(135deg,#1d4e6b,#0c2536)}
+.p1::before{content:"";position:absolute;inset:18%;border:6px dashed rgba(249,109,0,.55);border-radius:18px}
+.p1::after{content:"";position:absolute;left:0;right:0;bottom:64px;height:12px;background:var(--orange)}
+.p2{background:linear-gradient(135deg,#26434f,#12242f)}
+.p2::before{content:"";position:absolute;left:38%;top:12%;width:24%;height:56%;border-radius:50%;
+  background:radial-gradient(circle at 35% 35%,#5b7b8c,#223a48 70%);box-shadow:0 0 0 14px rgba(0,0,0,.25)}
+.p2::after{content:"";position:absolute;left:46%;top:26%;width:8%;height:28%;border-radius:50%;background:#12242f}
+.p3{background:linear-gradient(135deg,#3a2c1c,#141414)}
+.p3::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(-45deg,rgba(249,109,0,.22) 0 14px,transparent 14px 28px)}
+.p3::after{content:"";position:absolute;left:50%;top:50%;width:170px;height:170px;transform:translate(-50%,-62%);
+  border-radius:50%;border:22px solid #0c2536;box-shadow:inset 0 0 0 6px rgba(249,109,0,.5),0 0 0 6px rgba(255,255,255,.08)}
+
+/* testimonials */
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:42px}
+.t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-md);padding:30px 28px;box-shadow:var(--shadow-sm)}
+.t-card .sample-tag{display:inline-block;background:var(--orange-soft);color:var(--orange-dark);font-weight:700;
+  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;border-radius:999px;padding:5px 13px;margin-bottom:14px}
+.t-card blockquote{margin:0 0 16px;font-size:.98rem;color:var(--ink)}
+.t-card .who{font-weight:700;font-size:.92rem}
+.t-card .who span{display:block;font-weight:500;color:var(--muted);font-size:.84rem}
+
+/* faq */
+.faq{max-width:760px;margin:36px auto 0}
+.faq-item{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.faq-q{width:100%;background:none;border:0;cursor:pointer;text-align:left;padding:20px 22px;font-size:1rem;
+  font-weight:700;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:56px;font-family:"Barlow",sans-serif}
+.faq-q .x{font-size:1.4rem;color:var(--orange-dark);flex:none;transition:transform .2s ease}
+.faq-item.open .faq-q .x{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease}
+.faq-a p{padding:0 22px 20px;margin:0;color:var(--muted);font-size:.96rem}
+
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:40px}
+.contact-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);padding:40px 38px;box-shadow:var(--shadow)}
+.phone-big{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:800;color:var(--steel);text-decoration:none;
+  font-family:"Barlow Condensed",sans-serif;letter-spacing:.02em}
+.phone-big:hover{text-decoration:underline}
+.hours{width:100%;border-collapse:collapse;margin-top:10px}
+.hours td{padding:10px 4px;border-bottom:1px solid var(--line);font-size:.95rem}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px}
+.field input,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:13px 15px;
+  font-size:1rem;font-family:"Barlow",sans-serif;min-height:52px;background:var(--bg)}
+.field textarea{min-height:120px;resize:vertical}
+.form-note{display:none;background:var(--orange-soft);border:1.5px solid var(--orange);border-radius:12px;
+  padding:14px 18px;margin-top:16px;font-size:.94rem;color:#7a3a00}
+.area-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.area{background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 18px;font-weight:600;font-size:.92rem;color:var(--muted)}
+.call-band{background:linear-gradient(135deg,var(--steel-dark),var(--steel-deep));color:#fff;border-radius:var(--r-lg);
+  padding:46px 42px;box-shadow:var(--shadow);margin-top:28px;display:flex;flex-wrap:wrap;gap:24px;
+  align-items:center;justify-content:space-between}
+.call-band h2{color:#fff;margin:0 0 8px}
+.call-band p{color:#b9cfdb;margin:0;max-width:34rem}
+
+footer.site{background:var(--steel-deep);color:#a9c3d4;padding:38px 0;font-size:.88rem;border-top:4px solid var(--orange)}
+footer.site .container{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+footer.site strong{color:#fff}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;padding:64px 0 96px}
+  .hero-art{min-height:330px}
+  .grid-cards,.t-grid,.gallery-grid,.contact-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .step + .step::before{display:none}
+  .trust-grid{grid-template-columns:1fr 1fr}
+  .trust-item{border-left:0;border-top:1px solid var(--line)}
+  .trust-item:nth-child(-n+2){border-top:0}
+  .about-grid{grid-template-columns:1fr}
+  .nav-links{position:fixed;inset:74px 0 auto 0;background:var(--steel-deep);flex-direction:column;
+    align-items:stretch;padding:14px 20px 22px;gap:4px;display:none;border-bottom:3px solid var(--orange)}
+  body.menu-open .nav-links{display:flex}
+  .menu-btn{display:inline-block}
+  .section{padding:60px 0}
+}
+@media (max-width:560px){
+  .steps,.trust-grid{grid-template-columns:1fr}
+  .trust-item:nth-child(-n+2){border-top:1px solid var(--line)}
+  .trust-item:first-child{border-top:0}
+}
+</style>
+</head>
+<body>
+
+<div class="demo-strip">
+  Demo Website Concept: free sample mockup made for <strong>WrenchWay Mobile Auto Repair</strong>. Content is illustrative, not a real business.
+</div>
+
+<header class="site">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top" aria-label="WrenchWay home">
+      <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><rect width="42" height="42" rx="11" fill="#f96d00"/><path d="M26.5 8.5a7 7 0 0 0-9.3 9.3L8 27l7 7 9.2-9.2a7 7 0 0 0 9.3-9.3l-4.7 4.7-3.4-1.4-1.4-3.4z" fill="#fff"/></svg>
+      WrenchWay
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#process">How It Works</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="tel:+15551935847">&#9742; (555) 193-5847</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker" style="color:#ffb066">Mobile Mechanic, Houston TX</span>
+      <h1>The repair shop that comes to your driveway.</h1>
+      <p class="lead">WrenchWay Mobile Auto Repair brings the garage to you: brakes, batteries, diagnostics, and maintenance at your home or office, anywhere in the Houston metro. Real repairs, honest pricing, zero waiting room.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="tel:+15551935847">&#9742; Call (555) 193-5847</a>
+        <a class="btn btn-white" href="#services">See services</a>
+      </div>
+      <div class="hero-badges">
+        <span class="pill">&#10003; Licensed, bonded and insured</span>
+        <span class="pill">&#10003; Free estimates</span>
+        <span class="pill">&#10003; Same-day service</span>
+        <span class="pill">&#10003; Locally owned</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="garage-bay"></div>
+      <div class="car">
+        <svg viewBox="0 0 300 76" aria-hidden="true"><rect x="14" y="26" width="272" height="30" rx="12" fill="#8fb4c7"/><path d="M70 26l28-16h90l28 16z" fill="#5d86a0"/><rect x="80" y="14" width="52" height="14" rx="4" fill="#cfe3ee"/><rect x="168" y="14" width="52" height="14" rx="4" fill="#cfe3ee"/><circle cx="80" cy="60" r="14" fill="#12344a"/><circle cx="80" cy="60" r="6" fill="#f96d00"/><circle cx="220" cy="60" r="14" fill="#12344a"/><circle cx="220" cy="60" r="6" fill="#f96d00"/></svg>
+      </div>
+      <div class="lift"></div>
+      <div class="hero-card hc1"><h4>&#128663; Broken down?</h4><p>Most repairs finished right in your driveway, often the same day you call.</p></div>
+      <div class="hero-card hc2"><h4>&#128295; Free estimates</h4><p>You approve the price before we turn a single bolt.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe" aria-hidden="true"></div>
+
+<section class="trust-row" aria-label="Why choose WrenchWay">
+  <div class="container trust-grid">
+    <div class="trust-item">
+      <span class="ticon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d65a00" stroke-width="2" aria-hidden="true"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      <div><h3>Licensed, bonded and insured</h3><p>Professional coverage on every job.</p></div>
+    </div>
+    <div class="trust-item">
+      <span class="ticon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d65a00" stroke-width="2" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M8 3v3M16 3v3"/></svg></span>
+      <div><h3>Free estimates</h3><p>Clear quotes before any work starts.</p></div>
+    </div>
+    <div class="trust-item">
+      <span class="ticon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d65a00" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+      <div><h3>Same-day service</h3><p>Many jobs finished the day you call.</p></div>
+    </div>
+    <div class="trust-item">
+      <span class="ticon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d65a00" stroke-width="2" aria-hidden="true"><path d="M3 11l9-7 9 7M5 9.5V21h14V9.5"/></svg></span>
+      <div><h3>Locally owned</h3><p>Houston-based, driveway to driveway.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <span class="kicker">What we fix</span>
+    <h2>Full-service repairs, no tow truck needed.</h2>
+    <p class="lead">If it can be repaired in a driveway or parking lot, we do it there. Service list is illustrative.</p>
+    <div class="grid-cards">
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg></div>
+        <h3>Brake Repair</h3><p>Pads, rotors, and calipers replaced at your curb. Squeaks, grinding, and soft pedals diagnosed on the spot.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="7" y="8" width="10" height="12" rx="2"/><path d="M10 8V5h4v3M10 12h4M7 11H4v4h3M17 11h3v4h-3"/></svg></div>
+        <h3>Battery Service</h3><p>Testing, jump starts, and same-day battery replacement for most makes and models.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M4 17h16M6 17V9h12v8M9 20v-3M15 20v-3"/><path d="M9 12h6"/></svg></div>
+        <h3>Diagnostics</h3><p>Check-engine lights, strange noises, warning lights. We find the cause before you spend a dollar on parts.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/><path d="M9.5 14a2.5 2.5 0 0 0 2.5 2.5"/></svg></div>
+        <h3>Oil Changes</h3><p>Full synthetic and conventional oil changes at your home or office, filter and fluid checks included.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M14 4l-8 12h6l-1 4 8-12h-6z"/></svg></div>
+        <h3>Alternators and Starters</h3><p>Dead in the parking lot? We replace charging and starting components on site.</p>
+      </div>
+      <div class="card">
+        <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+        <h3>Pre-Purchase Inspections</h3><p>Buying a used car in Houston? A bumper-to-bumper inspection before you hand over cash.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="about">
+  <div class="container">
+    <span class="kicker">Our story</span>
+    <h2>Mechanics, minus the waiting room.</h2>
+    <div class="about-grid">
+      <div>
+        <p class="lead">WrenchWay Mobile Auto Repair started with a simple frustration: getting a car fixed meant losing half a day to a waiting room. So we put the shop in a van.</p>
+        <p>Today our certified mobile mechanics travel the Houston metro with professional-grade tools and diagnostic equipment, handling most repairs wherever your car is parked. You get dealership-level work with driveway-level convenience, and a price you approve before we start.</p>
+        <p>No invented history here: just honest auto repair, done where you are.</p>
+      </div>
+      <div class="about-panel">
+        <h3>How we work</h3>
+        <p style="color:#cfe0ea">Every visit follows the same playbook: diagnose first, quote clearly, repair cleanly, and road-test before we hand back the keys.</p>
+        <div class="stat-row" style="grid-template-columns:1fr 1fr">
+          <div class="stat"><b>90+</b><span>repairs a month (illustrative)</span></div>
+          <div class="stat"><b>1 day</b><span>typical turnaround</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="container">
+    <span class="kicker">How it works</span>
+    <h2>Fixed in four steps.</h2>
+    <p class="lead">From first call to road test, the whole process is built around your schedule.</p>
+    <div class="steps">
+      <div class="step"><span class="num">01</span><h3>Call or message</h3><p>Tell us the symptoms. We give you a straight answer on whether we can fix it on site.</p></div>
+      <div class="step"><span class="num">02</span><h3>Free estimate</h3><p>We inspect, diagnose, and quote a firm price. You approve before anything happens.</p></div>
+      <div class="step"><span class="num">03</span><h3>We come to you</h3><p>A mechanic arrives with the parts and tools. You keep working, we keep wrenching.</p></div>
+      <div class="step"><span class="num">04</span><h3>Road test and done</h3><p>We test drive, walk you through the work, and clean up. Keys back in your hand.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="gallery">
+  <div class="container">
+    <span class="kicker">On the job</span>
+    <h2>Our work, panel by panel.</h2>
+    <p class="lead">Illustrative artwork showing the kind of on-site jobs we do every week across Houston.</p>
+    <div class="gallery-grid">
+      <div class="panel p1"><div class="cap"><b>Brake service at your curb</b><span>Pads and rotors, same-day</span></div></div>
+      <div class="panel p2"><div class="cap"><b>Diagnostics done right</b><span>Full scan before any parts</span></div></div>
+      <div class="panel p3"><div class="cap"><b>Fresh tires, balanced</b><span>Road-ready in about an hour</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <div class="container">
+    <span class="kicker">Reviews</span>
+    <h2>What drivers say.</h2>
+    <p class="lead">Sample testimonials for layout purposes only.</p>
+    <div class="t-grid">
+      <div class="t-card">
+        <span class="sample-tag">Sample testimonial</span>
+        <blockquote>"They replaced my brakes in the office parking lot while I worked. No waiting room, no shuttle, no hassle."</blockquote>
+        <div class="who">Sample Client, Houston<span>Office parking lot brake job</span></div>
+      </div>
+      <div class="t-card">
+        <span class="sample-tag">Sample testimonial</span>
+        <blockquote>"Car would not start in my driveway at 7 AM. By lunch I was driving it. The estimate matched the final bill exactly."</blockquote>
+        <div class="who">Sample Client, Katy<span>Battery and starter replacement</span></div>
+      </div>
+      <div class="t-card">
+        <span class="sample-tag">Sample testimonial</span>
+        <blockquote>"The pre-purchase inspection caught problems the seller never mentioned. Best money I spent on that car."</blockquote>
+        <div class="who">Sample Client, Sugar Land<span>Pre-purchase inspection</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" id="faq">
+  <div class="container">
+    <span class="kicker">Good to know</span>
+    <h2>Frequently asked questions.</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How does a mobile mechanic work?<span class="x">+</span></button>
+        <div class="faq-a"><p>We drive a fully equipped service van to your location. For most repairs, all we need is a safe, flat place to park your car, like a driveway or parking lot. You keep your keys until we are done.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do I need to provide any tools or space?<span class="x">+</span></button>
+        <div class="faq-a"><p>No. We bring professional tools, diagnostic equipment, and the parts. We just ask for enough room to open the hood and work safely around the vehicle.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Is there a trip fee?<span class="x">+</span></button>
+        <div class="faq-a"><p>Estimates are free, and any service-call or travel fee is disclosed up front before we roll, never buried in the invoice. Call (555) 193-5847 for the exact details in your area.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">What if my car needs a repair you cannot do on site?<span class="x">+</span></button>
+        <div class="faq-a"><p>We tell you straight during the diagnosis. Some jobs, like full engine rebuilds or transmission overhauls, need a shop lift, and we will explain your options honestly instead of guessing.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">Do you warranty your work?<span class="x">+</span></button>
+        <div class="faq-a"><p>Yes. Repairs come with a workmanship warranty, and parts carry their manufacturer warranty. We put the terms in writing on every invoice.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">How fast can you get to me?<span class="x">+</span></button>
+        <div class="faq-a"><p>Same-day service is available across most of the Houston metro. During busy periods we schedule you into the next open window and keep you posted by text.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <span class="kicker">Get in touch</span>
+    <h2>Book your driveway repair.</h2>
+    <p class="lead">Call for the fastest scheduling, or send the demo form and we will call you back.</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Call or text</h3>
+        <p><a class="phone-big" href="tel:+15551935847">(555) 193-5847</a></p>
+        <p style="color:var(--muted)">Mobile service across the Houston, TX metro. No shop address: we come to you.</p>
+        <table class="hours" aria-label="Service hours">
+          <tr><td>Monday to Friday</td><td>8:00 AM, 6:00 PM</td></tr>
+          <tr><td>Saturday</td><td>9:00 AM, 4:00 PM</td></tr>
+          <tr><td>Sunday</td><td>Emergency only</td></tr>
+        </table>
+        <h3 style="margin-top:26px">Service areas</h3>
+        <div class="area-list">
+          <span class="area">Houston</span><span class="area">Katy</span><span class="area">Sugar Land</span>
+          <span class="area">Pasadena</span><span class="area">Pearland</span><span class="area">Cypress</span>
+          <span class="area">The Woodlands</span><span class="area">Spring</span><span class="area">Humble</span>
+          <span class="area">Missouri City</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>Request a callback</h3>
+        <p style="color:var(--muted);font-size:.94rem">Demo form only. Nothing is sent anywhere.</p>
+        <form id="demoForm" novalidate>
+          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
+          <div class="field"><label for="f-phone">Phone</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 000-0000"></div>
+          <div class="field"><label for="f-msg">What is your car doing?</label><textarea id="f-msg" name="message" placeholder="Year, make, model, and symptoms"></textarea></div>
+          <button class="btn btn-primary" type="submit" style="width:100%">Send request</button>
+        </form>
+        <div class="form-note" id="formNote" role="status">This is a demo form. Your message was not sent anywhere. To reach us, call <a href="tel:+15551935847">(555) 193-5847</a>.</div>
+      </div>
+    </div>
+    <div class="call-band">
+      <div>
+        <h2>Car trouble right now?</h2>
+        <p>Skip the form. Call and we will tell you in minutes whether we can fix it today at your location.</p>
+      </div>
+      <a class="btn btn-primary" href="tel:+15551935847">&#9742; (555) 193-5847</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <span><strong>WrenchWay Mobile Auto Repair</strong>, Houston TX. Demo Website Concept. Content is illustrative.</span>
+    <span>Not affiliated with any real business.</span>
+  </div>
+</footer>
+
+<script>
+var menuBtn = document.getElementById('menuBtn');
+menuBtn.addEventListener('click', function(){
+  var open = document.body.classList.toggle('menu-open');
+  menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+});
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click', function(){ document.body.classList.remove('menu-open'); menuBtn.setAttribute('aria-expanded','false'); });
+});
+document.querySelectorAll('.faq-item').forEach(function(item){
+  var q = item.querySelector('.faq-q'), a = item.querySelector('.faq-a');
+  q.addEventListener('click', function(){
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(o){
+      o.classList.remove('open'); o.querySelector('.faq-a').style.maxHeight = null;
+      o.querySelector('.faq-q').setAttribute('aria-expanded','false');
+    });
+    if(!isOpen){ item.classList.add('open'); a.style.maxHeight = a.scrollHeight + 'px'; q.setAttribute('aria-expanded','true'); }
+  });
+});
+document.getElementById('demoForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('formNote').style.display = 'block';
+});
+</script>
+</body>
+</html>

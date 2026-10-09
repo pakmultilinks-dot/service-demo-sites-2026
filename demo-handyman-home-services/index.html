@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="HandyFix Pros. Handyman serving Atlanta, GA metro. Drywall, carpentry, fixture installs, home repairs. Demo website concept. Call (555) 762-1459.">
+<meta name="theme-color" content="#3b2a20">
+<title>HandyFix Pros | Atlanta Handyman | Demo Website Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --esp:#3b2a20; --esp2:#2c1f16; --esp3:#4a3627;
+  --org:#f97316; --org-d:#c85a0e; --org-l:#ffcf9e;
+  --cream:#faf5ec; --cream2:#f1e8d7;
+  --ink:#f7f1e5; --muted:#c9b8a3; --line:#5a4632;
+  --card:#453322; --r:12px;
+  --shadow:0 18px 44px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--esp);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-size:16px;line-height:1.65;min-width:320px;overflow-x:hidden}
+body.menu-open{overflow:hidden}
+h1,h2,h3{font-weight:900;line-height:1.16;letter-spacing:-.015em;margin-bottom:.55em;text-transform:none}
+h1{font-size:clamp(2.1rem,5.4vw,3.7rem)}
+h2{font-size:clamp(1.6rem,3.6vw,2.4rem)}
+h3{font-size:1.08rem;margin-bottom:.4em;font-weight:800}
+p{margin-bottom:1em}
+a{color:inherit}
+.container{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.section{padding:86px 0}
+.kicker{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--org-l);margin-bottom:16px}
+.kicker::before,.kicker::after{content:"";width:34px;height:3px;background:var(--org);border-radius:2px}
+.lead{color:var(--muted);font-size:1.08rem;max-width:42rem}
+/* demo strip */
+.demo-strip{background:repeating-linear-gradient(-45deg,#1d130b,#1d130b 18px,#241a10 18px,#241a10 36px);color:#e8d9c0;text-align:center;font-size:.8rem;font-weight:600;padding:10px 18px;position:relative;z-index:70;border-bottom:3px solid var(--org)}
+.demo-strip strong{color:var(--org-l)}
+/* header */
+header.site{position:sticky;top:0;z-index:50;background:rgba(59,42,32,.95);backdrop-filter:blur(12px);border-bottom:3px solid var(--org)}
+.nav-wrap{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:900;font-size:1.12rem}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-links a.nlink{padding:10px 14px;text-decoration:none;font-weight:600;font-size:.93rem;color:var(--muted);border-radius:8px;min-height:44px;display:inline-flex;align-items:center}
+.nav-links a.nlink:hover{color:var(--org-l);background:rgba(249,115,22,.14)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;cursor:pointer;font-weight:800;text-decoration:none;border-radius:10px;padding:15px 28px;font-size:1rem;min-height:48px;transition:transform .15s,box-shadow .15s;text-transform:uppercase;letter-spacing:.03em}
+.btn:hover{transform:translateY(-2px)}
+.btn-shop{background:linear-gradient(135deg,var(--org),var(--org-d));color:#fff;box-shadow:0 10px 26px rgba(249,115,22,.4)}
+.btn-ghost{background:transparent;color:var(--cream);border:2px solid var(--line)}
+.btn-ghost:hover{border-color:var(--org)}
+.nav-cta{padding:11px 20px !important;font-size:.9rem !important}
+.menu-btn{display:none;background:var(--esp3);border:1px solid var(--line);color:#fff;border-radius:8px;padding:11px 16px;cursor:pointer;font-weight:700;min-height:44px;min-width:44px}
+/* hero */
+.hero{position:relative;overflow:hidden;padding:100px 0 104px;background:
+  radial-gradient(800px 400px at 90% 0%,rgba(249,115,22,.16),transparent 60%),
+  linear-gradient(180deg,var(--esp) 0%,var(--esp2) 100%)}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(249,115,22,.13) 1.6px,transparent 1.6px);background-size:26px 26px;opacity:.5}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:54px;align-items:center;position:relative}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:9px 16px;font-size:.85rem;font-weight:600;color:#e8d9c0;display:inline-flex;align-items:center;gap:9px}
+.pill .wrench{color:var(--org);font-weight:900}
+/* toolbox art */
+.hero-art{position:relative;min-height:440px}
+.pegboard{position:absolute;left:4%;right:4%;top:4%;bottom:12%;background:var(--esp3);border:3px solid var(--line);border-radius:16px;background-image:radial-gradient(rgba(0,0,0,.4) 2.4px,transparent 2.4px);background-size:30px 30px;box-shadow:var(--shadow)}
+.tool{position:absolute;background:linear-gradient(180deg,#8a7a68,#5f5245);border-radius:8px;box-shadow:0 10px 20px rgba(0,0,0,.45)}
+.hammer{left:14%;top:16%;width:18px;height:150px;transform:rotate(14deg)}
+.hammer::before{content:"";position:absolute;top:-34px;left:-22px;width:62px;height:38px;background:linear-gradient(180deg,#a89a86,#7d7060);border-radius:8px}
+.wrench-t{right:16%;top:22%;width:22px;height:130px;transform:rotate(-12deg)}
+.wrench-t::before{content:"";position:absolute;top:-26px;left:-8px;width:38px;height:32px;border:9px solid #a89a86;border-bottom:0;border-radius:18px 18px 0 0}
+.saw{left:38%;bottom:12%;width:130px;height:26px;transform:rotate(-6deg);background:linear-gradient(180deg,#c9c2b4,#8f877a);clip-path:polygon(0 20%,100% 0,100% 60%,0 100%)}
+.level{right:12%;bottom:22%;width:110px;height:22px;background:linear-gradient(180deg,var(--org),var(--org-d));transform:rotate(8deg)}
+.level::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:22px;height:12px;border-radius:6px;background:#ffe9c9}
+.ticket{position:absolute;bottom:0;left:8%;background:var(--cream);color:var(--esp2);border-radius:10px;padding:16px 20px;max-width:280px;box-shadow:var(--shadow);transform:rotate(-3deg)}
+.ticket b{font-size:.85rem;text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:6px;color:var(--org-d)}
+.ticket ul{list-style:none;font-size:.84rem;font-weight:600}
+.ticket li{padding:3px 0;border-bottom:1px dashed #d8cbb4}
+.ticket li::before{content:"☐ "}
+.fcard{position:absolute;top:2%;right:2%;background:var(--card);border:2px solid var(--org);border-radius:12px;box-shadow:var(--shadow);padding:16px 18px;max-width:230px;animation:float 7s ease-in-out infinite}
+.fcard b{font-size:.88rem;display:block;margin-bottom:4px;color:var(--org-l)}
+.fcard p{margin:0;font-size:.82rem;color:var(--muted)}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+/* trust row */
+.trust{background:#241a10;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0}
+.trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tbadge{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;align-items:center;gap:14px}
+.tbadge .tic{width:46px;height:46px;flex:none;border-radius:10px;background:rgba(249,115,22,.16);display:grid;place-items:center}
+.tbadge b{font-size:.9rem;display:block;line-height:1.35}
+.tbadge small{color:var(--muted);font-size:.8rem}
+/* services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}
+.svc{background:var(--cream);color:var(--esp2);border-radius:var(--r);padding:30px 26px;box-shadow:var(--shadow);transition:transform .18s;position:relative;overflow:hidden}
+.svc::before{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--org)}
+.svc:hover{transform:translateY(-6px) rotate(.4deg)}
+.svc .icon{width:52px;height:52px;border-radius:12px;background:var(--esp);display:grid;place-items:center;margin-bottom:16px}
+.svc h3{color:var(--esp2)}
+.svc p{color:#6b5a45;font-size:.94rem;margin:0}
+/* about */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.about-art{position:relative;min-height:400px;background:var(--esp3);border:3px solid var(--line);border-radius:16px;overflow:hidden;background-image:radial-gradient(rgba(0,0,0,.35) 2.4px,transparent 2.4px);background-size:30px 30px}
+.workbench{position:absolute;left:10%;right:10%;top:44%;height:16px;background:linear-gradient(180deg,#a37a45,#7d5a33);border-radius:6px;box-shadow:0 12px 24px rgba(0,0,0,.5)}
+.blueprint{position:absolute;left:14%;right:14%;top:14%;background:#274b63;border:2px solid #5b8cae;border-radius:10px;padding:18px;transform:rotate(2deg)}
+.blueprint b{color:#cfe8f7;font-size:.88rem;display:block;margin-bottom:8px}
+.blueprint .bl{height:10px;background:rgba(207,232,247,.5);border-radius:5px;margin-bottom:8px}
+.about-art .plate{position:absolute;bottom:8%;left:10%;right:10%;background:var(--org);color:#fff;border-radius:10px;padding:16px 20px;font-weight:700;font-size:.92rem}
+/* process */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:42px}
+.pstep{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px 26px;position:relative}
+.pstep .n{position:absolute;top:-18px;left:22px;background:var(--org);color:#fff;font-weight:900;font-size:1rem;width:44px;height:44px;border-radius:10px;display:grid;place-items:center;box-shadow:0 8px 18px rgba(249,115,22,.4)}
+.pstep p{color:var(--muted);font-size:.93rem;margin:14px 0 0}
+/* gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}
+.gal{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.gal .art{height:200px;position:relative}
+.gal .cap{padding:18px 20px}
+.gal .cap b{font-size:.94rem}
+.gal .cap p{color:var(--muted);font-size:.85rem;margin:6px 0 0}
+.w1{background:linear-gradient(160deg,#5a4632,#3b2a20)}
+.w1 .drywall{position:absolute;left:22%;right:22%;top:20%;bottom:24%;background:#efe6d2;border-radius:8px;box-shadow:0 10px 22px rgba(0,0,0,.4)}
+.w1 .patch{position:absolute;left:38%;top:36%;width:24%;height:24%;background:#d9cba8;border-radius:6px;border:2px dashed #a89a86}
+.w2{background:linear-gradient(160deg,#4a3627,#2c1f16)}
+.w2 .shelf{position:absolute;left:18%;right:18%;top:30%;height:14px;background:#a37a45;border-radius:4px;box-shadow:0 8px 16px rgba(0,0,0,.4)}
+.w2 .shelf.s2{top:56%}
+.w2 .book{position:absolute;top:12%;width:10%;height:18%;border-radius:3px}
+.w3{background:linear-gradient(160deg,#3d2f22,#241a10)}
+.w3 .door{position:absolute;left:34%;right:34%;top:14%;bottom:18%;background:linear-gradient(135deg,#8a6a45,#6b4e30);border-radius:8px;box-shadow:0 12px 24px rgba(0,0,0,.5)}
+.w3 .knob{position:absolute;left:60%;top:52%;width:16px;height:16px;border-radius:50%;background:var(--org)}
+/* testimonials */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}
+.testi{background:var(--cream);color:var(--esp2);border-radius:var(--r);padding:28px 26px;box-shadow:var(--shadow);transform:rotate(.5deg)}
+.testi:nth-child(2){transform:rotate(-.5deg)}
+.sample-flag{display:inline-block;font-size:.66rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--esp2);color:var(--org-l);border-radius:6px;padding:5px 10px;margin-bottom:12px}
+.testi p{font-size:.95rem;font-style:italic;color:#4a3a28}
+.testi .who{color:#8a755c;font-size:.84rem;font-weight:700;font-style:normal}
+/* faq */
+.faq-list{max-width:840px;margin-top:36px}
+.faq{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:12px;overflow:hidden}
+.faq button{width:100%;background:none;border:0;color:var(--ink);font-size:1rem;font-weight:700;text-align:left;padding:20px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;min-height:56px}
+.faq button .pm{flex:none;color:var(--org);font-size:1.5rem;font-weight:900}
+.faq .ans{max-height:0;overflow:hidden;transition:max-height .28s ease}
+.faq .ans p{padding:0 22px 22px;color:var(--muted);font-size:.95rem;margin:0}
+.faq.open .ans{max-height:340px}
+.faq.open{border-color:var(--org)}
+/* contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:40px}
+.ccard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:38px 34px}
+.ccard h3{font-size:1.3rem;margin-bottom:14px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:.84rem;font-weight:700;color:var(--muted);margin-bottom:7px}
+.field input,.field textarea{width:100%;background:var(--esp2);border:1px solid var(--line);border-radius:10px;color:var(--ink);font-size:1rem;padding:13px 15px;min-height:48px;font-family:inherit}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field textarea:focus{outline:2px solid var(--org);border-color:var(--org)}
+.form-note{display:none;background:rgba(249,115,22,.12);border:1px solid var(--org-d);border-radius:10px;padding:14px 16px;color:var(--org-l);font-size:.9rem;margin-top:14px}
+.phone-big{font-size:clamp(1.7rem,4vw,2.4rem);font-weight:900;color:var(--org);text-decoration:none;display:inline-block;margin:6px 0 12px}
+.phone-big:hover{text-decoration:underline}
+.hours{width:100%;border-collapse:collapse;margin-top:8px}
+.hours td{padding:10px 4px;border-bottom:1px solid var(--line);font-size:.94rem}
+.hours td:last-child{text-align:right;color:var(--muted)}
+.area-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.area{background:var(--esp2);border:1px solid var(--line);border-radius:8px;padding:9px 16px;font-weight:600;font-size:.88rem;color:#e8d9c0}
+.shop-band{margin-top:24px;background:linear-gradient(135deg,var(--org),var(--org-d));border-radius:16px;padding:44px 40px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;color:#fff}
+.shop-band h2{color:#fff;margin-bottom:8px}
+.shop-band p{margin:0;max-width:36rem;color:#ffe9d2}
+.shop-band .btn{background:#fff;color:var(--org-d)}
+footer.site{border-top:3px solid var(--org);padding:36px 0;color:var(--muted);font-size:.88rem;background:#241a10}
+footer.site .container{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+@media (max-width:900px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .svc-grid,.testi-grid{grid-template-columns:1fr}
+  .proc{grid-template-columns:1fr 1fr}
+  .gal-grid{grid-template-columns:1fr}
+  .trust-row{grid-template-columns:1fr 1fr}
+  .hero-art{min-height:360px}
+  .nav-links{position:fixed;top:78px;left:0;right:0;background:var(--esp2);border-bottom:3px solid var(--org);flex-direction:column;align-items:stretch;padding:14px 20px 22px;gap:6px;display:none;z-index:49}
+  body.menu-open .nav-links{display:flex}
+  .menu-btn{display:inline-block}
+  .section{padding:60px 0}
+}
+@media (max-width:520px){.proc,.trust-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo-strip"><strong>Demo Website Concept:</strong> free sample mockup made for <strong>HandyFix Pros</strong>. Content is illustrative, not a real business.</div>
+<header class="site">
+  <div class="container nav-wrap">
+    <a class="brand" href="#top">
+      <svg width="42" height="42" viewBox="0 0 42 42" aria-hidden="true"><rect x="2" y="2" width="38" height="38" rx="10" fill="#2c1f16" stroke="#f97316" stroke-width="2.5"/><path d="M27 11a7 7 0 0 0-9.5 9.3L10 27.8 14.2 32l7.5-7.5A7 7 0 0 0 31 15l-4.5 4.5-2.7-2.7L28.5 12z" fill="#f97316"/></svg>
+      HandyFix Pros
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a class="nlink" href="#services">Services</a>
+      <a class="nlink" href="#about">About</a>
+      <a class="nlink" href="#process">Process</a>
+      <a class="nlink" href="#gallery">Work</a>
+      <a class="nlink" href="#reviews">Reviews</a>
+      <a class="nlink" href="#faq">FAQ</a>
+      <a class="nlink" href="#contact">Contact</a>
+      <a class="btn btn-shop nav-cta" href="tel:+15557621459">&#9742; (555) 762-1459</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+  </div>
+</header>
+<main id="top">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="kicker">Handyman, Atlanta GA Metro</span>
+      <h1>That growing to-do list? Consider it done.</h1>
+      <p class="lead">HandyFix Pros is Atlanta's fix-it crew for everything on your list: drywall, carpentry, fixture installs, and all the small jobs that never quite get done. One call, one visit, everything handled.</p>
+      <div class="hero-cta">
+        <a class="btn btn-shop" href="tel:+15557621459">&#9742; Call (555) 762-1459</a>
+        <a class="btn btn-ghost" href="#services">See services</a>
+      </div>
+      <div class="hero-badges">
+        <span class="pill"><span class="wrench">✓</span>Licensed, bonded and insured</span>
+        <span class="pill"><span class="wrench">✓</span>Free estimates</span>
+        <span class="pill"><span class="wrench">✓</span>Same-week booking</span>
+        <span class="pill"><span class="wrench">✓</span>Locally owned</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="pegboard">
+        <div class="tool hammer"></div>
+        <div class="tool wrench-t"></div>
+        <div class="tool saw"></div>
+        <div class="tool level"></div>
+      </div>
+      <div class="fcard"><b>Small jobs welcome</b><p>No job too small. We batch your whole list into one efficient visit.</p></div>
+      <div class="ticket">
+        <b>Today's work order</b>
+        <ul><li>Patch hallway drywall</li><li>Hang 3 ceiling fans</li><li>Fix sticky back door</li><li>Caulk guest bath</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="trust" aria-label="Trust signals">
+  <div class="container trust-row">
+    <div class="tbadge"><span class="tic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></span><div><b>Licensed, bonded and insured</b><small>Trade-standard credentials</small></div></div>
+    <div class="tbadge"><span class="tic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M9 11l3 3 8-8M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></span><div><b>Checklist-driven</b><small>Nothing on your list missed</small></div></div>
+    <div class="tbadge"><span class="tic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><div><b>On-time arrivals</b><small>Texted arrival windows</small></div></div>
+    <div class="tbadge"><span class="tic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg></span><div><b>Locally owned</b><small>Atlanta metro based</small></div></div>
+  </div>
+</section>
+<section class="section" id="services">
+  <div class="container">
+    <span class="kicker">Services</span>
+    <h2>If it is broken, we fix it.</h2>
+    <p class="lead">Home repairs and improvements across the Atlanta metro. Service list is illustrative.</p>
+    <div class="svc-grid">
+      <article class="svc"><span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 12h16M12 4v16"/></svg></span><h3>Drywall and Patching</h3><p>Holes, cracks, and dents patched and finished so smoothly you will forget they were there.</p></article>
+      <article class="svc"><span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M3 17l9-9 9 9M7 17V8h10v9"/></svg></span><h3>Carpentry and Trim</h3><p>Baseboards, crown molding, shelving, and small built-ins with clean, tight joints.</p></article>
+      <article class="svc"><span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.8.7 1 1.5 1 2.5h6c0-1 .2-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg></span><h3>Fixture Installs</h3><p>Ceiling fans, light fixtures, mirrors, curtain rods, and TVs mounted safely and level.</p></article>
+      <article class="svc"><span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="1"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><h3>Doors and Locks</h3><p>Sticky doors planed, hinges adjusted, deadbolts and handles installed or replaced.</p></article>
+      <article class="svc"><span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M4 20h16M6 20V10l6-5 6 5v10"/></svg></span><h3>Caulking and Sealing</h3><p>Tubs, sinks, windows, and trim recaulked for a clean look and real water protection.</p></article>
+      <article class="svc"><span class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f97316" stroke-width="2"><path d="M14 7l-5 5 5 5M4 5h16v14H4z"/></svg></span><h3>Furniture Assembly</h3><p>Flat-pack furniture, shelving units, and outdoor gear assembled fast and sturdy.</p></article>
+    </div>
+  </div>
+</section>
+<section class="section" id="about" style="background:#241a10;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container about-grid">
+    <div>
+      <span class="kicker">Our story</span>
+      <h2>The crew for everything on the list.</h2>
+      <p class="lead">HandyFix Pros is an Atlanta-metro handyman company built for real life: the wobbly rail, the cracked drywall, the fan still in its box. We bundle your whole punch list into one efficient visit and knock it out.</p>
+      <p style="color:var(--muted)">Our techs arrive with a stocked truck, shoe covers, and a checklist mindset. You point, we fix, and the invoice matches the quote. Simple as that.</p>
+    </div>
+    <div class="about-art" aria-hidden="true">
+      <div class="blueprint">
+        <b>Work order #1042</b>
+        <div class="bl" style="width:90%"></div><div class="bl" style="width:70%"></div><div class="bl" style="width:80%"></div>
+      </div>
+      <div class="workbench"></div>
+      <div class="plate">One visit. Whole list. Done right.</div>
+    </div>
+  </div>
+</section>
+<section class="section" id="process">
+  <div class="container">
+    <span class="kicker">How it works</span>
+    <h2>List it. We handle it.</h2>
+    <div class="proc">
+      <div class="pstep"><span class="n">1</span><h3>Send your list</h3><p>Call or message with everything that needs doing, big jobs and tiny ones alike.</p></div>
+      <div class="pstep"><span class="n">2</span><h3>Get one price</h3><p>We review the list and give one clear quote for the whole visit, free.</p></div>
+      <div class="pstep"><span class="n">3</span><h3>We get to work</h3><p>One tech, one visit, checklist in hand. Floors protected, areas cleaned as we go.</p></div>
+      <div class="pstep"><span class="n">4</span><h3>Walk it together</h3><p>We review every item with you before we leave. Anything not right gets fixed on the spot.</p></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="gallery" style="background:#241a10;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <span class="kicker">Sample work</span>
+    <h2>Illustrative project panels.</h2>
+    <p class="lead">Stylized panels showing typical handyman work. Artwork is illustrative, not photographs of real jobs.</p>
+    <div class="gal-grid">
+      <div class="gal"><div class="art w1" aria-hidden="true"><div class="drywall"></div><div class="patch"></div></div><div class="cap"><b>Drywall repairs</b><p>Invisible patches, ready for paint.</p></div></div>
+      <div class="gal"><div class="art w2" aria-hidden="true"><div class="shelf"></div><div class="shelf s2"></div><div class="book" style="left:24%;background:#f97316"></div><div class="book" style="left:36%;background:#5fae4f"></div><div class="book" style="left:48%;background:#3fa7e8"></div></div><div class="cap"><b>Shelving and storage</b><p>Sturdy, level, and exactly where you want it.</p></div></div>
+      <div class="gal"><div class="art w3" aria-hidden="true"><div class="door"></div><div class="knob"></div></div><div class="cap"><b>Door fixes</b><p>No more sticking, squeaking, or sagging.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="reviews">
+  <div class="container">
+    <span class="kicker">Kind words</span>
+    <h2>What neighbors say.</h2>
+    <p class="lead">The quotes below are illustrative samples written for this demo, not real customer reviews.</p>
+    <div class="testi-grid">
+      <div class="testi"><span class="sample-flag">Sample testimonial</span><p>"Sent them a list of nine things. One visit, everything done, and the drywall patches are genuinely invisible."</p><div class="who">Sample Client, Atlanta</div></div>
+      <div class="testi"><span class="sample-flag">Sample testimonial</span><p>"Finally, someone who takes small jobs seriously. Hung our fans, fixed two doors, and caulked the tubs in one morning."</p><div class="who">Sample Client, Marietta</div></div>
+      <div class="testi"><span class="sample-flag">Sample testimonial</span><p>"Quoted one price for the whole list and stuck to it. Polite, tidy, and fast. Already booked them again."</p><div class="who">Sample Client, Decatur</div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="faq" style="background:#241a10;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="container">
+    <span class="kicker">Good to know</span>
+    <h2>Handyman questions, answered.</h2>
+    <div class="faq-list">
+      <div class="faq"><button aria-expanded="false">How do you charge for handyman work?<span class="pm">+</span></button><div class="ans"><p>We quote your whole list as one clear price before we start. Small single jobs may be priced individually. Either way, the price is fixed before work begins.</p></div></div>
+      <div class="faq"><button aria-expanded="false">Is there a minimum job size?<span class="pm">+</span></button><div class="ans"><p>No. We happily take small jobs, and we encourage you to bundle several into one visit so you get the best value from our trip.</p></div></div>
+      <div class="faq"><button aria-expanded="false">Do I need to supply materials?<span class="pm">+</span></button><div class="ans"><p>Usually not. Our trucks carry common fasteners, patching materials, and hardware. For special fixtures or finishes, we will tell you exactly what to buy or pick it up for you.</p></div></div>
+      <div class="faq"><button aria-expanded="false">Are you insured?<span class="pm">+</span></button><div class="ans"><p>Yes. We are licensed, bonded and insured, and we treat your home with the same care we would our own.</p></div></div>
+      <div class="faq"><button aria-expanded="false">What jobs do you not do?<span class="pm">+</span></button><div class="ans"><p>We stay in our lane: no major electrical panel work, no gas lines, and no structural engineering. For those we will point you to the right licensed specialist.</p></div></div>
+      <div class="faq"><button aria-expanded="false">How soon can you come out?<span class="pm">+</span></button><div class="ans"><p>Most bookings are scheduled within the same week. Call with your list and we will find the earliest slot that works.</p></div></div>
+    </div>
+  </div>
+</section>
+<section class="section" id="contact">
+  <div class="container">
+    <span class="kicker">Get in touch</span>
+    <h2>Send us the list.</h2>
+    <p class="lead">Call or send the demo form with everything on your to-do list.</p>
+    <div class="contact-grid">
+      <div class="ccard">
+        <h3>Request a visit</h3>
+        <form id="demoForm" novalidate>
+          <div class="field"><label for="fName">Name</label><input id="fName" name="name" type="text" autocomplete="name" placeholder="Your name"></div>
+          <div class="field"><label for="fPhone">Phone</label><input id="fPhone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 000-0000"></div>
+          <div class="field"><label for="fMsg">Message</label><textarea id="fMsg" name="message" placeholder="List everything that needs fixing"></textarea></div>
+          <button class="btn btn-shop" type="submit" style="width:100%">Send request</button>
+          <div class="form-note" id="formNote">This is a demo form. On a real site this would reach HandyFix Pros. For now, please call <a href="tel:+15557621459" style="color:#fff;font-weight:700">(555) 762-1459</a>.</div>
+        </form>
+      </div>
+      <div class="ccard">
+        <h3>Call or text</h3>
+        <a class="phone-big" href="tel:+15557621459">(555) 762-1459</a>
+        <p style="color:var(--muted)">HandyFix Pros<br>Serving the Atlanta, GA metro</p>
+        <table class="hours">
+          <tr><td>Monday to Friday</td><td>8:00 AM - 6:00 PM</td></tr>
+          <tr><td>Saturday</td><td>9:00 AM - 3:00 PM</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+        </table>
+        <h3 style="margin-top:26px">Service area</h3>
+        <div class="area-list">
+          <span class="area">Atlanta</span><span class="area">Marietta</span><span class="area">Decatur</span><span class="area">Sandy Springs</span><span class="area">Roswell</span><span class="area">Alpharetta</span><span class="area">Smyrna</span><span class="area">Kennesaw</span><span class="area">Duluth</span><span class="area">College Park</span><span class="area">Buckhead</span><span class="area">East Point</span>
+        </div>
+      </div>
+    </div>
+    <div class="shop-band">
+      <div><h2>One visit. Whole list. Done.</h2><p>Stop staring at that to-do list. Call now and we will knock it out in a single visit.</p></div>
+      <a class="btn" href="tel:+15557621459">&#9742; (555) 762-1459</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site">
+  <div class="container">
+    <span><strong style="color:#fff">HandyFix Pros</strong></span>
+    <span>Demo Website Concept. Content is illustrative. Not affiliated with any real business.</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  menuBtn.addEventListener('click',function(){document.body.classList.toggle('menu-open');});
+  document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.body.classList.remove('menu-open');});});
+  document.querySelectorAll('.faq button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.parentElement, open=item.classList.contains('open');
+      document.querySelectorAll('.faq').forEach(function(f){f.classList.remove('open');f.querySelector('button').setAttribute('aria-expanded','false');});
+      if(!open){item.classList.add('open');btn.setAttribute('aria-expanded','true');}
+    });
+  });
+  document.getElementById('demoForm').addEventListener('submit',function(e){e.preventDefault();document.getElementById('formNote').style.display='block';});
+})();
+</script>
+</body>
+</html>
