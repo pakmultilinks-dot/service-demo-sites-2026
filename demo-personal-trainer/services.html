@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Services | ForgeFit Training (Demo Website Concept)</title>
+<meta name="description" content="ForgeFit Training demo concept services: 1-on-1 Coaching, Small Group Training, Strength Program, Weight-Loss Coaching. Call (555) 539-2284.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Jost:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/custom.css">
+<style>
+body{font-family:'Jost',system-ui,sans-serif}
+h1,h2,h3,.font-display{font-family:'Fraunces',Georgia,serif}
+</style>
+</head>
+<body data-page="services" class="bg-[#faf6f1] text-[#38222f] antialiased">
+<div class="demo-strip">Demo Website Concept: a sample site for <strong>ForgeFit Training</strong>, San Diego, CA. Not a real business.</div>
+
+<header class="bg-[#40203a] text-white sticky top-0 z-40 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-20">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8e4a5e" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M7 8v8M17 8v8M4 10v4M20 10v4M7 12h10"/></svg>
+      <span class="font-display font-bold text-lg md:text-xl tracking-tight">ForgeFit <span class="text-[#8e4a5e] font-semibold">San</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium tracking-wide" aria-label="Main">
+<a data-nav="home" href="index.html" class="hover:text-[#8e4a5e] transition">Home</a>
+<a data-nav="services" href="services.html" class="hover:text-[#8e4a5e] transition">Services</a>
+<a data-nav="about" href="about.html" class="hover:text-[#8e4a5e] transition">About</a>
+<a data-nav="gallery" href="gallery.html" class="hover:text-[#8e4a5e] transition">Gallery</a>
+<a data-nav="reviews" href="reviews.html" class="hover:text-[#8e4a5e] transition">Reviews</a>
+<a data-nav="contact" href="contact.html" class="hover:text-[#8e4a5e] transition">Contact</a>
+
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:+15555392284" class="hidden md:inline-flex items-center gap-2 bg-[#8e4a5e] hover:opacity-90 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+        (555) 539-2284
+      </a>
+      <button id="menuBtn" class="md:hidden p-2 -mr-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="closed md:hidden bg-[#261222] border-t border-white/10">
+    <nav class="px-5 py-4 flex flex-col gap-1 text-base font-medium" aria-label="Mobile">
+<a data-nav="home" href="index.html" class="py-2.5 border-b border-white/5">Home</a>
+<a data-nav="services" href="services.html" class="py-2.5 border-b border-white/5">Services</a>
+<a data-nav="about" href="about.html" class="py-2.5 border-b border-white/5">About</a>
+<a data-nav="gallery" href="gallery.html" class="py-2.5 border-b border-white/5">Gallery</a>
+<a data-nav="reviews" href="reviews.html" class="py-2.5 border-b border-white/5">Reviews</a>
+<a data-nav="contact" href="contact.html" class="py-2.5 border-b border-white/5">Contact</a>
+
+      <a href="tel:+15555392284" class="mt-3 text-center bg-[#8e4a5e] text-white font-semibold py-3 rounded-xl">Call (555) 539-2284</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="max-w-4xl mx-auto px-4 sm:px-6 pt-16 pb-10 md:pt-24 md:pb-14 text-center">
+  <p class="reveal eyebrow">Services</p>
+  <h1 class="reveal font-display font-bold text-4xl md:text-6xl mt-5 text-[#40203a]">Services and specialties</h1>
+  <p class="reveal text-lg text-stone-600 mt-5 max-w-2xl mx-auto leading-relaxed">Everything ForgeFit does, done the way it should be done. Pick your service, then book in seconds.</p>
+</section>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 pb-8"><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition duration-300 border border-stone-100">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=800&q=80" alt="One-on-one coaching session" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="p-7"><h3 class="font-display font-semibold text-xl text-[#40203a]">1-on-1 Coaching</h3><p class="text-stone-500 mt-2">Fully personalized programming with a coach in your corner every rep.</p></div>
+      </a>
+
+      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition duration-300 border border-stone-100">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=80" alt="Small group workout" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="p-7"><h3 class="font-display font-semibold text-xl text-[#40203a]">Small Group Training</h3><p class="text-stone-500 mt-2">Groups of four max. Personal attention, team energy, shared momentum.</p></div>
+      </a>
+
+      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition duration-300 border border-stone-100">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80" alt="Barbell strength training" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="p-7"><h3 class="font-display font-semibold text-xl text-[#40203a]">Strength Program</h3><p class="text-stone-500 mt-2">Barbell-based progressive programming for lasting, measurable strength.</p></div>
+      </a>
+
+      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition duration-300 border border-stone-100">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800&q=80" alt="Client training for fat loss" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="p-7"><h3 class="font-display font-semibold text-xl text-[#40203a]">Weight-Loss Coaching</h3><p class="text-stone-500 mt-2">Training plus nutrition habits that fit real life, not crash diets.</p></div>
+      </a>
+
+      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition duration-300 border border-stone-100">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=800&q=80" alt="Athletic conditioning drill" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="p-7"><h3 class="font-display font-semibold text-xl text-[#40203a]">Athletic Conditioning</h3><p class="text-stone-500 mt-2">Speed, power, and agility work for sport and for life.</p></div>
+      </a>
+
+      <a href="services.html" class="reveal group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition duration-300 border border-stone-100">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&w=800&q=80" alt="Kettlebell home workout" class="h-52 w-full object-cover group-hover:scale-105 transition duration-500">
+        <div class="p-7"><h3 class="font-display font-semibold text-xl text-[#40203a]">Online Coaching</h3><p class="text-stone-500 mt-2">Custom plans, video check-ins, and accountability from anywhere.</p></div>
+      </a></div></section>
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-20 md:py-24">
+  <div class="orn-divider" aria-hidden="true"><span></span><svg width="14" height="14" viewBox="0 0 14 14"><rect x="3.5" y="3.5" width="7" height="7" transform="rotate(45 7 7)" fill="none" stroke="#8e4a5e" stroke-width="1.6"/></svg><span></span></div>
+  <p class="reveal eyebrow">Train together</p>
+  <h2 class="reveal font-display font-bold text-3xl md:text-5xl mt-3 text-center text-[#40203a]">Weekly class schedule</h2>
+  <p class="reveal text-center text-stone-500 mt-4 max-w-xl mx-auto">Small groups, capped sizes, coached every minute. Pick a day to see what is on.</p>
+  <div id="classSchedule" class="reveal mt-10">
+    <div class="flex flex-wrap justify-center gap-2.5"><button type="button" class="tab-btn active" data-day="Mon">Mon</button><button type="button" class="tab-btn" data-day="Tue">Tue</button><button type="button" class="tab-btn" data-day="Wed">Wed</button><button type="button" class="tab-btn" data-day="Thu">Thu</button><button type="button" class="tab-btn" data-day="Fri">Fri</button><button type="button" class="tab-btn" data-day="Sat">Sat</button><button type="button" class="tab-btn" data-day="Sun">Sun</button></div>
+    <div class="mt-8 bg-white rounded-3xl shadow-xl border border-stone-100 px-8 md:px-12 py-4"><div class="sch-day" data-daypanel="Mon"><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Sunrise Strength</p><p class="text-sm text-stone-500 capitalize">strength session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">6:00 AM</span></div><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Lunch Express Circuit</p><p class="text-sm text-stone-500 capitalize">conditioning session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">12:15 PM</span></div><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Small Group: Foundations</p><p class="text-sm text-stone-500 capitalize">coaching session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">5:30 PM</span></div></div><div class="sch-day hidden" data-daypanel="Tue"><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Kettlebell Conditioning</p><p class="text-sm text-stone-500 capitalize">conditioning session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">6:00 AM</span></div><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Small Group: Foundations</p><p class="text-sm text-stone-500 capitalize">coaching session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">9:30 AM</span></div><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Barbell Club</p><p class="text-sm text-stone-500 capitalize">strength session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">5:30 PM</span></div></div><div class="sch-day hidden" data-daypanel="Wed"><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Sunrise Strength</p><p class="text-sm text-stone-500 capitalize">strength session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">6:00 AM</span></div><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Core and Mobility</p><p class="text-sm text-stone-500 capitalize">recovery session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">12:15 PM</span></div><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Small Group: Foundations</p><p class="text-sm text-stone-500 capitalize">coaching session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">5:30 PM</span></div></div><div class="sch-day hidden" data-daypanel="Thu"><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Kettlebell Conditioning</p><p class="text-sm text-stone-500 capitalize">conditioning session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">6:00 AM</span></div><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Small Group: Foundations</p><p class="text-sm text-stone-500 capitalize">coaching session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">9:30 AM</span></div><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Barbell Club</p><p class="text-sm text-stone-500 capitalize">strength session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">5:30 PM</span></div></div><div class="sch-day hidden" data-daypanel="Fri"><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Sunrise Strength</p><p class="text-sm text-stone-500 capitalize">strength session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">6:00 AM</span></div><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Lunch Express Circuit</p><p class="text-sm text-stone-500 capitalize">conditioning session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">12:15 PM</span></div><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Open Coaching Hour</p><p class="text-sm text-stone-500 capitalize">coaching session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">5:30 PM</span></div></div><div class="sch-day hidden" data-daypanel="Sat"><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Weekend Warrior WOD</p><p class="text-sm text-stone-500 capitalize">conditioning session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">8:00 AM</span></div><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Barbell Club</p><p class="text-sm text-stone-500 capitalize">strength session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">10:00 AM</span></div></div><div class="sch-day hidden" data-daypanel="Sun"><div class="flex items-center justify-between gap-4 py-4 border-b border-stone-100 last:border-0"><div><p class="font-semibold text-[#40203a]">Recovery Flow and Stretch</p><p class="text-sm text-stone-500 capitalize">recovery session</p></div><span class="shrink-0 font-display font-semibold text-[#8e4a5e]">10:00 AM</span></div></div></div>
+    <p class="text-xs text-stone-400 mt-6 text-center">Demo schedule for illustration only.</p>
+  </div>
+</section>
+<section class="max-w-4xl mx-auto px-4 sm:px-6 pb-20 md:pb-24">
+  <p class="reveal eyebrow">Measure</p>
+  <h2 class="reveal font-display font-bold text-3xl md:text-4xl mt-3 text-center text-[#40203a]">Know your starting point</h2>
+  <p class="reveal text-center text-stone-500 mt-4 max-w-xl mx-auto">A quick body mass index check. Just a number, and just the start of the conversation.</p>
+  <form id="bmiForm" class="reveal mt-10 bg-white rounded-3xl shadow-xl border border-stone-100 p-8 md:p-10 grid sm:grid-cols-2 gap-5">
+    <div>
+      <label for="bmiH" class="font-semibold text-[#40203a]">Height (cm)</label>
+      <input id="bmiH" type="number" min="100" max="250" placeholder="175" class="mt-2 w-full border-2 border-stone-200 rounded-xl px-4 py-3.5 font-medium focus:border-[#8e4a5e]">
+    </div>
+    <div>
+      <label for="bmiW" class="font-semibold text-[#40203a]">Weight (kg)</label>
+      <input id="bmiW" type="number" min="25" max="350" placeholder="78" class="mt-2 w-full border-2 border-stone-200 rounded-xl px-4 py-3.5 font-medium focus:border-[#8e4a5e]">
+    </div>
+    <div class="sm:col-span-2">
+      <button type="submit" class="font-semibold text-white px-8 py-4 rounded-full transition hover:opacity-90" style="background:var(--brand)">Calculate BMI</button>
+      <div id="bmiResult" class="hidden mt-8 bg-stone-50 border-2 border-dashed rounded-2xl p-7 text-center" style="border-color:var(--accent)"></div>
+    </div>
+  </form>
+</section>
+
+<section class="max-w-3xl mx-auto px-4 sm:px-6 py-20 md:py-24">
+  <p class="reveal eyebrow">Good to know</p>
+  <h2 class="reveal font-display font-bold text-3xl md:text-5xl mt-3 text-center text-[#40203a]">Questions, answered</h2>
+  <div class="mt-10">
+    <div class="faq-item reveal bg-white border-2 border-stone-200 rounded-2xl mb-4">
+      <button class="faq-q w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-semibold text-[#40203a]">
+        <span>I have never worked out. Is this for me?</span>
+        <svg class="faq-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8e4a5e" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p class="px-6 pb-6 text-stone-500">Yes. Most clients start as beginners. Your first sessions focus on form, confidence, and building the habit.</p></div>
+    </div>
+    <div class="faq-item reveal bg-white border-2 border-stone-200 rounded-2xl mb-4">
+      <button class="faq-q w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-semibold text-[#40203a]">
+        <span>How many sessions per week do I need?</span>
+        <svg class="faq-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8e4a5e" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p class="px-6 pb-6 text-stone-500">Two to three sessions weekly is the sweet spot for most goals, plus simple homework on off days.</p></div>
+    </div>
+    <div class="faq-item reveal bg-white border-2 border-stone-200 rounded-2xl mb-4">
+      <button class="faq-q w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-semibold text-[#40203a]">
+        <span>Do you help with nutrition?</span>
+        <svg class="faq-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8e4a5e" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p class="px-6 pb-6 text-stone-500">We build sustainable eating habits around your training, no crash diets, no banned foods, no guilt.</p></div>
+    </div>
+    <div class="faq-item reveal bg-white border-2 border-stone-200 rounded-2xl mb-4">
+      <button class="faq-q w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-semibold text-[#40203a]">
+        <span>Where do sessions happen?</span>
+        <svg class="faq-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8e4a5e" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p class="px-6 pb-6 text-stone-500">At our San Diego studio, outdoors at local parks, or online with video coaching.</p></div>
+    </div>
+    <div class="faq-item reveal bg-white border-2 border-stone-200 rounded-2xl mb-4">
+      <button class="faq-q w-full text-left px-6 py-5 flex items-center justify-between gap-4 font-semibold text-[#40203a]">
+        <span>What should I bring to my first session?</span>
+        <svg class="faq-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8e4a5e" stroke-width="2.4" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p class="px-6 pb-6 text-stone-500">Workout clothes, water, and an open mind. We handle programming, equipment, and the plan.</p></div>
+    </div></div>
+</section>
+
+<section class="relative text-white overflow-hidden mt-4">
+  <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1920&q=80" alt="The ForgeFit training floor" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0 bg-[#261222]/85"></div>
+  <div class="relative max-w-4xl mx-auto px-4 sm:px-6 py-20 md:py-28 text-center">
+    <h2 class="reveal font-display font-bold text-3xl md:text-5xl">Not sure which fits?</h2>
+    <p class="reveal text-lg text-stone-200 mt-4">Call (555) 539-2284 and we will point you to the right service, no pressure.</p>
+    <div class="reveal flex flex-wrap justify-center gap-4 mt-8">
+      <a href="tel:+15555392284" class="bg-[#8e4a5e] hover:opacity-90 text-white font-semibold px-8 py-4 rounded-full transition shadow-xl">Call (555) 539-2284</a>
+      <a href="contact.html" class="border-2 border-white/60 hover:border-white font-semibold px-8 py-4 rounded-full transition">Book a visit</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="bg-[#261222] text-stone-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid gap-10 md:grid-cols-4">
+    <div>
+      <p class="font-display font-bold text-white text-lg">ForgeFit <span class="text-[#8e4a5e]">San</span></p>
+      <p class="text-sm mt-3 text-stone-400">Stronger every session.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-white mb-4 tracking-wide">Pages</p>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="index.html" class="hover:text-[#8e4a5e]">Home</a></li>
+        <li><a href="services.html" class="hover:text-[#8e4a5e]">Services</a></li>
+        <li><a href="about.html" class="hover:text-[#8e4a5e]">About</a></li>
+        <li><a href="gallery.html" class="hover:text-[#8e4a5e]">Gallery</a></li>
+        <li><a href="reviews.html" class="hover:text-[#8e4a5e]">Reviews</a></li>
+        <li><a href="contact.html" class="hover:text-[#8e4a5e]">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold text-white mb-4 tracking-wide">Visit</p>
+      <p class="text-sm text-stone-400">Serving San Diego and nearby neighborhoods.</p>
+      <p class="text-sm mt-2 text-stone-400">By appointment, plus walk-ins where noted.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-white mb-4 tracking-wide">Contact</p>
+      <a href="tel:+15555392284" class="text-[#8e4a5e] font-semibold text-lg">(555) 539-2284</a>
+      <p class="text-sm mt-2 text-stone-400">Mon-Fri: 6am - 8pm<br>Saturday: 7am - 2pm<br>Sunday: By appointment</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-stone-500">
+      <p>Copyright <span data-year></span> ForgeFit Training. Demo website concept. Content is illustrative, not a real business.</p>
+      <p>Sample photos via Unsplash.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="callBar" class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white border-t border-stone-200 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
+  <div class="grid grid-cols-2 gap-3 p-3">
+    <a href="tel:+15555392284" class="bg-[#8e4a5e] text-white font-semibold text-center py-3.5 rounded-xl">Call Now</a>
+    <a href="contact.html" class="bg-[#40203a] text-white font-semibold text-center py-3.5 rounded-xl">Book a Visit</a>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+/* GROUP B demo concepts: dark charcoal + racing red system. Space Grotesk display, Inter body. No em-dash characters used. */
+:root{
+  --bg:#0b0b0c; --panel:#141416; --panel2:#1b1b1e;
+  --red:#e10600; --red-hi:#ff2b1f; --red-dim:rgba(225,6,0,.14);
+  --ink:#f4f4f5; --mut:#a1a1aa;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink)}
+::selection{background:var(--red);color:#fff}
+
+/* Demo concept banner */
+.demo-strip{background:var(--red);color:#fff;text-align:center;font-size:.8rem;font-weight:700;padding:10px 18px;letter-spacing:.02em}
+.demo-strip strong{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+/* Red kicker */
+.kicker{color:var(--red-hi);font-weight:800;font-size:.8rem;text-transform:uppercase;letter-spacing:.22em}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* Spec-sheet cards */
+.spec-card{background:rgba(20,20,22,.72);border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--red);backdrop-filter:blur(8px);border-radius:.9rem;padding:.9rem 1.1rem}
+.spec-card .k{font-size:.68rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.spec-card .v{font-weight:700;margin-top:.25rem}
+
+/* Testimonial slider */
+.tst-track{display:flex;transition:transform .55s ease}
+.tst-slide{min-width:100%}
+.tst-dot{width:10px;height:10px;border-radius:9999px;background:#3f3f46;cursor:pointer;transition:background .25s,transform .25s;border:0;padding:0}
+.tst-dot.active{background:var(--red);transform:scale(1.25)}
+
+/* FAQ accordion */
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-answer{max-height:320px}
+.faq-item .faq-chevron{transition:transform .3s ease}
+.faq-item.open .faq-chevron{transform:rotate(180deg)}
+.faq-item.open{border-color:var(--red)}
+
+/* Lightbox */
+#lightbox{transition:opacity .3s ease;background:rgba(5,5,6,.94)}
+#lightbox.hiddenx{opacity:0;pointer-events:none}
+
+/* Mobile nav panel */
+#mobileMenu{transition:transform .32s ease,opacity .32s ease;transform-origin:top}
+#mobileMenu.closed{transform:scaleY(.6);opacity:0;pointer-events:none}
+
+/* Sticky mobile call bar */
+#callBar{transform:translateY(110%);transition:transform .35s ease}
+#callBar.show{transform:translateY(0)}
+
+/* Gallery hover */
+.g-item img{transition:transform .5s ease}
+.g-item:hover img{transform:scale(1.06)}
+
+/* Range sliders */
+input[type="range"]{accent-color:var(--red)}
+
+/* Focus visibility */
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+
+/* Pulsing emergency dot */
+.pulse-dot{width:12px;height:12px;border-radius:9999px;background:var(--red-hi);position:relative;flex:none}
+.pulse-dot::after{content:"";position:absolute;inset:-4px;border-radius:9999px;border:2px solid var(--red-hi);animation:ping 1.6s ease-out infinite}
+@keyframes ping{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.4);opacity:0}}
+@media (prefers-reduced-motion:reduce){.pulse-dot::after{animation:none}}
+
+/* Option buttons (troubleshooter, wear inspector, triage) */
+.tr-opt{border:2px solid #27272a;border-radius:1rem;padding:1rem 1.25rem;font-weight:600;color:var(--ink);text-align:left;background:var(--panel);transition:border-color .2s,background .2s,transform .15s;cursor:pointer}
+.tr-opt:hover{border-color:var(--red);transform:translateY(-2px)}
+.tr-opt.selected{border-color:var(--red);background:var(--red-dim)}
+
+/* Scheduler day/slot buttons */
+.sched-day,.sched-slot{border:2px solid #27272a;border-radius:.9rem;padding:.7rem .5rem;font-size:.85rem;color:var(--ink);background:var(--panel);transition:border-color .18s,background .18s,color .18s;cursor:pointer}
+.sched-day:hover:not(.disabled),.sched-slot:hover{border-color:var(--red)}
+.sched-day.selected,.sched-slot.selected{border-color:var(--red);background:var(--red);color:#fff}
+.sched-day.disabled{opacity:.45;cursor:not-allowed;background:#17171a}
+
+/* Red divider */
+.divider-red{display:flex;align-items:center;gap:14px;max-width:72rem;margin:0 auto;padding:0 1.5rem}
+.divider-red span{height:2px;flex:1;background:linear-gradient(90deg,transparent,#3f3f46,transparent)}
+
+/* Before/after slider */
+.ba-wrap{position:relative;overflow:hidden;border-radius:1.25rem;user-select:none;touch-action:none;cursor:ew-resize}
+.ba-wrap .ba-img-after{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba-wrap .ba-img-before{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:sepia(.55) saturate(.7) brightness(.62) contrast(.92);clip-path:inset(0 50% 0 0)}
+.ba-handle{position:absolute;top:0;bottom:0;width:3px;background:#fff;box-shadow:0 0 12px rgba(0,0,0,.6);pointer-events:none}
+.ba-knob{position:absolute;top:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:9999px;background:var(--red);display:grid;place-items:center;color:#fff;font-weight:800;box-shadow:0 6px 20px rgba(0,0,0,.5);pointer-events:none;white-space:nowrap}
+.ba-tag{position:absolute;top:14px;font-size:.7rem;font-weight:800;letter-spacing:.2em;padding:.4rem .8rem;border-radius:9999px;background:rgba(0,0,0,.65);color:#fff}
+
+/* Stat band numbers */
+.stat-num{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700}
+
+/* Form fields on dark */
+.field{background:var(--panel);border:2px solid #27272a;border-radius:.9rem;padding:.8rem 1rem;color:var(--ink);width:100%}
+.field:focus{border-color:var(--red)}
+select.field option{background:#141416}

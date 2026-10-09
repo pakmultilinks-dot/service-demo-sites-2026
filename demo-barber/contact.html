@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | SharpLine Barbershop (Demo Website Concept)</title>
+<meta name="description" content="Contact SharpLine Barbershop in Los Angeles, CA. Call (555) 214-8890. Demo website concept.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Jost:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/custom.css">
+<style>
+body{font-family:'Jost',system-ui,sans-serif}
+h1,h2,h3,.font-display{font-family:'Fraunces',Georgia,serif}
+</style>
+</head>
+<body data-page="contact" class="bg-[#faf6ef] text-[#3a2438] antialiased">
+<div class="demo-strip">Demo Website Concept: a sample site for <strong>SharpLine Barbershop</strong>, Los Angeles, CA. Not a real business.</div>
+
+<header class="bg-[#3a2140] text-white sticky top-0 z-40 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-20">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a5713f" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="6" cy="6" r="2.6"/><circle cx="6" cy="18" r="2.6"/><path d="M8.2 7.8 20 19.5M8.2 16.2 20 4.5"/></svg>
+      <span class="font-display font-bold text-lg md:text-xl tracking-tight">SharpLine <span class="text-[#a5713f] font-semibold">Los</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-medium tracking-wide" aria-label="Main">
+<a data-nav="home" href="index.html" class="hover:text-[#a5713f] transition">Home</a>
+<a data-nav="services" href="services.html" class="hover:text-[#a5713f] transition">Services</a>
+<a data-nav="about" href="about.html" class="hover:text-[#a5713f] transition">About</a>
+<a data-nav="gallery" href="gallery.html" class="hover:text-[#a5713f] transition">Gallery</a>
+<a data-nav="reviews" href="reviews.html" class="hover:text-[#a5713f] transition">Reviews</a>
+<a data-nav="contact" href="contact.html" class="hover:text-[#a5713f] transition">Contact</a>
+
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:+15552148890" class="hidden md:inline-flex items-center gap-2 bg-[#a5713f] hover:opacity-90 text-white font-semibold text-sm px-5 py-2.5 rounded-full transition">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+        (555) 214-8890
+      </a>
+      <button id="menuBtn" class="md:hidden p-2 -mr-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="closed md:hidden bg-[#231225] border-t border-white/10">
+    <nav class="px-5 py-4 flex flex-col gap-1 text-base font-medium" aria-label="Mobile">
+<a data-nav="home" href="index.html" class="py-2.5 border-b border-white/5">Home</a>
+<a data-nav="services" href="services.html" class="py-2.5 border-b border-white/5">Services</a>
+<a data-nav="about" href="about.html" class="py-2.5 border-b border-white/5">About</a>
+<a data-nav="gallery" href="gallery.html" class="py-2.5 border-b border-white/5">Gallery</a>
+<a data-nav="reviews" href="reviews.html" class="py-2.5 border-b border-white/5">Reviews</a>
+<a data-nav="contact" href="contact.html" class="py-2.5 border-b border-white/5">Contact</a>
+
+      <a href="tel:+15552148890" class="mt-3 text-center bg-[#a5713f] text-white font-semibold py-3 rounded-xl">Call (555) 214-8890</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section class="max-w-4xl mx-auto px-4 sm:px-6 pt-16 pb-10 md:pt-24 md:pb-14 text-center">
+  <p class="reveal eyebrow">Contact</p>
+  <h1 class="reveal font-display font-bold text-4xl md:text-6xl mt-5 text-[#3a2140]">Get in touch</h1>
+  <p class="reveal text-lg text-stone-600 mt-5 max-w-2xl mx-auto leading-relaxed">Call, message, or book online. SharpLine replies fast and friendly.</p>
+</section>
+<section class="max-w-6xl mx-auto px-4 sm:px-6 pb-8"><div class="grid md:grid-cols-3 gap-6 mt-4"><a href="tel:+15552148890" class="reveal bg-white rounded-3xl shadow-md border border-stone-100 p-8 text-center hover:shadow-xl transition"><p class="eyebrow">Call us</p><p class="font-display font-semibold text-2xl text-[#3a2140] mt-2">(555) 214-8890</p><p class="text-sm text-stone-500 mt-2">Tap to call now</p></a><div class="reveal bg-white rounded-3xl shadow-md border border-stone-100 p-8"><p class="eyebrow">Hours</p><div class="mt-3"><div class="flex justify-between py-2 border-b border-stone-100 last:border-0 text-sm"><span class="font-medium">Mon-Fri</span><span class="text-stone-500">9am - 7pm</span></div><div class="flex justify-between py-2 border-b border-stone-100 last:border-0 text-sm"><span class="font-medium">Saturday</span><span class="text-stone-500">8am - 5pm</span></div><div class="flex justify-between py-2 border-b border-stone-100 last:border-0 text-sm"><span class="font-medium">Sunday</span><span class="text-stone-500">10am - 3pm</span></div></div></div><div class="reveal bg-white rounded-3xl shadow-md border border-stone-100 p-8"><p class="eyebrow">Service area</p><p class="text-sm text-stone-500 mt-3">Serving Los Angeles and nearby neighborhoods.</p><p class="text-xs text-stone-400 mt-3">Demo concept. No street address listed.</p></div></div></section>
+<section class="max-w-5xl mx-auto px-4 sm:px-6 py-20 md:py-24">
+  <p class="reveal eyebrow">Book ahead</p>
+  <h2 class="reveal font-display font-bold text-3xl md:text-5xl mt-3 text-center text-[#3a2140]">Book online</h2>
+  <p class="reveal text-center text-stone-500 mt-4 max-w-xl mx-auto">Pick a day and time below, or send a message and we will get right back to you.</p>
+  <div class="reveal mt-10 bg-white rounded-3xl shadow-xl border border-stone-100 p-7 md:p-10">
+    <p class="font-display font-semibold text-xl text-[#3a2140]">Pick a day</p>
+    <div id="schedDays" class="grid grid-cols-4 sm:grid-cols-7 gap-2.5 mt-5"></div>
+    <p class="font-display font-semibold text-xl text-[#3a2140] mt-8">Pick a time</p>
+    <div id="schedSlots" class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 mt-5"></div>
+    <div id="schedDone" class="hidden mt-8 bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-7 text-center"></div>
+    <p class="text-xs text-stone-400 mt-6 text-center">Demo scheduler for illustration only. No real appointment is created.</p>
+  </div>
+</section>
+<section class="max-w-3xl mx-auto px-4 sm:px-6 pb-20 md:pb-24"><div class="reveal bg-white rounded-3xl shadow-xl border border-stone-100 p-8 md:p-12"><p class="eyebrow">Send a message</p><h2 class="font-display font-bold text-2xl md:text-3xl mt-3 text-[#3a2140]">We reply within a day</h2><form id="contactForm" class="mt-6 grid sm:grid-cols-2 gap-5"><div><label for="cfName" class="font-medium">Name</label><input id="cfName" required type="text" placeholder="Jane Smith" class="mt-2 w-full border-2 border-stone-200 rounded-xl px-4 py-3 focus:border-[#a5713f]"></div><div><label for="cfPhone" class="font-medium">Phone</label><input id="cfPhone" required type="tel" placeholder="(555) 000-0000" class="mt-2 w-full border-2 border-stone-200 rounded-xl px-4 py-3 focus:border-[#a5713f]"></div><div class="sm:col-span-2"><label for="cfService" class="font-medium">Service</label><select id="cfService" class="mt-2 w-full border-2 border-stone-200 rounded-xl px-4 py-3 focus:border-[#a5713f]"><option>Signature Haircut</option><option>Skin Fade</option><option>Beard Sculpting</option><option>Hot Towel Shave</option><option>Kids Cut</option><option>Gray Blending</option></select></div><div class="sm:col-span-2"><label for="cfMsg" class="font-medium">Message</label><textarea id="cfMsg" rows="4" placeholder="Tell us what you need..." class="mt-2 w-full border-2 border-stone-200 rounded-xl px-4 py-3 focus:border-[#a5713f]"></textarea></div><div class="sm:col-span-2"><button type="submit" class="font-semibold text-white px-8 py-4 rounded-full transition hover:opacity-90" style="background:var(--brand)">Send message</button></div></form><div id="formDone" class="hidden mt-6 bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-8 text-center"><p class="font-display font-semibold text-xl text-emerald-700">Message received</p><p class="text-stone-500 mt-2">Thanks for reaching out. Demo form, nothing was actually sent.</p></div></div></section></main>
+<footer class="bg-[#231225] text-stone-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid gap-10 md:grid-cols-4">
+    <div>
+      <p class="font-display font-bold text-white text-lg">SharpLine <span class="text-[#a5713f]">Los</span></p>
+      <p class="text-sm mt-3 text-stone-400">Sharp cuts. Honest craft.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-white mb-4 tracking-wide">Pages</p>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="index.html" class="hover:text-[#a5713f]">Home</a></li>
+        <li><a href="services.html" class="hover:text-[#a5713f]">Services</a></li>
+        <li><a href="about.html" class="hover:text-[#a5713f]">About</a></li>
+        <li><a href="gallery.html" class="hover:text-[#a5713f]">Gallery</a></li>
+        <li><a href="reviews.html" class="hover:text-[#a5713f]">Reviews</a></li>
+        <li><a href="contact.html" class="hover:text-[#a5713f]">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold text-white mb-4 tracking-wide">Visit</p>
+      <p class="text-sm text-stone-400">Serving Los Angeles and nearby neighborhoods.</p>
+      <p class="text-sm mt-2 text-stone-400">By appointment, plus walk-ins where noted.</p>
+    </div>
+    <div>
+      <p class="font-semibold text-white mb-4 tracking-wide">Contact</p>
+      <a href="tel:+15552148890" class="text-[#a5713f] font-semibold text-lg">(555) 214-8890</a>
+      <p class="text-sm mt-2 text-stone-400">Mon-Fri: 9am - 7pm<br>Saturday: 8am - 5pm<br>Sunday: 10am - 3pm</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-stone-500">
+      <p>Copyright <span data-year></span> SharpLine Barbershop. Demo website concept. Content is illustrative, not a real business.</p>
+      <p>Sample photos via Unsplash.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="callBar" class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white border-t border-stone-200 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
+  <div class="grid grid-cols-2 gap-3 p-3">
+    <a href="tel:+15552148890" class="bg-[#a5713f] text-white font-semibold text-center py-3.5 rounded-xl">Call Now</a>
+    <a href="contact.html" class="bg-[#3a2140] text-white font-semibold text-center py-3.5 rounded-xl">Book a Visit</a>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

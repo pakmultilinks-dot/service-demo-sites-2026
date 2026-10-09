@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SmokeStack BBQ Truck | Services (Demo Website Concept)</title>
+<meta name="description" content="Services from SmokeStack BBQ Truck, a demo website concept in Portland, OR.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/custom.css">
+<style>body{font-family:'DM Sans',system-ui,sans-serif}h1,h2,h3,.font-display{font-family:'DM Serif Display',Georgia,serif;letter-spacing:.01em}</style>
+</head>
+<body data-page="services" class="antialiased" style="background:#fdf6ec;color:#2b2118">
+
+<div class="demo-strip">Demo Website Concept: a sample site for <strong>SmokeStack BBQ Truck</strong>, Portland, OR. Not a real business.</div>
+
+<header class="text-white sticky top-0 z-40 shadow-lg" style="background:#2a1c12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-20">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2c1 3-2 4.5-2 7a4.5 4.5 0 0 0 9 .5C19 6 15 4 12 2z" fill="#d9481f"/><path d="M12 9c.6 1.8-1.2 2.7-1.2 4.2a2.7 2.7 0 0 0 5.4.3C16.2 11.4 14 10.4 12 9z" fill="#f4a259"/><path d="M7 20h10l-1.2-3.5H8.2L7 20z" fill="#fdf6ec"/></svg>
+      <span class="font-bold text-lg md:text-xl tracking-tight font-display">SmokeStack</span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-semibold" aria-label="Main">
+      <a data-nav="home" href="index.html" class="hover:text-[#d9481f] transition">Home</a><a data-nav="services" href="services.html" class="hover:text-[#d9481f] transition">Services</a><a data-nav="about" href="about.html" class="hover:text-[#d9481f] transition">About</a><a data-nav="gallery" href="gallery.html" class="hover:text-[#d9481f] transition">Gallery</a><a data-nav="reviews" href="reviews.html" class="hover:text-[#d9481f] transition">Reviews</a><a data-nav="contact" href="contact.html" class="hover:text-[#d9481f] transition">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:+15552345678" class="hidden md:inline-flex items-center gap-2 text-white font-bold text-sm px-5 py-2.5 rounded-full transition hover:brightness-110" style="background:#d9481f">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+        (555) 234-5678
+      </a>
+      <button id="menuBtn" class="md:hidden p-2 -mr-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="closed md:hidden border-t border-white/10" style="background:#1a110a">
+    <nav class="px-5 py-4 flex flex-col gap-1 text-base font-semibold" aria-label="Mobile">
+      <a data-nav="home" href="index.html" class="py-2.5 border-b border-white/5">Home</a><a data-nav="services" href="services.html" class="py-2.5 border-b border-white/5">Services</a><a data-nav="about" href="about.html" class="py-2.5 border-b border-white/5">About</a><a data-nav="gallery" href="gallery.html" class="py-2.5 border-b border-white/5">Gallery</a><a data-nav="reviews" href="reviews.html" class="py-2.5 border-b border-white/5">Reviews</a><a data-nav="contact" href="contact.html" class="py-2.5 border-b border-white/5">Contact</a>
+      <a href="tel:+15552345678" class="mt-3 text-center text-white font-bold py-3 rounded-xl" style="background:#d9481f">Call (555) 234-5678</a>
+    </nav>
+  </div>
+</header>
+<main>
+<section style="background:#2a1c12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+    <p class="reveal text-xs font-bold uppercase tracking-[0.2em]" style="color:#d9481f">Services</p>
+    <h1 class="reveal font-display text-4xl md:text-6xl text-white mt-3">What we offer</h1>
+    <p class="reveal text-lg mt-4 max-w-2xl" style="color:#fdf6ec;opacity:.85">From the smoker to your event.</p>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-24">
+  
+<div class="reveal">
+  <p class="font-bold text-sm uppercase tracking-[0.18em]" style="color:#d9481f">What we do</p>
+  <h2 class="font-display text-3xl md:text-5xl mt-3" style="color:#2b2118">Services in detail</h2>
+</div>
+  <div class="mt-12 space-y-16"><div class="grid md:grid-cols-2 gap-10 items-center"><div class="menu-frame reveal"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" alt="Signature Smoke Plates" class="w-full h-64 md:h-72 object-cover"></div><div class="reveal">
+          <p class="text-xs font-bold uppercase tracking-[0.18em]" style="color:#d9481f">Service 1</p>
+          <h3 class="font-display text-3xl mt-2" style="color:#2b2118">Signature Smoke Plates</h3>
+          <p class="text-stone-500 mt-3 leading-relaxed">Brisket, ribs, pulled pork, and smoked chicken plated with two scratch sides and pickles.</p>
+          <a href="contact.html" class="inline-block mt-5 font-bold border-b-2" style="color:#2a1c12;border-color:#d9481f">Ask about this</a>
+        </div></div><div class="grid md:grid-cols-2 gap-10 items-center"><div class="reveal">
+          <p class="text-xs font-bold uppercase tracking-[0.18em]" style="color:#d9481f">Service 2</p>
+          <h3 class="font-display text-3xl mt-2" style="color:#2b2118">Sandwiches and Tacos</h3>
+          <p class="text-stone-500 mt-3 leading-relaxed">Piled-high pork sandwiches, brisket melts, and smoked chicken tacos on fresh tortillas.</p>
+          <a href="contact.html" class="inline-block mt-5 font-bold border-b-2" style="color:#2a1c12;border-color:#d9481f">Ask about this</a>
+        </div><div class="menu-frame reveal"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?auto=format&fit=crop&w=900&q=80" alt="Sandwiches and Tacos" class="w-full h-64 md:h-72 object-cover"></div></div><div class="grid md:grid-cols-2 gap-10 items-center"><div class="menu-frame reveal"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=900&q=80" alt="Sides and Fixings" class="w-full h-64 md:h-72 object-cover"></div><div class="reveal">
+          <p class="text-xs font-bold uppercase tracking-[0.18em]" style="color:#d9481f">Service 3</p>
+          <h3 class="font-display text-3xl mt-2" style="color:#2b2118">Sides and Fixings</h3>
+          <p class="text-stone-500 mt-3 leading-relaxed">Mac and cheese, pit beans, collard greens, cornbread, and tangy slaw, made every morning.</p>
+          <a href="contact.html" class="inline-block mt-5 font-bold border-b-2" style="color:#2a1c12;border-color:#d9481f">Ask about this</a>
+        </div></div><div class="grid md:grid-cols-2 gap-10 items-center"><div class="reveal">
+          <p class="text-xs font-bold uppercase tracking-[0.18em]" style="color:#d9481f">Service 4</p>
+          <h3 class="font-display text-3xl mt-2" style="color:#2b2118">Event Catering</h3>
+          <p class="text-stone-500 mt-3 leading-relaxed">We roll the truck to weddings, office parties, and backyard bashes anywhere in Portland.</p>
+          <a href="contact.html" class="inline-block mt-5 font-bold border-b-2" style="color:#2a1c12;border-color:#d9481f">Ask about this</a>
+        </div><div class="menu-frame reveal"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="Event Catering" class="w-full h-64 md:h-72 object-cover"></div></div><div class="grid md:grid-cols-2 gap-10 items-center"><div class="menu-frame reveal"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" alt="Brewery and Taproom Nights" class="w-full h-64 md:h-72 object-cover"></div><div class="reveal">
+          <p class="text-xs font-bold uppercase tracking-[0.18em]" style="color:#d9481f">Service 5</p>
+          <h3 class="font-display text-3xl mt-2" style="color:#2b2118">Brewery and Taproom Nights</h3>
+          <p class="text-stone-500 mt-3 leading-relaxed">Regular late stops at Portland breweries. BBQ and beer is a combination we take seriously.</p>
+          <a href="contact.html" class="inline-block mt-5 font-bold border-b-2" style="color:#2a1c12;border-color:#d9481f">Ask about this</a>
+        </div></div><div class="grid md:grid-cols-2 gap-10 items-center"><div class="reveal">
+          <p class="text-xs font-bold uppercase tracking-[0.18em]" style="color:#d9481f">Service 6</p>
+          <h3 class="font-display text-3xl mt-2" style="color:#2b2118">Bulk To-Go Packs</h3>
+          <p class="text-stone-500 mt-3 leading-relaxed">Feed the whole crew with family packs of smoked meats and sides, ready for pickup.</p>
+          <a href="contact.html" class="inline-block mt-5 font-bold border-b-2" style="color:#2a1c12;border-color:#d9481f">Ask about this</a>
+        </div><div class="menu-frame reveal"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=80" alt="Bulk To-Go Packs" class="w-full h-64 md:h-72 object-cover"></div></div></div>
+</section>
+
+<section id="crew" class="max-w-4xl mx-auto px-4 sm:px-6 py-20 md:py-24">
+  
+<div class="reveal">
+  <p class="font-bold text-sm uppercase tracking-[0.18em]" style="color:#d9481f">Feeding a crowd</p>
+  <h2 class="font-display text-3xl md:text-5xl mt-3" style="color:#2b2118">Crew pack estimator</h2>
+</div>
+  <p class="reveal text-stone-500 mt-4 max-w-2xl">How many hungry people? Slide, pick an appetite, and get a sample guide for a bulk to-go order.</p>
+  <form id="crewForm" class="reveal bg-white rounded-3xl shadow-md p-8 mt-8">
+    <label class="font-bold block" style="color:#2b2118">People to feed: <span id="crewCountVal" class="font-display text-2xl" style="color:#d9481f">20</span></label>
+    <input id="crewCount" type="range" min="5" max="100" value="20" class="w-full mt-3">
+    <label class="font-bold block mt-6" style="color:#2b2118">Appetite level</label>
+    <select id="crewAppetite" class="mt-2 w-full rounded-xl border-2 border-stone-200 px-4 py-3 font-semibold">
+      <option value="light">Light grazers</option>
+      <option value="normal" selected>Normal appetites</option>
+      <option value="big">Serious BBQ fans</option>
+    </select>
+    <button type="submit" class="mt-6 text-white font-bold px-8 py-4 rounded-full transition hover:brightness-110" style="background:#d9481f">Get sample guide</button>
+  </form>
+  <div id="crewOut" class="hidden mt-6 bg-white rounded-3xl shadow-md p-8"></div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 sm:px-6 py-20 md:py-24">
+  
+<div class="reveal">
+  <p class="font-bold text-sm uppercase tracking-[0.18em]" style="color:#d9481f">Good to know</p>
+  <h2 class="font-display text-3xl md:text-5xl mt-3" style="color:#2b2118">Frequently asked questions</h2>
+</div>
+  <div class="mt-10">
+    <div class="faq-item reveal bg-white rounded-2xl border-2 border-stone-200 mb-4 overflow-hidden">
+      <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-bold" style="color:#2b2118">
+        <span>Where is the truck today?</span>
+        <svg class="faq-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d9481f" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p class="px-6 pb-6 text-stone-500 text-sm leading-relaxed">Check the weekly schedule widget on this page. We post our stops for the full week every Sunday evening, and same-day changes go on our social pages.</p></div>
+    </div>
+    <div class="faq-item reveal bg-white rounded-2xl border-2 border-stone-200 mb-4 overflow-hidden">
+      <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-bold" style="color:#2b2118">
+        <span>Do you sell out?</span>
+        <svg class="faq-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d9481f" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p class="px-6 pb-6 text-stone-500 text-sm leading-relaxed">Sometimes, yes. Popular items like brisket and burnt ends can sell out on busy days. Coming before 6pm is the safest bet.</p></div>
+    </div>
+    <div class="faq-item reveal bg-white rounded-2xl border-2 border-stone-200 mb-4 overflow-hidden">
+      <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-bold" style="color:#2b2118">
+        <span>Do you have vegetarian options?</span>
+        <svg class="faq-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d9481f" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p class="px-6 pb-6 text-stone-500 text-sm leading-relaxed">We always carry smoked jackfruit sandwiches, grilled vegetable plates, and all of our sides are meat-free. Ask at the window for today&#x27;s picks.</p></div>
+    </div>
+    <div class="faq-item reveal bg-white rounded-2xl border-2 border-stone-200 mb-4 overflow-hidden">
+      <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-bold" style="color:#2b2118">
+        <span>Can you cater my event?</span>
+        <svg class="faq-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d9481f" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p class="px-6 pb-6 text-stone-500 text-sm leading-relaxed">Yes. We cater weddings, office parties, and private events across Portland with the truck on site or drop-off trays. Use the contact page for a sample quote.</p></div>
+    </div>
+    <div class="faq-item reveal bg-white rounded-2xl border-2 border-stone-200 mb-4 overflow-hidden">
+      <button class="faq-q w-full flex items-center justify-between gap-4 text-left px-6 py-5 font-bold" style="color:#2b2118">
+        <span>Do you take cards?</span>
+        <svg class="faq-chevron shrink-0" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d9481f" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-answer"><p class="px-6 pb-6 text-stone-500 text-sm leading-relaxed">We take cards, mobile payments, and cash at the window. For catering we invoice after the event.</p></div>
+    </div></div>
+</section>
+
+<section class="py-20" style="background:#2a1c12">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+    <h2 class="reveal font-display text-3xl md:text-5xl text-white">Hungry? Let's talk.</h2>
+    <p class="reveal mt-4 text-lg" style="color:#fdf6ec;opacity:.8">Call, message, or stop by. We would love to feed you.</p>
+    <div class="reveal flex flex-wrap justify-center gap-4 mt-8">
+      <a href="tel:+15552345678" class="text-white font-bold px-8 py-4 rounded-full transition hover:brightness-110" style="background:#d9481f">Call (555) 234-5678</a>
+      <a href="contact.html" class="border-2 border-white/60 text-white hover:border-white font-bold px-8 py-4 rounded-full transition">Contact us</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="text-stone-300" style="background:#1a110a">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid gap-10 md:grid-cols-4">
+    <div>
+      <p class="font-display font-bold text-white text-lg">SmokeStack BBQ Truck</p>
+      <p class="text-sm mt-3 text-stone-400">Slow-smoked BBQ on wheels, serving Portland, OR.</p>
+    </div>
+    <div>
+      <p class="font-bold text-white mb-4">Pages</p>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="index.html" class="hover:text-white">Home</a></li>
+        <li><a href="services.html" class="hover:text-white">Services</a></li>
+        <li><a href="about.html" class="hover:text-white">About</a></li>
+        <li><a href="gallery.html" class="hover:text-white">Gallery</a></li>
+        <li><a href="reviews.html" class="hover:text-white">Reviews</a></li>
+        <li><a href="contact.html" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold text-white mb-4">Services</p>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="services.html" class="hover:text-white">Signature Smoke Plates</a></li><li><a href="services.html" class="hover:text-white">Sandwiches and Tacos</a></li><li><a href="services.html" class="hover:text-white">Sides and Fixings</a></li><li><a href="services.html" class="hover:text-white">Event Catering</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold text-white mb-4">Contact</p>
+      <a href="tel:+15552345678" class="font-bold text-lg" style="color:#d9481f">(555) 234-5678</a>
+      <p class="text-sm mt-2 text-stone-400">Mon-Thu 11am-8pm<br>Fri-Sat 11am-9pm<br>Sun 12pm-6pm</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-stone-500">
+      <p>Copyright <span data-year></span> SmokeStack BBQ Truck. Demo website concept. Content is illustrative, not a real business.</p>
+      <p>Sample photos via Unsplash.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="callBar" class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white border-t border-stone-200 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
+  <div class="px-4 py-3 flex items-center justify-between gap-3">
+    <p class="text-sm font-semibold" style="color:#2b2118">Slow-smoked BBQ on wheels</p>
+    <a href="tel:+15552345678" class="shrink-0 text-white font-bold text-sm px-5 py-2.5 rounded-full" style="background:#d9481f">Call now</a>
+  </div>
+</div>
+<script src="js/main.js" defer></script>
+</body>
+</html>

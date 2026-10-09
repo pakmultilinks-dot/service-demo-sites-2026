@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Pampered Paws Grooming | Minneapolis, MN (Demo Website Concept)</title>
+<meta name="description" content="Pampered Paws Grooming demo website concept: cage-free pet grooming salon in Minneapolis, MN. Baths, cuts, cat grooming. Call (555) 456-7890.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/custom.css">
+<style>:root{--teal:#14b8a6}body{font-family:'Inter',system-ui,sans-serif}h1,h2,h3,.font-display{font-family:'Bricolage Grotesque','Inter',sans-serif;letter-spacing:.01em}</style>
+</head>
+<body data-page="about" class="bg-slate-50 text-slate-800 antialiased">
+
+<div class="demo-strip">Demo Website Concept: a sample site for <strong>Pampered Paws Grooming</strong>, Minneapolis, MN. Not a real business.</div>
+
+<header class="site-header text-white sticky top-0 z-40 shadow-lg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16 md:h-20">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><ellipse cx="12" cy="15.5" rx="4.6" ry="3.6" fill="#2dd4bf"/><circle cx="5.8" cy="10.5" r="1.9" fill="#2dd4bf"/><circle cx="9.6" cy="7.2" r="1.9" fill="#2dd4bf"/><circle cx="14.4" cy="7.2" r="1.9" fill="#2dd4bf"/><circle cx="18.2" cy="10.5" r="1.9" fill="#2dd4bf"/></svg>
+      <span class="font-extrabold text-lg md:text-xl tracking-tight font-display">Pampered Paws <span class="text-teal-300">Grooming</span></span>
+    </a>
+    <nav class="hidden md:flex items-center gap-7 text-sm font-semibold" aria-label="Main">
+      <a data-nav="home" href="index.html" class="hover:text-teal-300 transition">Home</a>
+      <a data-nav="services" href="services.html" class="hover:text-teal-300 transition">Services</a>
+      <a data-nav="about" href="about.html" class="hover:text-teal-300 transition">About</a>
+      <a data-nav="gallery" href="gallery.html" class="hover:text-teal-300 transition">Gallery</a>
+      <a data-nav="reviews" href="reviews.html" class="hover:text-teal-300 transition">Reviews</a>
+      <a data-nav="contact" href="contact.html" class="hover:text-teal-300 transition">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:+15554567890" class="hidden md:inline-flex items-center gap-2 btn-accent font-bold text-sm px-5 py-2.5 rounded-full transition">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.7 2z"/></svg>
+        (555) 456-7890
+      </a>
+      <button id="menuBtn" class="md:hidden p-2 -mr-2" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="closed md:hidden mobile-menu border-t border-white/10">
+    <nav class="px-5 py-4 flex flex-col gap-1 text-base font-semibold" aria-label="Mobile">
+      <a data-nav="home" href="index.html" class="py-2.5 border-b border-white/5">Home</a>
+      <a data-nav="services" href="services.html" class="py-2.5 border-b border-white/5">Services</a>
+      <a data-nav="about" href="about.html" class="py-2.5 border-b border-white/5">About</a>
+      <a data-nav="gallery" href="gallery.html" class="py-2.5 border-b border-white/5">Gallery</a>
+      <a data-nav="reviews" href="reviews.html" class="py-2.5 border-b border-white/5">Reviews</a>
+      <a data-nav="contact" href="contact.html" class="py-2.5">Contact</a>
+      <a href="tel:+15554567890" class="mt-3 text-center btn-accent font-bold py-3 rounded-xl">Call (555) 456-7890</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="relative text-white overflow-hidden rail-navy">
+  
+  <div class="absolute inset-0 bg-[var(--navy)]/80"></div>
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-28">
+    <p class="reveal text-teal-300 font-bold text-sm uppercase tracking-[0.18em]">About</p>
+    <h1 class="reveal font-display font-bold text-4xl md:text-6xl mt-4 max-w-2xl">The crew behind Pampered Paws Grooming</h1>
+    <p class="reveal text-lg text-slate-200 mt-4 max-w-xl">Pampered Paws Grooming is a demo website concept for a cage-free Minneapolis salon built on a simple belief: a groom should feel like a spa day, not an ordeal.</p>
+  </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-24 grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
+  <div>
+    <p class="reveal sec-kicker">Our story</p>
+    <h2 class="reveal font-display font-bold text-3xl md:text-4xl mt-3 text-[var(--navy)]">A demo concept done properly</h2>
+    <div class="reveal mt-6 space-y-4">
+      <p class="text-slate-600 leading-relaxed">Pampered Paws Grooming is a demo website concept for a cage-free Minneapolis salon built on a simple belief: a groom should feel like a spa day, not an ordeal.</p>
+      <p class="text-slate-600 leading-relaxed">Each pet gets one dedicated groomer from drop-off to pickup, a calm drying process with no cages, and photo updates texted to you mid-groom.</p>
+      <p class="text-slate-600 leading-relaxed">Dogs, cats, nervous rescues, and wiggly puppies all get the same thing: patience, skill, and a really good haircut.</p>
+    </div>
+  </div>
+  <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=900&q=80" alt="Dog bath" class="reveal rounded-[2rem] shadow-xl w-full h-[320px] md:h-[440px] object-cover">
+</section>
+<section class="bg-slate-100 py-16 md:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <h2 class="reveal font-display font-bold text-3xl md:text-4xl text-center text-[var(--navy)]">What we stand for</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+      <div class="reveal bg-white rounded-3xl p-7 shadow-md border border-slate-100">
+        <h3 class="font-display font-bold text-lg text-[var(--navy)]">Calm first</h3>
+        <p class="text-slate-500 mt-2 text-sm">No rushing, no force. Nervous pets set the pace.</p>
+      </div>
+      <div class="reveal bg-white rounded-3xl p-7 shadow-md border border-slate-100">
+        <h3 class="font-display font-bold text-lg text-[var(--navy)]">One groomer</h3>
+        <p class="text-slate-500 mt-2 text-sm">The same caring hands from bath to bow.</p>
+      </div>
+      <div class="reveal bg-white rounded-3xl p-7 shadow-md border border-slate-100">
+        <h3 class="font-display font-bold text-lg text-[var(--navy)]">Honest advice</h3>
+        <p class="text-slate-500 mt-2 text-sm">We tell you what your coat actually needs.</p>
+      </div>
+      <div class="reveal bg-white rounded-3xl p-7 shadow-md border border-slate-100">
+        <h3 class="font-display font-bold text-lg text-[var(--navy)]">Clean and safe</h3>
+        <p class="text-slate-500 mt-2 text-sm">Sanitized tools and tubs between every pet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-24">
+  <h2 class="reveal font-display font-bold text-3xl md:text-4xl text-center text-[var(--navy)]">Meet the team</h2>
+  <p class="reveal text-center text-slate-500 mt-3">Sample team illustration for this demo concept.</p>
+  <div class="grid sm:grid-cols-2 gap-6 mt-10 max-w-2xl mx-auto">
+      <div class="reveal bg-white rounded-3xl overflow-hidden shadow-md border border-slate-100 text-center">
+        <img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Portrait of a smiling woman" class="w-full h-72 object-cover">
+        <div class="p-6"><p class="font-display font-bold text-xl text-[var(--navy)]">Maya Lindqvist</p><p class="text-slate-500 text-sm mt-1">Founder and master groomer</p></div>
+      </div>
+  </div>
+</section><section class="rail-teal text-white py-16 md:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <p class="reveal text-teal-100 font-bold text-sm uppercase tracking-[0.18em] text-center">Our guarantee</p>
+    <h2 class="reveal font-display font-bold text-3xl md:text-4xl mt-3 text-center">Book with total confidence</h2>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <div class="reveal bg-white/10 backdrop-blur rounded-3xl p-7 border border-white/15">
+        <h3 class="font-display font-bold text-xl">Stress-free promise</h3>
+        <p class="text-teal-50 mt-2">Nervous pets get extra time and gentle handling, never rushed.</p>
+      </div>
+      <div class="reveal bg-white/10 backdrop-blur rounded-3xl p-7 border border-white/15">
+        <h3 class="font-display font-bold text-xl">One groomer start to finish</h3>
+        <p class="text-teal-50 mt-2">Your pet is never handed off mid-groom.</p>
+      </div>
+      <div class="reveal bg-white/10 backdrop-blur rounded-3xl p-7 border border-white/15">
+        <h3 class="font-display font-bold text-xl">Happiness re-do</h3>
+        <p class="text-teal-50 mt-2">Not thrilled with the cut? We fix it free within a week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="rail-navy text-white overflow-hidden">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-20 md:py-24 text-center">
+    <h2 class="reveal font-display font-bold text-3xl md:text-5xl">Ready when you are.</h2>
+    <p class="reveal text-lg text-slate-300 mt-4">Call (555) 456-7890 or send us a message and we will take it from there.</p>
+    <div class="reveal flex flex-wrap justify-center gap-4 mt-8">
+      <a href="tel:+15554567890" class="btn-accent font-bold px-8 py-4 rounded-full transition shadow-xl">Call (555) 456-7890</a>
+      <a href="contact.html" class="btn-ghost font-bold px-8 py-4 rounded-full transition">Contact us</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer-navy text-slate-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14 grid gap-10 md:grid-cols-4">
+    <div>
+      <p class="font-display font-bold text-white text-lg">Pampered Paws <span class="text-teal-300">Grooming</span></p>
+      <p class="text-sm mt-3 text-slate-400">Bath, cut, nails, and de-shedding in a quiet, cage-free salon. One groomer per pet from start to finish, with photo upda...</p>
+    </div>
+    <div>
+      <p class="font-bold text-white mb-4">Pages</p>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="index.html" class="hover:text-teal-300">Home</a></li>
+        <li><a href="services.html" class="hover:text-teal-300">Services</a></li>
+        <li><a href="about.html" class="hover:text-teal-300">About</a></li>
+        <li><a href="gallery.html" class="hover:text-teal-300">Gallery</a></li>
+        <li><a href="reviews.html" class="hover:text-teal-300">Reviews</a></li>
+        <li><a href="contact.html" class="hover:text-teal-300">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold text-white mb-4">Services</p>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="services.html" class="hover:text-teal-300">full groom</a></li>
+        <li><a href="services.html" class="hover:text-teal-300">bath and brush</a></li>
+        <li><a href="services.html" class="hover:text-teal-300">puppy&#x27;s first groom</a></li>
+        <li><a href="services.html" class="hover:text-teal-300">cat grooming</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-bold text-white mb-4">Contact</p>
+      <a href="tel:+15554567890" class="text-teal-300 font-bold text-lg">(555) 456-7890</a>
+      <p class="text-sm mt-2 text-slate-400">Minneapolis, MN<br>Tue-Sat 8am-6pm, Sun-Mon closed</p>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col md:flex-row justify-between gap-3 text-xs text-slate-500">
+      <p>Copyright <span data-year></span> Pampered Paws Grooming Demo website concept. Content is illustrative, not a real business.</p>
+      <p>Sample photos via Unsplash.</p>
+    </div>
+  </div>
+</footer>
+
+<div id="callBar" class="fixed bottom-0 inset-x-0 z-40 md:hidden bg-white border-t border-slate-200 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
+  <div class="grid grid-cols-2 gap-3 p-3">
+    <a href="tel:+15554567890" class="btn-accent font-bold text-center py-3.5 rounded-xl">Call Now</a>
+    <a href="contact.html" class="btn-navy font-bold text-center py-3.5 rounded-xl">Get a Quote</a>
+  </div>
+</div>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
