@@ -44,7 +44,7 @@
 #lightbox { transition: opacity .3s ease; }
 #lightbox.hiddenx { opacity: 0; pointer-events: none; }
 #mobileMenu { transition: transform .32s ease, opacity .32s ease; transform-origin: top; }
-#mobileMenu.closed { display: none; }
+#mobileMenu.closed { transform: scaleY(.6); opacity: 0; pointer-events: none; }
 #callBar { transform: translateY(110%); transition: transform .35s ease; }
 #callBar.show { transform: translateY(0); }
 .hero-photo { box-shadow: 0 30px 60px -20px rgba(10,42,67,.45); }
@@ -72,8 +72,3 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .addon-pill { display: inline-flex; align-items: center; gap: .55rem; border: 2px solid #e2e8f0; border-radius: 9999px; padding: .6rem 1.2rem; font-weight: 600; font-size: .9rem; cursor: pointer; transition: border-color .18s; }
 .addon-pill:hover { border-color: var(--teal); }
 .addon-pill input { accent-color: var(--teal); width: 1.05rem; height: 1.05rem; }
-
-/* carousel overflow fallback (if Tailwind CDN slow/blocked) */
-.overflow-hidden{overflow:hidden !important}
-#tstTrack{max-width:100%}
-.tst-slide{flex:0 0 100%;max-width:100%}

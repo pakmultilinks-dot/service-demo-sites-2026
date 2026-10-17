@@ -100,7 +100,7 @@
 
 /* Mobile nav panel */
 #mobileMenu { transition: transform 0.32s ease, opacity 0.32s ease; transform-origin: top; }
-#mobileMenu.closed { display: none; }
+#mobileMenu.closed { transform: scaleY(0.6); opacity: 0; pointer-events: none; }
 
 /* Sticky mobile call bar */
 #callBar { transform: translateY(110%); transition: transform 0.35s ease; }
