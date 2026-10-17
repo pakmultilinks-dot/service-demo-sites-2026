@@ -87,3 +87,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 /* Pipe divider with wrench */
 .divider-pipe { display: flex; align-items: center; gap: 14px; max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
 .divider-pipe span { height: 2px; flex: 1; background: linear-gradient(90deg, transparent, #cbd5e1, transparent); }
+
+/* carousel overflow fallback (if Tailwind CDN slow/blocked) */
+.overflow-hidden{overflow:hidden !important}
+#tstTrack{max-width:100%}
+.tst-slide{flex:0 0 100%;max-width:100%}

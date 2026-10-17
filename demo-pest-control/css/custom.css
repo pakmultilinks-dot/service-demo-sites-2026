@@ -72,3 +72,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .addon-pill { display: inline-flex; align-items: center; gap: .55rem; border: 2px solid #e2e8f0; border-radius: 9999px; padding: .6rem 1.2rem; font-weight: 600; font-size: .9rem; cursor: pointer; transition: border-color .18s; }
 .addon-pill:hover { border-color: var(--teal); }
 .addon-pill input { accent-color: var(--teal); width: 1.05rem; height: 1.05rem; }
+
+/* carousel overflow fallback (if Tailwind CDN slow/blocked) */
+.overflow-hidden{overflow:hidden !important}
+#tstTrack{max-width:100%}
+.tst-slide{flex:0 0 100%;max-width:100%}
