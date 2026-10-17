@@ -58,7 +58,7 @@
 #lightbox.hiddenx { opacity: 0; pointer-events: none; }
 
 #mobileMenu { transition: transform 0.32s ease, opacity 0.32s ease; transform-origin: top; }
-#mobileMenu.closed { transform: scaleY(0.6); opacity: 0; pointer-events: none; }
+#mobileMenu.closed { display: none; }
 
 #callBar { transform: translateY(110%); transition: transform 0.35s ease; }
 #callBar.show { transform: translateY(0); }
